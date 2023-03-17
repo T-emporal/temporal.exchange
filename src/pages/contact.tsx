@@ -1,4 +1,5 @@
 import type {NextPage} from "next";
+import {NextSeo} from "next-seo";
 import {Fragment, useState} from "react";
 
 const Contact: NextPage = () => {
@@ -20,6 +21,7 @@ const Contact: NextPage = () => {
     }
 
     return (<Fragment>
+        <NextSeo title="Contact"/>
         <main className="flex min-h-screen flex-col items-center justify-center -mt-16">
             <h1 className="text-4xl text-center text-white mb-2 font-mono max-w-xl">
                 We will be out of stealth mode soon.

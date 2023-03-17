@@ -33,16 +33,17 @@ const Footer: NextPage = () => {
                         </ul>
                     </div>
                     <div className="col-span-6 text-center md:text-left md:col-span-3">
-				<p className="pb-1 text-lg font-medium">Socials</p>
-				<ul>
-					<li>
-						<Link rel="noopener noreferrer" href="#" className="hover:white">Twitter</Link>
-					</li>
-					<li>
-						<Link rel="noopener noreferrer" href="#" className="hover:dark:text-violet-400">Telegram</Link>
-					</li>
-				</ul>
-			</div>
+                        <p className="pb-1 text-lg font-medium">Socials</p>
+                        <ul>
+                            <li>
+                                <Link rel="noopener noreferrer" href="/contact" className="hover:white">Twitter</Link>
+                            </li>
+                            <li>
+                                <Link rel="noopener noreferrer" href="/contact"
+                                      className="hover:dark:text-violet-400">Telegram</Link>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
                 <div className="grid justify-center pt-6 lg:justify-between">
                     <div className="flex flex-col self-center text-sm text-center md:block lg:col-start-1 md:space-x-6">

@@ -12,18 +12,11 @@ const sendEmailEndpoint = endpoint(
         }),
     },
     async ({ query }) => {
-        var mailOptions = {
-            from: 'dankguy6146@gmail.com',
-            to: 'admin.cairorasa@proton.me',
-            subject: `Message from ${query.name} @ temporal.exchange contact site`,
-            text: query.message
-        };
- 
         const email_res = await sendEmail({
-            to: "admin.cairorasa@proton.me",
+            to: "hello@temporal.exchange",
             subject: `Message from ${query.name} @ temporal.exchange contact site`,
-            html: query.message + "render(WelcomeTemplate())",
-          });
+            html: query.message,
+        });
 
         return {
             status: 200,

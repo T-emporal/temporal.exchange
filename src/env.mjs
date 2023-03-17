@@ -6,6 +6,11 @@ import { z } from "zod";
  */
 const server = z.object({
   NODE_ENV: z.enum(["development", "test", "production"]),
+  NEXT_SMTP_HOST: z.string(),
+  NEXT_SMTP_PORT: z.string(),
+  NEXT_SMTP_USER: z.string(),
+  NEXT_SMTP_PASSWORD: z.string(),
+  NEXT_SMTP_FROM_EMAIL: z.string()
 });
 
 /**
@@ -24,6 +29,11 @@ const client = z.object({
  */
 const processEnv = {
   NODE_ENV: process.env.NODE_ENV,
+  NEXT_SMTP_HOST: process.env.NEXT_SMTP_HOST,
+  NEXT_SMTP_PORT: process.env.NEXT_SMTP_PORT,
+  NEXT_SMTP_USER: process.env.NEXT_SMTP_USER,
+  NEXT_SMTP_PASSWORD: process.env.NEXT_SMTP_PASSWORD,
+  NEXT_SMTP_FROM_EMAIL: process.env.NEXT_SMTP_FROM_EMAIL,
   // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
 };
 

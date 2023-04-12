@@ -12,7 +12,7 @@ const NavBar: NextPage = () => {
         },
         {
             name: "WhitePaper",
-            href: "/whitepaper"
+            href: "/litepaper"
         },
         // {
         //     name: "Link 3",

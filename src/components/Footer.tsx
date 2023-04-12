@@ -19,7 +19,8 @@ const Footer: NextPage = () => {
                                 <Link rel="noopener noreferrer" href="/docs" className="hover:dark:text-violet-400">Docs</Link>
                             </li>
                             <li>
-                                <Link rel="noopener noreferrer" href="/whitepaper" className="hover:dark:text-violet-400">Whitepaper</Link>
+                                <Link rel="noopener noreferrer" href="/litepaper"
+                                      className="hover:dark:text-violet-400">LitePaper</Link>
                             </li>
                             {/* <li>
 						<Link rel="noopener noreferrer" href="#" className="hover:dark:text-violet-400">Link</Link>

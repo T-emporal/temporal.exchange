@@ -9,8 +9,12 @@ const LitePaper: NextPage = () => {
             <NextSeo title="LitePaper"/>
             <main className="flex min-h-screen flex-col items-center justify-center">
                 {/*<h1 className="text-4xl text-white font-mono">Coming Soon🔥</h1>*/}
-                <object height={windowSize.height} width={windowSize.width} type="application/pdf"
-                        data='temporal-litepaper.pdf'/>
+                <iframe title="Temporal LitePaper"
+                        height={windowSize.height}
+                        width={windowSize.width}
+                    // type="application/pdf"
+                        src='temporal-litepaper.pdf'
+                />
             </main>
         </>
     )

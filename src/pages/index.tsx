@@ -11,7 +11,7 @@ const Home: NextPage = () => {
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
             <main className="bg-fixed bg-cover bg-center bg-no-repeat" style={{
-                background: "rgba(255, 255, 255, .5) url('background.webp') no-repeat",
+                background: "rgba(255, 255, 255, .5) url('background.jpg') no-repeat",
                 backgroundSize: 'cover'
             }}>
 

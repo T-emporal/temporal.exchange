@@ -54,12 +54,12 @@ const Footer: NextPage = () => {
                 <div className="grid justify-center pt-6 lg:justify-between">
                     <div className="flex flex-col self-center text-sm text-center md:block lg:col-start-1 md:space-x-6">
                         <span>©2023 All rights reserved</span>
-                        <Link rel="noopener noreferrer" href="#">
-                            <span>Privacy policy</span>
-                        </Link>
-                        <Link rel="noopener noreferrer" href="#">
-                            <span>Terms of service</span>
-                        </Link>
+                        {/*<Link rel="noopener noreferrer" href="#">*/}
+                        {/*    <span>Privacy policy</span>*/}
+                        {/*</Link>*/}
+                        {/*<Link rel="noopener noreferrer" href="#">*/}
+                        {/*    <span>Terms of service</span>*/}
+                        {/*</Link>*/}
                     </div>
                     <div className="flex justify-center pt-4 space-x-4 lg:pt-0 lg:col-end-13">
                         <Link rel="noopener noreferrer" href="mailto:hello@temporal.exchange" title="Email"

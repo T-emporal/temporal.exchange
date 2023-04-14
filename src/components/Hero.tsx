@@ -9,12 +9,12 @@ const Hero: NextPage = () => {
                 <h1 className="text-4xl font-bold leading-none sm:text-5xl">A New DeFi Primitive:
                     <span className="text-zinc-300"> Market-Determined Yield Curves</span>
                 </h1>
-                <p className="text-zinc-200 px-8 mt-8 mb-12 text-lg sm:text3xl font-semibold">
+                <p className="text-left text-zinc-200 px-8 mt-8 mb-12 text-xl font-semibold">
                     <span>Temporal’s realtime continuous yield curves are shaped purely by market forces</span>
                     <br />
-                    <div className="text-left">
+                    <div className="mt-2">
                     <span>Users can</span>
-                        <ul className="ml-4 text-xl">
+                        <ul className="ml-4">
                             <li>• Customize maturity</li>
                             <li>• Lend / Borrow at fixed-rates</li>
                         </ul>

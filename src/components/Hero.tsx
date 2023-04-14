@@ -7,7 +7,7 @@ const Hero: NextPage = () => {
             <div
                 className="container mx-auto flex flex-col items-center px-4 py-16 text-center md:py-32 md:px-10 lg:px-18 xl:max-w-9xl">
                 <h1 className="text-4xl font-bold leading-none sm:text-5xl">A New DeFi Primitive:
-                    <span className="text-zinc-300"> Market-Determined Yield / Forward Curves</span>
+                    <span className="text-zinc-300"> Market-Determined Yield Curves</span>
                 </h1>
                 <p className="text-zinc-200 px-8 mt-8 mb-12 text-lg sm:text3xl font-semibold">
                     <span>Built via a novel approach of Unifying Temporally discrete markets into Realtime, Continuous Forward Curves.</span>
@@ -20,7 +20,7 @@ const Hero: NextPage = () => {
                         </button>
                     </Link>
                     <Link href="/litepaper">
-                        <button className="px-14 py-5 m-2 text-lg font-semibold rounded text-black bg-white">LitePaper
+                        <button className="px-14 py-5 m-2 text-lg font-semibold rounded text-black bg-white">Litepaper
                         </button>
                     </Link>
                 </div>

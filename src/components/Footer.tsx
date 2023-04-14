@@ -22,7 +22,7 @@ const Footer: NextPage = () => {
                     {/*        </li>*/}
                     {/*        <li>*/}
                     {/*            <Link rel="noopener noreferrer" href="/litepaper"*/}
-                    {/*                  className="hover:dark:text-violet-400">LitePaper</Link>*/}
+                    {/*                  className="hover:dark:text-violet-400">Litepaper</Link>*/}
                     {/*        </li>*/}
                     {/*        <li>*/}
                     {/*            <Link rel="noopener noreferrer" href="#"*/}

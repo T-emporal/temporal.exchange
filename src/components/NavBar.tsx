@@ -11,7 +11,7 @@ const NavBar: NextPage = () => {
             href: "/docs"
         },
         {
-            name: "LitePaper",
+            name: "Litepaper",
             href: "/litepaper"
         },
         // {

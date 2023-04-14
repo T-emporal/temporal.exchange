@@ -1,4 +1,4 @@
-import type {NextPage} from "next";
+import type { NextPage } from "next";
 import Link from "next/link";
 
 const Hero: NextPage = () => {
@@ -10,9 +10,15 @@ const Hero: NextPage = () => {
                     <span className="text-zinc-300"> Market-Determined Yield Curves</span>
                 </h1>
                 <p className="text-zinc-200 px-8 mt-8 mb-12 text-lg sm:text3xl font-semibold">
-                    <span>Built via a novel approach of Unifying Temporally discrete markets into Realtime, Continuous Forward Curves.</span>
-                    <br/>
-                    <span>Applied to Debt and Derivative markets. Participants can enter Custom-duration Lending / Borrowing or Futures contracts. Priced entirely by market forces.</span>
+                    <span>Temporal’s realtime continuous yield curves are shaped purely by market forces</span>
+                    <br />
+                    <div className="text-left">
+                    <span>Users can</span>
+                        <ul className="ml-4 text-xl">
+                            <li>• Customize maturity</li>
+                            <li>• Lend / Borrow at fixed-rates</li>
+                        </ul>
+                    </div>
                 </p>
                 <div className="flex flex-wrap justify-center">
                     <Link href="/docs">

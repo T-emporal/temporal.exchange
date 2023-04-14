@@ -6,7 +6,7 @@ import Navbar from './NavBar'
 export default function Layout({ children } : any) {
     return (
         <>
-            <NextSeo title="Temporal" description="The next evolution in AMM and Exchanges"/>
+            <NextSeo title="Temporal" description="Future of Market Mechanisms"/>
             <div className="min-h-screen overflow-x-hidden bg-black w-full">
                 <Navbar/>
                 <main>{children}</main>

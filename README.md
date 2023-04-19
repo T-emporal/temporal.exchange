@@ -1,6 +1,11 @@
 # Temporal Frontend
 
-## Built with NextJS, Styled using TailwindCSS and Safety ensured by Typescript
+## Tech Stack used
+- NextJS
+- TailwindCSS
+- Typescript
+- NodeMailer
+- Zod
 
 ## Test it in local
 - Clone the repository

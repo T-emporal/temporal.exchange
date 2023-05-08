@@ -29,6 +29,10 @@ const Hero: NextPage = () => {
                         <button className="px-14 py-5 m-2 text-lg font-semibold rounded text-black bg-white">Litepaper
                         </button>
                     </Link>
+                    <Link href="https://demo.temporal.exchange/">
+                        <button className="px-14 py-5 m-2 text-lg font-semibold rounded text-black bg-white">Demo
+                        </button>
+                    </Link>
                 </div>
             </div>
         </section>

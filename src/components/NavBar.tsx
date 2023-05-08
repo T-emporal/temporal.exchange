@@ -14,6 +14,10 @@ const NavBar: NextPage = () => {
             name: "Litepaper",
             href: "/litepaper"
         },
+        {
+            name: "Demo",
+            href: "https://demo.temporal.exchange/"
+        },
         // {
         //     name: "Link 3",
         //     href: "#"

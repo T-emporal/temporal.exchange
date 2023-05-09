@@ -3,7 +3,6 @@ import {NextSeo} from "next-seo";
 import {Fragment, useState} from "react";
 
 const Contact: NextPage = () => {
-    const [twitter, setTwitter] = useState("");
     const [telegram, setTelegram] = useState("");
     const [discord, setDiscord] = useState("");
 
@@ -28,23 +27,6 @@ const Contact: NextPage = () => {
                 Please leave your handle and we’ll reach out to you
             </h1>
             <form className="w-full max-w-sm">
-                <div className="flex items-center border-b border-gray-500 py-2">
-                    <input
-                        className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
-                        type="text"
-                        placeholder="Twitter Handle"
-                        aria-label="Twitter Handle"
-                        onChange={(e) => setTwitter(e.target.value)}
-                    />
-                    <button
-                        className="flex-shrink-0 font-semibold bg-grey-500 hover:bg-grey-700 border-grey-500 hover:border-grey-700 text-sm border-4 text-white py-1 px-2 rounded"
-                        type="button"
-                        /* eslint-disable-next-line @typescript-eslint/no-misused-promises */
-                        onClick={() => onSubmit(twitter, "Twitter")}
-                    >
-                        S E N D
-                    </button>
-                </div>
                 <div className="flex items-center border-b border-gray-500 py-2">
                     <input
                         className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"

@@ -21,18 +21,18 @@ const Hero: NextPage = () => {
                     </div>
                 </p>
                 <div className="flex flex-wrap justify-center">
-                    <Link href="/docs">
-                        <button className="px-14 py-5 m-2 text-lg font-semibold rounded bg-black text-white">Docs
+                    <Link href="/comingSoon">
+                        <button className="px-14 py-5 m-2 text-lg font-semibold rounded bg-black text-white">Join Waitlist
                         </button>
                     </Link>
-                    <Link href="/litepaper">
+                    {/* <Link href="/litepaper">
                         <button className="px-14 py-5 m-2 text-lg font-semibold rounded text-black bg-white">Litepaper
                         </button>
                     </Link>
                     <Link href="https://demo.temporal.exchange/">
                         <button className="px-14 py-5 m-2 text-lg font-semibold rounded text-black bg-white">Demo
                         </button>
-                    </Link>
+                    </Link> */}
                 </div>
             </div>
         </section>

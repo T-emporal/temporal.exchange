@@ -20,9 +20,10 @@ const Hero: NextPage = () => {
                         </ul>
                     </div>
                 </p>
+            
                 <div className="flex flex-wrap justify-center">
                     <Link href="/comingSoon">
-                        <button className="px-14 py-5 m-2 text-lg font-semibold rounded bg-black text-white">Join Waitlist
+                        <button className="mt-4 rounded bg-gradient-to-r from-black to-gray-500 px-4 py-2 text-white text-l">Join Waitlist
                         </button>
                     </Link>
                     {/* <Link href="/litepaper">

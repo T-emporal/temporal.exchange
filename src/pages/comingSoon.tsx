@@ -7,19 +7,18 @@ const ComingSoon: NextPage = () => {
       window.open('https://z4y1xmgjna6.typeform.com/to/VVustsKl', '_blank');
     };
     return (
-        <>
-          <NextSeo title="LandingPage" />
-          <main className="flex min-h-screen flex-col items-center justify-center">
-            <h1 className="text-4xl text-white font-mono">Join Waitlist</h1>
-            <button
-              onClick={handleJoinWaitlistClick}
-              className="bg-blue-500 text-white px-4 py-2 mt-4 rounded"
-            >
-              Join Waitlist
-            </button>
-          </main>
-        </>
-      );
+      <>
+        <NextSeo title="LandingPage" />
+        <main className="flex min-h-screen flex-col items-center justify-center">
+          <button
+            onClick={handleJoinWaitlistClick}
+            className="mt-4 rounded bg-gradient-to-r from-black to-gray-500 px-4 py-2 text-white"
+          >
+            <h1 className="font-mono text-2xl text-white">Join Waitlist</h1>
+          </button>
+        </main>
+      </>
+    );
     };
 
 export {};

@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Link from "next/link";
 import { useState } from "react";
-import LogoSVG from "./../../public/TemporalLogoComplete.svg";
+import LogoSVG from "./../../public/TemporalLogoComplete.svg"; 
 
 const NavBar: NextPage = () => {
   const title = "{ T } E M P O R A L";
@@ -26,7 +26,7 @@ const NavBar: NextPage = () => {
         className="absolute inset-0 justify-center md:justify-left"
         style={{
           marginLeft:"24px",
-          backgroundImage: `url(${LogoSVG.src})`,
+          backgroundImage: `url('./TemporalLogoComplete.svg')`,
           backgroundSize: "contain",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "left",

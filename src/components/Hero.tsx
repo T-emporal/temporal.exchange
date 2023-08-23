@@ -55,7 +55,7 @@ const Hero: NextPage = () => {
 
         <div className="flex justify-center md:justify-start md:pb-2">
           <button
-            className="mr-4 flex items-center rounded-full border-2 border-[#FFFFFF] pl-12 pr-12 pt-4 pb-4"
+            className="mr-4 flex items-center rounded-full border-2 border-[#FFFFFF] pl-12 pr-12 pt-4 pb-4 hover:border-[#3CC0A3] hover:bg-black hover:text-[#3CC0A3]"
             onClick={() => router.push("/litepaper")}
           >
             <span className="text-12 font-helvetica-neue text-[#FFFFFF]">
@@ -64,7 +64,7 @@ const Hero: NextPage = () => {
           </button>
 
           <button
-            className="flex items-center rounded-full border-2 border-[#FFFFFF] pl-12 pr-12 pt-4 pb-4"
+            className="flex items-center rounded-full border-2 border-[#FFFFFF] pl-12 pr-12 pt-4 pb-4 hover:border-[#3CC0A3] hover:bg-black hover:text-[#3CC0A3]"
             onClick={() => router.push("/litepaper")}
           >
             <span className="text-12 font-helvetica-neue text-[#FFFFFF]">
@@ -82,43 +82,43 @@ const Hero: NextPage = () => {
 
       <div className="mx-4 mt-8 grid grid-cols-1 gap-4 sm:mx-24 md:grid-cols-4">
         {/* First Card */}
-        <div className="flex-1 rounded-3xl border-2 border-[#3CC0A3] border-opacity-100 bg-black p-8">
-          <div className="mb-4 text-2xl font-semibold text-[#3CC0A3]">01</div>
-          <div className="mb-2 text-lg text-white">
+        <div className="flex-1 rounded-3xl border-2 border-[#3CC0A3] border-opacity-100 bg-transparent p-8">
+          <div className="mb-4 text-4xl font-semibold text-[#3CC0A3]">01</div>
+          <p className="mb-2 text-xl text-white font-helvetica-neue">
             Market-Determined Yield Curves
-          </div>
-          <div className="text-lg text-white">
+          </p>
+          <div className="text-lg text-white font-extralight font-helvetica-neue">
             Interest rates set purely by market forces.
           </div>
         </div>
 
         {/* Second Card */}
-        <div className="flex-1 rounded-3xl border-2 border-[#3CC0A3] border-opacity-100 bg-black p-8">
-          <div className="mb-4 text-2xl font-semibold text-[#3CC0A3]">02</div>
-          <div className="mb-2 text-lg text-white">Custom Maturities</div>
-          <div className="text-lg text-white">
+        <div className="flex-1 rounded-3xl border-2 border-[#3CC0A3] border-opacity-100 bg-transparent p-8">
+          <div className="mb-4 text-4xl font-semibold text-[#3CC0A3]">02</div>
+          <div className="mb-2 text-xl text-white font-helvetica-neue">Custom Maturities</div>
+          <div className="text-lg text-white font-extralight font-helvetica-neue">
             Borrowing and lending durations are no longer limited by the pool.
           </div>
         </div>
 
         {/* Third Card */}
-        <div className="flex-1 rounded-3xl border-2 border-[#3CC0A3] border-opacity-100 bg-black p-8">
-          <div className="mb-4 text-2xl font-semibold text-[#3CC0A3]">03</div>
-          <div className="mb-2 text-lg text-white">
-            Flexible Collateral Levels
+        <div className="flex-1 rounded-3xl border-2 border-[#3CC0A3] border-opacity-100 bg-transparent p-8">
+          <div className="mb-4 text-4xl font-semibold text-[#3CC0A3]">03</div>
+          <div className="mb-2 text-xl text-white font-helvetica-neue">
+            Undercollateralized borrowing
           </div>
-          <div className="text-lg text-white">
-            Enabling users to set their collateral level above floor.
+          <div className="text-lg text-white font-extralight font-helvetica-neue">
+            Collateralise your position & borrow upto 5x.
           </div>
         </div>
 
         {/* Fourth Card */}
-        <div className="flex-1 rounded-3xl border-2 border-[#3CC0A3] border-opacity-100 bg-black p-8">
-          <div className="mb-4 text-2xl font-semibold text-[#3CC0A3]">04</div>
-          <div className="mb-2 text-lg text-white">
+        <div className="flex-1 rounded-3xl border-2 border-[#3CC0A3] border-opacity-100 bg-transparent p-8">
+          <div className="mb-4 text-4xl font-semibold text-[#3CC0A3]">04</div>
+          <div className="mb-2 text-xl text-white font-helvetica-neue">
             No Liquidity Fragmentation
           </div>
-          <div className="text-lg text-white">
+          <div className="text-lg text-white font-extralight font-helvetica-neue">
             A novel order book designed to cumulate liquidity.
           </div>
         </div>
@@ -133,18 +133,18 @@ const Hero: NextPage = () => {
         Incentivized TestNet on <span className="text-[#3CC0A3]">Injective soon</span>
       </div>
 
-      <div className="justify-center flex space-x-2 mt-8">
-        <img src="/TemporalLogoWithT.svg" alt="Vector 1" />
-        <img src="/xIcon.svg" alt="Vector 2" />
-        <img src="/injective-logo.svg" alt="Vector 3" />
+      <div className="flex justify-center mx-4 mt-16">
+        <img src="/New tempxinjec.svg" alt="Vector 1" />
+        {/* <img src="/xIcon.svg" alt="Vector 2" />
+        <img src="/injective-logo.svg" alt="Vector 3" /> */}
       </div>
    
-      <div className="mx-4 md:mx-0 font-helvetica-neue text-18 leading-24 mt-6 text-center font-light text-white">
+      <div className="mx-4 md:mx-0 font-helvetica-neue text-18 leading-24 mt-16 text-center font-light text-white">
         Join our community, stay updated, and contribute to the future of
         finance!
       </div>
 
-      <div className="mt-16 flex flex-col justify-center items-center md:flex-row space-y-8 md:space-y-0 md:space-x-10">
+      <div className="mt-8 flex flex-col justify-center items-center md:flex-row space-y-8 md:space-y-0 md:space-x-10">
         <button
           className="flex items-center rounded-full border-2 border-[#008063] bg-[#008063] p-6"
           onClick={() => router.push("/contact")}
@@ -167,11 +167,11 @@ const Hero: NextPage = () => {
         </button>
       </div>
 
-      <div className="font-helvetica-neue text-18 leading-24 mt-12 text-center font-light text-white">
+      <div className="font-helvetica-neue text-18 leading-24 mt-8 text-center font-light text-white">
         Follow us on
       </div>
 
-      <div className="mt-12 flex justify-center space-x-4">
+      <div className="mt-8 flex justify-center space-x-4">
         {/* LinkedIn Button */}
         <a
           href="https://www.linkedin.com/company/temporal-exchange/"
@@ -208,14 +208,14 @@ const Hero: NextPage = () => {
 
       <div className="mx-4 mt-32 h-0.5 bg-[#3CC0A3] bg-opacity-30 md:mx-24"></div>
       <div
-        className="font-helvetica-neue mt-32 text-center font-light text-white"
+        className="font-helvetica-neue mt-24 text-center font-light text-white"
         style={{ fontSize: "48px", lineHeight: "48px" }}
       >
         Disclaimer
       </div>
 
       <div
-        className="font-helvetica-neue mt-12 mb-12 justify-center px-24 text-center font-light text-white sm:mx-auto"
+        className="font-helvetica-neue mt-12 mb-24 justify-center px-24 text-center font-light text-white sm:mx-auto"
         style={{ fontSize: "18px", lineHeight: "24px" }}
       >
         This is a testnet website for Temporal. All interactions are simulations

@@ -7,7 +7,12 @@ const LitePaper: NextPage = () => {
     return (
         <>
             <NextSeo title="Litepaper"/>
-            <main className="flex min-h-screen flex-col items-center justify-center">
+            <main className="flex min-h-screen flex-col items-center justify-center"
+            style={{
+                backgroundImage: 'url("/waves-backdrop.svg")',
+                backgroundSize: "cover",
+                /* backgroundPosition: "center",*/
+              }}>
                 {/*<h1 className="text-4xl text-white font-mono">Coming Soon🔥</h1>*/}
                 {/*<iframe title="Temporal LitePaper"*/}
                 {/*        height={windowSize.height}*/}

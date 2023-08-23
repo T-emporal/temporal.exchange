@@ -32,7 +32,7 @@ const Hero: NextPage = () => {
               marginTop: "48px",
             }}
           >
-            Temporal's real-time continuous yield curves, shaped purely by
+            Temporal&apos;s real-time continuous yield curves, shaped purely by
             market
             <br /> forces, allow users to customize maturity and lend/borrow at
             fixed-rates.
@@ -45,7 +45,8 @@ const Hero: NextPage = () => {
       <div className="mt-16 flex flex-col justify-center space-y-4 md:flex-row md:space-x-4">
         <button
           className="mb-4 flex items-center self-center rounded-full border-2 border-[#3CC0A3] pl-16 pr-16 pt-6 pb-6 md:mb-0"
-          onClick={() => router.push("https://demo.temporal.exchange/")}
+          onClick={() => { window.location.href="https://demo.temporal.exchange/" }}
+
         >
           <span className="text-18 font-sans-serif mr-2 text-[#3CC0A3]">
             Try Demo
@@ -56,7 +57,8 @@ const Hero: NextPage = () => {
         <div className="flex justify-center md:justify-start md:pb-2">
           <button
             className="mr-4 flex items-center rounded-full border-2 border-[#FFFFFF] pl-12 pr-12 pt-4 pb-4 hover:border-[#3CC0A3] hover:bg-black hover:text-[#3CC0A3]"
-            onClick={() => router.push("/litepaper")}
+            onClick={() => { window.location.href="/litepaper"; }}
+
           >
             <span className="text-12 font-helvetica-neue text-[#FFFFFF]">
               Litepaper
@@ -65,7 +67,8 @@ const Hero: NextPage = () => {
 
           <button
             className="flex items-center rounded-full border-2 border-[#FFFFFF] pl-12 pr-12 pt-4 pb-4 hover:border-[#3CC0A3] hover:bg-black hover:text-[#3CC0A3]"
-            onClick={() => router.push("/litepaper")}
+            onClick={() => { window.location.href="/litepaper"; }}
+
           >
             <span className="text-12 font-helvetica-neue text-[#FFFFFF]">
               Docs
@@ -147,7 +150,8 @@ const Hero: NextPage = () => {
       <div className="mt-8 flex flex-col justify-center items-center md:flex-row space-y-8 md:space-y-0 md:space-x-10">
         <button
           className="flex items-center rounded-full border-2 border-[#008063] bg-[#008063] p-6"
-          onClick={() => router.push("/contact")}
+          onClick={() => { window.location.href="/contact"; }}
+
         >
           <span className="text-18 font-helvetica-neue mr-2 text-[#000000]">
             Join Discord
@@ -158,7 +162,7 @@ const Hero: NextPage = () => {
         <button
           className="flex items-center rounded-full border-2 border-[#008063] bg-[#008063] p-6"
           
-          onClick={() => router.push("/contact")}
+          onClick={(): void => { window.location.href="/contact"; }}
         >
           <span className="text-18 font-helvetica-neue mr-2 text-[#000000]">
             Join Telegram

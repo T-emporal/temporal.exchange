@@ -147,7 +147,7 @@ const Hero: NextPage = () => {
       <div className="mt-16 flex flex-col justify-center items-center md:flex-row space-y-8 md:space-y-0 md:space-x-10">
         <button
           className="flex items-center rounded-full border-2 border-[#008063] bg-[#008063] p-6"
-          onClick={() => router.push("https://demo.temporal.exchange/")}
+          onClick={() => router.push("/contact")}
         >
           <span className="text-18 font-helvetica-neue mr-2 text-[#000000]">
             Join Discord
@@ -158,7 +158,7 @@ const Hero: NextPage = () => {
         <button
           className="flex items-center rounded-full border-2 border-[#008063] bg-[#008063] p-6"
           
-          onClick={() => router.push("https://demo.temporal.exchange/")}
+          onClick={() => router.push("/contact")}
         >
           <span className="text-18 font-helvetica-neue mr-2 text-[#000000]">
             Join Telegram

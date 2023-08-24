@@ -8,19 +8,19 @@ const Hero: NextPage = () => {
     <section
       className="bg-black bg-cover bg-center"
       style={{
-        backgroundImage: 'url("/waves-backdrop.svg")',
+        backgroundImage: 'url("/waves-backdrop.svg")'
       }}
     >
       <div className="container mx-auto flex flex-col items-center">
         <div className="text-center">
-          <h1 className="mt-8 text-center font-sans text-3xl font-light leading-tight text-[#3CC0A3] md:text-5xl lg:text-6xl">
-            Revolutionary liquidity primitive:
+          <h1 className="mt-8 mx-4 md:mx-0 text-center font-sans text-3xl font-extralight leading-tight text-[#3CC0A3] md:text-5xl lg:text-6xl">
+            Revolutionary Liquidity Primitive:
           </h1>
-          <h2 className="mt-4 font-sans text-3xl font-light leading-tight text-white md:text-5xl lg:text-6xl">
+          <h2 className="mt-4 mx-4 md:mx-0 font-sans text-3xl font-extralight leading-tight text-white md:text-5xl lg:text-6xl">
             Market-Determined Yield Curves
           </h2>
           <p
-            className="mx-4"
+            className="mx-8"
             style={{
               color: "#FFFFFF",
               textAlign: "center",
@@ -56,7 +56,7 @@ const Hero: NextPage = () => {
 
         <div className="flex justify-center md:justify-start md:pb-2">
           <button
-            className="mr-4 flex items-center rounded-full border-2 border-[#FFFFFF] pl-12 pr-12 pt-4 pb-4 hover:border-[#3CC0A3] hover:bg-black hover:text-[#3CC0A3]"
+            className="mr-4 md:ml-6 flex items-center rounded-full border-2 border-[#FFFFFF] pl-8 pr-8 pt-4 pb-4 hover:border-[#3CC0A3] hover:bg-black hover:text-[#3CC0A3]"
             onClick={() => { window.location.href="/litepaper"; }}
 
           >
@@ -67,7 +67,7 @@ const Hero: NextPage = () => {
 
           <button
             className="flex items-center rounded-full border-2 border-[#FFFFFF] pl-12 pr-12 pt-4 pb-4 hover:border-[#3CC0A3] hover:bg-black hover:text-[#3CC0A3]"
-            onClick={() => { window.location.href="/litepaper"; }}
+            onClick={() => { window.location.href="/contact"; }}
 
           >
             <span className="text-12 font-helvetica-neue text-[#FFFFFF]">
@@ -79,11 +79,11 @@ const Hero: NextPage = () => {
 
       {/* Features section showing 4 cards aligned right next to each other */}
 
-      <div className="md:justify-left font-helvetica-neue mt-16 text-center text-2xl font-light text-white md:ml-24 md:flex">
+      <div className="lg:justify-left font-helvetica-neue mt-16 text-center text-2xl font-light text-white lg:ml-24 lg:flex">
         Features
       </div>
 
-      <div className="mx-4 mt-8 grid grid-cols-1 gap-4 sm:mx-24 md:grid-cols-4">
+      <div className="mx-4 mt-8 grid grid-cols-1 gap-4 sm:mx-24 lg:grid-cols-4">
         {/* First Card */}
         <div className="flex-1 rounded-3xl border-2 border-[#3CC0A3] border-opacity-100 bg-transparent p-8">
           <div className="mb-4 text-4xl font-semibold text-[#3CC0A3]">01</div>
@@ -108,7 +108,7 @@ const Hero: NextPage = () => {
         <div className="flex-1 rounded-3xl border-2 border-[#3CC0A3] border-opacity-100 bg-transparent p-8">
           <div className="mb-4 text-4xl font-semibold text-[#3CC0A3]">03</div>
           <div className="mb-2 text-xl text-white font-helvetica-neue">
-            Undercollateralized borrowing
+            Undercollateralized Borrowing
           </div>
           <div className="text-lg text-white font-extralight font-helvetica-neue">
             Collateralise your position & borrow upto 5x.
@@ -137,7 +137,7 @@ const Hero: NextPage = () => {
       </div>
 
       <div className="flex justify-center mx-4 mt-16">
-        <img src="/New tempxinjec.svg" alt="Vector 1" />
+        <img src="/PartnerLogo.svg" alt="Vector 1" />
         {/* <img src="/xIcon.svg" alt="Vector 2" />
         <img src="/injective-logo.svg" alt="Vector 3" /> */}
       </div>
@@ -149,7 +149,7 @@ const Hero: NextPage = () => {
 
       <div className="mt-8 flex flex-col justify-center items-center md:flex-row space-y-8 md:space-y-0 md:space-x-10">
         <button
-          className="flex items-center rounded-full border-2 border-[#008063] bg-[#008063] p-6"
+          className="flex items-center rounded-full border-2 border-[#008063] bg-[#008063] pl-7 pr-7 pt-4 pb-4"
           onClick={() => { window.location.href="/contact"; }}
 
         >
@@ -160,14 +160,14 @@ const Hero: NextPage = () => {
         </button>
 
         <button
-          className="flex items-center rounded-full border-2 border-[#008063] bg-[#008063] p-6"
+          className="flex items-center rounded-full border-2 border-[#008063] bg-[#008063] pl-6 pr-6 pt-4 pb-4"
           
           onClick={(): void => { window.location.href="/contact"; }}
         >
           <span className="text-18 font-helvetica-neue mr-2 text-[#000000]">
             Join Telegram
           </span>
-          <img src="/TelegramIcon.svg" alt="Arrow" />
+          <img src="/Telegram.svg" alt="Arrow" />
         </button>
       </div>
 
@@ -219,7 +219,7 @@ const Hero: NextPage = () => {
       </div>
 
       <div
-        className="font-helvetica-neue mt-12 mb-24 justify-center px-24 text-center font-light text-white sm:mx-auto"
+        className="font-helvetica-neue mt-12 mb-24 justify-center mx-12 md:mx-32 text-center font-light text-white"
         style={{ fontSize: "18px", lineHeight: "24px" }}
       >
         This is a testnet website for Temporal. All interactions are simulations

@@ -1,13 +1,10 @@
 import type {NextPage} from "next";
 import {NextSeo} from "next-seo";
 import {Fragment, useState} from "react";
-import Link from 'next/link';
-import { useRouter } from 'next/router';
 
 const Contact: NextPage = () => {
     const [telegram, setTelegram] = useState("");
     const [discord, setDiscord] = useState("");
-    const router = useRouter();
 
     const [isHovered, setIsHovered] = useState(false);
 

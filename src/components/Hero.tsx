@@ -1,6 +1,17 @@
 import type { NextPage } from "next";
+import React, { useState } from 'react';
 
 const Hero: NextPage = () => {
+
+  const [isLinkedinHovered, setLinkedinHovered] = useState(false);
+  const [isMediumHovered, setMediumHovered] = useState(false);
+  const [isTwitterHovered, setTwitterHovered] = useState(false);
+
+  const [isTelegramHovered, setTelegramHovered] = useState(false);
+  const [isDiscordHovered, setDiscordHovered] = useState(false);
+
+  const [isTryDemoHovered, setTryDemoHovered] = useState(false);
+
   return (
     <section
       className="bg-black bg-cover bg-center"
@@ -41,19 +52,23 @@ const Hero: NextPage = () => {
       {/* Section with Try Demo, Litepaper and Docs Buttons */}
       <div className="mt-16 flex flex-col justify-center space-y-4 md:flex-row md:space-x-4">
         <button
-          className="mb-4 flex items-center self-center rounded-full border-2 border-[#3CC0A3] pl-16 pr-16 pt-6 pb-6 md:mb-0"
+          className="mb-4 flex items-center self-center rounded-full border-2 border-[#3CC0A3] pl-12 pr-12 pt-4 pb-4 md:mb-0 text-[#3CC0A3] hover:text-black hover:bg-[#3CC0A3]"
           onClick={() => { window.location.href="https://demo.temporal.exchange/" }}
-
+          onMouseEnter={() => setTryDemoHovered(true)}  // Set hover state to true when mouse enters
+          onMouseLeave={() => setTryDemoHovered(false)} 
         >
-          <span className="text-18 font-sans-serif mr-2 text-[#3CC0A3]">
+          <span className="text-16 font-open mr-2 font-normal">
             Try Demo
           </span>
-          <img src="/arrow-right.svg" alt="Arrow" />
+          <img 
+            src={isTryDemoHovered ? "/arrow-right-hover.svg" : "/arrow-right.svg"} 
+            alt="Arrow" 
+           />
         </button>
 
         <div className="flex justify-center md:justify-start md:pb-2">
           <button
-            className="mr-4 md:ml-6 flex items-center rounded-full border-2 border-[#FFFFFF] pl-8 pr-8 pt-4 pb-4 hover:border-[#3CC0A3] hover:bg-black hover:text-[#3CC0A3]"
+            className="mr-4 md:ml-6 flex items-center rounded-full border-2 border-[#FFFFFF] pl-6 pr-6 pt-1 pb-1 hover:border-[#3CC0A3] hover:bg-black hover:text-[#3CC0A3]"
             onClick={() => { window.location.href="/litepaper"; }}
 
           >
@@ -63,7 +78,7 @@ const Hero: NextPage = () => {
           </button>
 
           <button
-            className="flex items-center rounded-full border-2 border-[#FFFFFF] pl-12 pr-12 pt-4 pb-4 hover:border-[#3CC0A3] hover:bg-black hover:text-[#3CC0A3]"
+            className="flex items-center rounded-full border-2 border-[#FFFFFF] pl-8 pr-8 pt-2 pb-2 hover:border-[#3CC0A3] hover:bg-black hover:text-[#3CC0A3]"
             onClick={() => { window.location.href="/contact"; }}
 
           >
@@ -146,25 +161,33 @@ const Hero: NextPage = () => {
 
       <div className="mt-8 flex flex-col justify-center items-center md:flex-row space-y-8 md:space-y-0 md:space-x-10">
         <button
-          className="flex items-center rounded-full border-2 border-[#008063] bg-[#008063] pl-7 pr-7 pt-4 pb-4"
+          className="flex items-center rounded-full border-2 border-[#008063] bg-[#008063] pl-7 pr-7 pt-4 pb-4 text-[#000000] hover:text-[#008063] hover:bg-[#161616]"
           onClick={() => { window.location.href="/contact"; }}
-
+          onMouseEnter={() => setDiscordHovered(true)}  // Set hover state to true when mouse enters
+          onMouseLeave={() => setDiscordHovered(false)} // Set hover state to false when mouse leaves
         >
-          <span className="text-18 font-helvetica-neue mr-2 text-[#000000]">
+          <span className="text-18 font-helvetica-neue mr-2">
             Join Discord
           </span>
-          <img src="/DiscordIcon.svg" alt="Arrow" />
+          <img 
+            src={isDiscordHovered ? "/DiscordIconHover.svg" : "/DiscordIcon.svg"} 
+            alt="Arrow" 
+           />
         </button>
 
         <button
-          className="flex items-center rounded-full border-2 border-[#008063] bg-[#008063] pl-6 pr-6 pt-4 pb-4"
-          
+          className="flex items-center rounded-full border-2 border-[#008063] bg-[#008063] pl-6 pr-6 pt-4 pb-4 hover:bg-[#161616] text-[#000000] hover:text-[#008063]"
+          onMouseEnter={() => setTelegramHovered(true)}  // Set hover state to true when mouse enters
+          onMouseLeave={() => setTelegramHovered(false)} // Set hover state to false when mouse leaves
           onClick={(): void => { window.location.href="/contact"; }}
         >
-          <span className="text-18 font-helvetica-neue mr-2 text-[#000000]">
+          <span className="text-18 font-helvetica-neue mr-2">
             Join Telegram
           </span>
-          <img src="/Telegram.svg" alt="Arrow" />
+          <img 
+            src={isTelegramHovered ? "/TelegramIconHover.svg" : "/TelegramIcon.svg"} 
+            alt="Arrow" 
+           />
         </button>
       </div>
 
@@ -172,16 +195,20 @@ const Hero: NextPage = () => {
         Follow us on
       </div>
 
-      <div className="mt-8 flex justify-center space-x-4">
+      <div className="mt-8 flex flex-row justify-center space-x-4">
         {/* LinkedIn Button */}
         <a
           href="https://www.linkedin.com/company/temporal-exchange/"
           target="_blank"
           rel="noopener noreferrer"
-          className="rounded-full border-2 border-[#008063] bg-[#008063]"
-          style={{ padding: "25px" }}
+          className="rounded-full p-6 border-2 border-[#008063] bg-[#008063] hover:bg-[#161616]"
+          onMouseEnter={() => setLinkedinHovered(true)}  // Set hover state to true when mouse enters
+          onMouseLeave={() => setLinkedinHovered(false)} // Set hover state to false when mouse leaves
         >
-          <img src="/LinkedinIcon.svg" alt="LinkedIn Icon" />
+          <img 
+            src={isLinkedinHovered ? "/LinkedinIconHover.svg" : "/LinkedinIcon.svg"} 
+            alt="LinkedIn Icon" 
+          />
         </a>
 
         {/* Twitter Button */}
@@ -189,10 +216,14 @@ const Hero: NextPage = () => {
           href="https://twitter.com/temporalfinance"
           target="_blank"
           rel="noopener noreferrer"
-          className="rounded-full border-2 border-[#008063] bg-[#008063]"
-          style={{ padding: "25px" }}
+          className="rounded-full p-7 border-2 border-[#008063] bg-[#008063] hover:bg-[#161616]"
+          onMouseEnter={() => setTwitterHovered(true)}  // Set hover state to true when mouse enters
+          onMouseLeave={() => setTwitterHovered(false)} // Set hover state to false when mouse leaves
         >
-          <img src="/TwitterIcon.svg" alt="Twitter Icon" />
+          <img 
+            src={isTwitterHovered ? "/TwitterIconNewHover.svg" : "/TwitterIconNew.svg"} 
+            alt="Twitter Icon" 
+          />
         </a>
 
         {/* Medium Button */}
@@ -200,10 +231,14 @@ const Hero: NextPage = () => {
           href="https://medium.com/"
           target="_blank"
           rel="noopener noreferrer"
-          className="rounded-full border-2 border-[#008063] bg-[#008063]"
-          style={{ padding: "25px" }}
+          className="rounded-full p-6 border-2 border-[#008063] bg-[#008063] hover:bg-[#161616]"
+          onMouseEnter={() => setMediumHovered(true)}  // Set hover state to true when mouse enters
+          onMouseLeave={() => setMediumHovered(false)} // Set hover state to false when mouse leaves
         >
-          <img src="/MediumIcon.svg" alt="Medium Icon" />
+          <img 
+            src={isMediumHovered ? "/MediumIconHover.svg" : "/MediumIcon.svg"} 
+            alt="Medium Icon" 
+          />
         </a>
       </div>
 

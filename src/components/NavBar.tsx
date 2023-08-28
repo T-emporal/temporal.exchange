@@ -13,7 +13,7 @@ const NavBar: NextPage = () => {
     },
     {
       name: "Docs",
-      href: "/docs",
+      href: "/contact",
     },
     {
       name: "Litepaper",

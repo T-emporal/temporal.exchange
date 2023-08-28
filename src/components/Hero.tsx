@@ -1,9 +1,6 @@
 import type { NextPage } from "next";
-import Link from "next/link";
-import { useRouter } from "next/router";
 
 const Hero: NextPage = () => {
-  const router = useRouter();
   return (
     <section
       className="bg-black bg-cover bg-center"
@@ -16,7 +13,7 @@ const Hero: NextPage = () => {
           <h1 className="mt-8 mx-4 md:mx-0 text-center font-sans text-3xl font-extralight leading-tight text-[#3CC0A3] md:text-5xl lg:text-6xl">
             Revolutionary Liquidity Primitive:
           </h1>
-          <h2 className="mt-4 mx-4 md:mx-0 font-sans text-3xl font-extralight leading-tight text-white md:text-5xl lg:text-6xl">
+          <h2 className="mt-4 mx-4 md:mx-0 font-sans text-4xl font-extralight leading-tight text-white md:text-6xl lg:text-7xl">
             Market-Determined Yield Curves
           </h2>
           <p

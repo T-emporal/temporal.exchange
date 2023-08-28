@@ -20,10 +20,9 @@ const Contact: NextPage = () => {
         const message = `Discord handle: ${discord} and Telegram handle: ${telegram}`;
         const res = await fetch(`/api/sendmessage?name=NoName&message=${encodeURIComponent(message)}`);
         if (res.status === 200) {
-            alert("Message Sent")
             window.location.href="/thankYou"
         } else {
-            alert("Error occurred")
+            alert("Some error occurred. Please try again")
         }
     }
 

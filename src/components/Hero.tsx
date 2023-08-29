@@ -14,12 +14,13 @@ const Hero: NextPage = () => {
 
   return (
     <section
-      className="bg-black bg-cover bg-center"
-      style={{
-        backgroundImage: 'url("/waves-backdrop.svg")'
-      }}
+    className="relative z-10 bg-[#161616] bg-cover bg-center"
+    style={{
+      backgroundImage: 'url("/Waves Backdrop.svg")',
+      backgroundAttachment: 'fixed'
+    }}
     >
-      <div className="container mx-auto flex flex-col items-center">
+      <div className="container mx-auto flex flex-col items-center shadow-lg transform hover:-translate-y-1 transition-transform duration-300 bg-opacity-70">
         <div className="text-center">
           <h1 className="mt-8 mx-4 md:mx-0 text-center font-sans text-3xl font-extralight leading-tight text-[#3CC0A3] md:text-5xl lg:text-6xl">
             Revolutionary Liquidity Primitive:
@@ -72,7 +73,7 @@ const Hero: NextPage = () => {
             onClick={() => { window.location.href="/litepaper"; }}
 
           >
-            <span className="text-12 font-helvetica-neue text-[#FFFFFF]">
+            <span className="text-12 font-helvetica-neue text-[#FFFFFF] font-extralight">
               Litepaper
             </span>
           </button>
@@ -82,7 +83,7 @@ const Hero: NextPage = () => {
             onClick={() => { window.location.href="/contact"; }}
 
           >
-            <span className="text-12 font-helvetica-neue text-[#FFFFFF]">
+            <span className="text-12 font-helvetica-neue text-[#FFFFFF] font-extralight">
               Docs
             </span>
           </button>

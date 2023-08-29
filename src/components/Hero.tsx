@@ -72,7 +72,7 @@ const Hero: NextPage = () => {
             onClick={() => { window.location.href="/litepaper"; }}
 
           >
-            <span className="text-12 font-helvetica-neue text-[#FFFFFF]">
+            <span className="text-12 font-helvetica-neue text-[#FFFFFF] font-extralight">
               Litepaper
             </span>
           </button>
@@ -82,7 +82,7 @@ const Hero: NextPage = () => {
             onClick={() => { window.location.href="/contact"; }}
 
           >
-            <span className="text-12 font-helvetica-neue text-[#FFFFFF]">
+            <span className="text-12 font-helvetica-neue text-[#FFFFFF] font-extralight">
               Docs
             </span>
           </button>

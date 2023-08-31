@@ -4,8 +4,8 @@ import Link from "next/link";
 const Footer: NextPage = () => {
   const t = "{ T }";
   return (
-    <footer className="bg-[#161616] py-6 text-gray-50">
-      <div className="container mx-auto space-y-6 divide-y divide-[#3CC0A3] px-6 md:space-y-12">
+    
+      <div className="container mx-auto space-y-6 divide-y divide-[#3CC0A3] px-6 mb-4 md:space-y-12">
         <div className="grid grid-cols-12">
           <div className="col-span-full pb-6 md:col-span-6 md:pb-0">
             <a
@@ -14,23 +14,14 @@ const Footer: NextPage = () => {
               className="flex justify-center space-x-3 md:justify-start"
             >
               <span
-                className="font-mono text-2xl leading-[32px] text-[#f9fafb]"
-                style={{
-                  color: "#F9FAFB",
-                  fontFamily: "Menlo",
-                  fontSize: "24px",
-                  fontStyle: "normal",
-                  fontWeight: 400,
-                  lineHeight: "32px",
-                }}
-              >
+                className="font-mono font-normal text-lg sm:text-2xl leading-[32px] text-[#f9fafb]">
                 {t} E M P O R A L
               </span>
             </a>
           </div>
         </div>
         <div className="grid justify-center pt-6 lg:justify-between">
-          <div className="flex flex-col self-center text-center text-sm md:block md:space-x-6 lg:col-start-1">
+          <div className="flex flex-col text-[#f9fafb] self-center text-center text-sm md:block md:space-x-6 lg:col-start-1">
             <span>©2023 Temporal All rights reserved</span>
           </div>
           <div className="flex justify-center space-x-4 pt-4 lg:col-end-13 lg:pt-0">
@@ -117,7 +108,7 @@ const Footer: NextPage = () => {
           </div>
         </div>
       </div>
-    </footer>
+   
   );
 };
 

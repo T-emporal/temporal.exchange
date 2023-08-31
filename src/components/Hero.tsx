@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import React, { useState } from 'react';
+import Footer from './Footer'
 
 const Hero: NextPage = () => {
 
@@ -14,10 +15,11 @@ const Hero: NextPage = () => {
 
   return (
     <section
-      className="bg-black bg-cover bg-center"
-      style={{
-        backgroundImage: 'url("/waves-backdrop.svg")'
-      }}
+    className="relative z-0 bg-[#161616] bg-cover bg-center"
+    style={{
+      backgroundImage: 'url("/Background.jpg")',
+      backgroundAttachment: 'fixed'
+    }}
     >
       <div className="container mx-auto flex flex-col items-center">
         <div className="text-center">
@@ -72,7 +74,7 @@ const Hero: NextPage = () => {
             onClick={() => { window.location.href="/litepaper"; }}
 
           >
-            <span className="text-12 font-helvetica-neue text-[#FFFFFF]">
+            <span className="text-12 font-helvetica-neue text-[#FFFFFF] font-extralight">
               Litepaper
             </span>
           </button>
@@ -82,7 +84,7 @@ const Hero: NextPage = () => {
             onClick={() => { window.location.href="/contact"; }}
 
           >
-            <span className="text-12 font-helvetica-neue text-[#FFFFFF]">
+            <span className="text-12 font-helvetica-neue text-[#FFFFFF] font-extralight">
               Docs
             </span>
           </button>
@@ -258,6 +260,7 @@ const Hero: NextPage = () => {
         and do not involve real assets. Ensure to exercise caution and conduct
         thorough research before using any new platform.
       </div>
+      <Footer/>
     </section>
   );
 };

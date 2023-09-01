@@ -1,9 +1,8 @@
 import type { NextPage } from "next";
-import React, { useState } from 'react';
-import Footer from './Footer'
+import React, { useState } from "react";
+import Footer from "./Footer";
 
 const Hero: NextPage = () => {
-
   const [isLinkedinHovered, setLinkedinHovered] = useState(false);
   const [isMediumHovered, setMediumHovered] = useState(false);
   const [isTwitterHovered, setTwitterHovered] = useState(false);
@@ -15,18 +14,18 @@ const Hero: NextPage = () => {
 
   return (
     <section
-    className="relative z-0 bg-[#161616] bg-cover bg-center"
-    style={{
-      backgroundImage: 'url("/Background.jpg")',
-      backgroundAttachment: 'fixed'
-    }}
+      className="relative z-0 bg-[#161616] bg-cover bg-center"
+      style={{
+        backgroundImage: 'url("/Background.jpg")',
+        backgroundAttachment: "fixed",
+      }}
     >
       <div className="container mx-auto flex flex-col items-center">
         <div className="text-center">
-          <h1 className="mt-8 mx-4 md:mx-0 text-center font-sans text-3xl font-extralight leading-tight text-[#3CC0A3] md:text-5xl lg:text-6xl">
+          <h1 className="mx-4 mt-8 text-center font-sans text-3xl font-extralight leading-tight text-[#3CC0A3] md:mx-0 md:text-5xl lg:text-6xl">
             Revolutionary Liquidity Primitive:
           </h1>
-          <h2 className="mt-4 mx-4 md:mx-0 font-sans text-4xl font-extralight leading-tight text-white md:text-6xl lg:text-7xl">
+          <h2 className="mx-4 mt-4 font-sans text-4xl font-extralight leading-tight text-white md:mx-0 md:text-6xl lg:text-7xl">
             Market-Determined Yield Curves
           </h2>
           <p
@@ -54,37 +53,41 @@ const Hero: NextPage = () => {
       {/* Section with Try Demo, Litepaper and Docs Buttons */}
       <div className="mt-16 flex flex-col justify-center space-y-4 md:flex-row md:space-x-4">
         <button
-          className="mb-4 flex items-center self-center rounded-full border-2 border-[#3CC0A3] pl-12 pr-12 pt-4 pb-4 md:mb-0 text-[#3CC0A3] hover:text-black hover:bg-[#3CC0A3]"
-          onClick={() => { window.location.href="https://demo.temporal.exchange/" }}
-          onMouseEnter={() => setTryDemoHovered(true)}  // Set hover state to true when mouse enters
-          onMouseLeave={() => setTryDemoHovered(false)} 
+          className="mb-4 flex items-center self-center rounded-full border-2 border-[#3CC0A3] pl-12 pr-12 pt-4 pb-4 text-[#3CC0A3] hover:bg-[#3CC0A3] hover:text-black md:mb-0"
+          onClick={() => {
+            window.location.href = "https://demo.temporal.exchange/";
+          }}
+          onMouseEnter={() => setTryDemoHovered(true)} // Set hover state to true when mouse enters
+          onMouseLeave={() => setTryDemoHovered(false)}
         >
-          <span className="text-16 font-open mr-2 font-normal">
-            Try Demo
-          </span>
-          <img 
-            src={isTryDemoHovered ? "/arrow-right-hover.svg" : "/arrow-right.svg"} 
-            alt="Arrow" 
-           />
+          <span className="text-16 font-open mr-2 font-normal">Try Demo</span>
+          <img
+            src={
+              isTryDemoHovered ? "/arrow-right-hover.svg" : "/arrow-right.svg"
+            }
+            alt="Arrow"
+          />
         </button>
 
         <div className="flex justify-center md:justify-start md:pb-2">
           <button
-            className="mr-4 md:ml-6 flex items-center rounded-full border-2 border-[#FFFFFF] pl-6 pr-6 pt-1 pb-1 hover:border-[#3CC0A3] hover:bg-black hover:text-[#3CC0A3]"
-            onClick={() => { window.location.href="/litepaper"; }}
-
+            className="mr-4 flex items-center rounded-full border-2 border-[#FFFFFF] pl-6 pr-6 pt-1 pb-1 hover:border-[#3CC0A3] hover:bg-black hover:text-[#3CC0A3] md:ml-6"
+            onClick={() => {
+              window.location.href = "/litepaper";
+            }}
           >
-            <span className="text-12 font-helvetica-neue text-[#FFFFFF] font-extralight">
+            <span className="text-12 font-helvetica-neue font-extralight text-[#FFFFFF]">
               Litepaper
             </span>
           </button>
 
           <button
             className="flex items-center rounded-full border-2 border-[#FFFFFF] pl-8 pr-8 pt-2 pb-2 hover:border-[#3CC0A3] hover:bg-black hover:text-[#3CC0A3]"
-            onClick={() => { window.location.href="/contact"; }}
-
+            onClick={() => {
+              window.location.href = "/contact";
+            }}
           >
-            <span className="text-12 font-helvetica-neue text-[#FFFFFF] font-extralight">
+            <span className="text-12 font-helvetica-neue font-extralight text-[#FFFFFF]">
               Docs
             </span>
           </button>
@@ -101,10 +104,10 @@ const Hero: NextPage = () => {
         {/* First Card */}
         <div className="flex-1 rounded-3xl border-2 border-[#3CC0A3] border-opacity-100 bg-transparent p-8">
           <div className="mb-4 text-4xl font-semibold text-[#3CC0A3]">01</div>
-          <p className="mb-2 text-xl text-white font-helvetica-neue">
+          <p className="font-helvetica-neue mb-2 text-xl text-white">
             Market-Determined Yield Curves
           </p>
-          <div className="text-lg text-white font-extralight font-helvetica-neue">
+          <div className="font-helvetica-neue text-lg font-extralight text-white">
             Interest rates set purely by market forces.
           </div>
         </div>
@@ -112,8 +115,10 @@ const Hero: NextPage = () => {
         {/* Second Card */}
         <div className="flex-1 rounded-3xl border-2 border-[#3CC0A3] border-opacity-100 bg-transparent p-8">
           <div className="mb-4 text-4xl font-semibold text-[#3CC0A3]">02</div>
-          <div className="mb-2 text-xl text-white font-helvetica-neue">Custom Maturities</div>
-          <div className="text-lg text-white font-extralight font-helvetica-neue">
+          <div className="font-helvetica-neue mb-2 text-xl text-white">
+            Custom Maturities
+          </div>
+          <div className="font-helvetica-neue text-lg font-extralight text-white">
             Borrowing and lending durations are no longer limited by the pool.
           </div>
         </div>
@@ -121,10 +126,10 @@ const Hero: NextPage = () => {
         {/* Third Card */}
         <div className="flex-1 rounded-3xl border-2 border-[#3CC0A3] border-opacity-100 bg-transparent p-8">
           <div className="mb-4 text-4xl font-semibold text-[#3CC0A3]">03</div>
-          <div className="mb-2 text-xl text-white font-helvetica-neue">
+          <div className="font-helvetica-neue mb-2 text-xl text-white">
             Undercollateralized Borrowing
           </div>
-          <div className="text-lg text-white font-extralight font-helvetica-neue">
+          <div className="font-helvetica-neue text-lg font-extralight text-white">
             Collateralise your position & borrow upto 5x.
           </div>
         </div>
@@ -132,10 +137,10 @@ const Hero: NextPage = () => {
         {/* Fourth Card */}
         <div className="flex-1 rounded-3xl border-2 border-[#3CC0A3] border-opacity-100 bg-transparent p-8">
           <div className="mb-4 text-4xl font-semibold text-[#3CC0A3]">04</div>
-          <div className="mb-2 text-xl text-white font-helvetica-neue">
+          <div className="font-helvetica-neue mb-2 text-xl text-white">
             No Liquidity Fragmentation
           </div>
-          <div className="text-lg text-white font-extralight font-helvetica-neue">
+          <div className="font-helvetica-neue text-lg font-extralight text-white">
             A novel order book designed to cumulate liquidity.
           </div>
         </div>
@@ -146,50 +151,57 @@ const Hero: NextPage = () => {
 
       {/* Partner Section */}
 
-      <div className="font-helvetica-neue text-4xl md:text-5xl mx-4 md:mx-0 leading-24 mt-24 text-center font-light text-white">
-        Incentivized TestNet on <span className="text-[#3CC0A3]">Injective soon</span>
+      <div className="font-helvetica-neue leading-24 mx-4 mt-24 text-center text-4xl font-light text-white md:mx-0 md:text-5xl">
+        Incentivized TestNet on{" "}
+        <span className="text-[#3CC0A3]">Injective soon</span>
       </div>
 
-      <div className="flex justify-center mx-4 mt-16">
+      <div className="mx-4 mt-16 flex justify-center">
         <img src="/PartnerLogo.svg" alt="Vector 1" />
         {/* <img src="/xIcon.svg" alt="Vector 2" />
         <img src="/injective-logo.svg" alt="Vector 3" /> */}
       </div>
-   
-      <div className="mx-4 md:mx-0 font-helvetica-neue text-18 leading-24 mt-16 text-center font-light text-white">
+
+      <div className="font-helvetica-neue text-18 leading-24 mx-4 mt-16 text-center font-light text-white md:mx-0">
         Join our community, stay updated, and contribute to the future of
         finance!
       </div>
 
-      <div className="mt-8 flex flex-col justify-center items-center md:flex-row space-y-8 md:space-y-0 md:space-x-10">
+      <div className="mt-8 flex flex-col items-center justify-center space-y-8 md:flex-row md:space-y-0 md:space-x-10">
         <button
-          className="flex items-center rounded-full border-2 border-[#008063] bg-[#008063] pl-7 pr-7 pt-4 pb-4 text-[#000000] hover:text-[#008063] hover:bg-[#161616]"
-          onClick={() => { window.location.href="/contact"; }}
-          onMouseEnter={() => setDiscordHovered(true)}  // Set hover state to true when mouse enters
+          className="flex items-center rounded-full border-2 border-[#008063] bg-[#008063] pl-7 pr-7 pt-4 pb-4 text-[#000000] hover:bg-[#161616] hover:text-[#008063]"
+          onClick={() => {
+            window.location.href = "/contact";
+          }}
+          onMouseEnter={() => setDiscordHovered(true)} // Set hover state to true when mouse enters
           onMouseLeave={() => setDiscordHovered(false)} // Set hover state to false when mouse leaves
         >
-          <span className="text-18 font-helvetica-neue mr-2">
-            Join Discord
-          </span>
-          <img 
-            src={isDiscordHovered ? "/DiscordIconHover.svg" : "/DiscordIcon.svg"} 
-            alt="Arrow" 
-           />
+          <span className="text-18 font-helvetica-neue mr-2">Join Discord</span>
+          <img
+            src={
+              isDiscordHovered ? "/DiscordIconHover.svg" : "/DiscordIcon.svg"
+            }
+            alt="Arrow"
+          />
         </button>
 
         <button
-          className="flex items-center rounded-full border-2 border-[#008063] bg-[#008063] pl-6 pr-6 pt-4 pb-4 hover:bg-[#161616] text-[#000000] hover:text-[#008063]"
-          onMouseEnter={() => setTelegramHovered(true)}  // Set hover state to true when mouse enters
+          className="flex items-center rounded-full border-2 border-[#008063] bg-[#008063] pl-6 pr-6 pt-4 pb-4 text-[#000000] hover:bg-[#161616] hover:text-[#008063]"
+          onMouseEnter={() => setTelegramHovered(true)} // Set hover state to true when mouse enters
           onMouseLeave={() => setTelegramHovered(false)} // Set hover state to false when mouse leaves
-          onClick={(): void => { window.location.href="/contact"; }}
+          onClick={(): void => {
+            window.location.href = "/contact";
+          }}
         >
           <span className="text-18 font-helvetica-neue mr-2">
             Join Telegram
           </span>
-          <img 
-            src={isTelegramHovered ? "/TelegramIconHover.svg" : "/TelegramIcon.svg"} 
-            alt="Arrow" 
-           />
+          <img
+            src={
+              isTelegramHovered ? "/TelegramIconHover.svg" : "/TelegramIcon.svg"
+            }
+            alt="Arrow"
+          />
         </button>
       </div>
 
@@ -203,13 +215,15 @@ const Hero: NextPage = () => {
           href="https://www.linkedin.com/company/temporal-exchange/"
           target="_blank"
           rel="noopener noreferrer"
-          className="rounded-full p-6 border-2 border-[#008063] bg-[#008063] hover:bg-[#161616]"
-          onMouseEnter={() => setLinkedinHovered(true)}  // Set hover state to true when mouse enters
+          className="rounded-full border-2 border-[#008063] bg-[#008063] p-6 hover:bg-[#161616]"
+          onMouseEnter={() => setLinkedinHovered(true)} // Set hover state to true when mouse enters
           onMouseLeave={() => setLinkedinHovered(false)} // Set hover state to false when mouse leaves
         >
-          <img 
-            src={isLinkedinHovered ? "/LinkedinIconHover.svg" : "/LinkedinIcon.svg"} 
-            alt="LinkedIn Icon" 
+          <img
+            src={
+              isLinkedinHovered ? "/LinkedinIconHover.svg" : "/LinkedinIcon.svg"
+            }
+            alt="LinkedIn Icon"
           />
         </a>
 
@@ -218,13 +232,17 @@ const Hero: NextPage = () => {
           href="https://twitter.com/temporalfinance"
           target="_blank"
           rel="noopener noreferrer"
-          className="rounded-full p-7 border-2 border-[#008063] bg-[#008063] hover:bg-[#161616]"
-          onMouseEnter={() => setTwitterHovered(true)}  // Set hover state to true when mouse enters
+          className="rounded-full border-2 border-[#008063] bg-[#008063] p-7 hover:bg-[#161616]"
+          onMouseEnter={() => setTwitterHovered(true)} // Set hover state to true when mouse enters
           onMouseLeave={() => setTwitterHovered(false)} // Set hover state to false when mouse leaves
         >
-          <img 
-            src={isTwitterHovered ? "/TwitterIconNewHover.svg" : "/TwitterIconNew.svg"} 
-            alt="Twitter Icon" 
+          <img
+            src={
+              isTwitterHovered
+                ? "/TwitterIconNewHover.svg"
+                : "/TwitterIconNew.svg"
+            }
+            alt="Twitter Icon"
           />
         </a>
 
@@ -233,13 +251,13 @@ const Hero: NextPage = () => {
           href="https://medium.com/"
           target="_blank"
           rel="noopener noreferrer"
-          className="rounded-full p-6 border-2 border-[#008063] bg-[#008063] hover:bg-[#161616]"
-          onMouseEnter={() => setMediumHovered(true)}  // Set hover state to true when mouse enters
+          className="rounded-full border-2 border-[#008063] bg-[#008063] p-6 hover:bg-[#161616]"
+          onMouseEnter={() => setMediumHovered(true)} // Set hover state to true when mouse enters
           onMouseLeave={() => setMediumHovered(false)} // Set hover state to false when mouse leaves
         >
-          <img 
-            src={isMediumHovered ? "/MediumIconHover.svg" : "/MediumIcon.svg"} 
-            alt="Medium Icon" 
+          <img
+            src={isMediumHovered ? "/MediumIconHover.svg" : "/MediumIcon.svg"}
+            alt="Medium Icon"
           />
         </a>
       </div>
@@ -253,14 +271,14 @@ const Hero: NextPage = () => {
       </div>
 
       <div
-        className="font-helvetica-neue mt-12 mb-24 justify-center mx-12 md:mx-32 text-center font-light text-white"
+        className="font-helvetica-neue mx-12 mt-12 mb-24 justify-center text-center font-light text-white md:mx-32"
         style={{ fontSize: "18px", lineHeight: "24px" }}
       >
         This is a testnet website for Temporal. All interactions are simulations
         and do not involve real assets. Ensure to exercise caution and conduct
         thorough research before using any new platform.
       </div>
-      <Footer/>
+      <Footer />
     </section>
   );
 };

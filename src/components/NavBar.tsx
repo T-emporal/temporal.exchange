@@ -1,7 +1,6 @@
 import type { NextPage } from "next";
 import Link from "next/link";
 import { useState } from "react";
-import LogoSVG from "./../../public/TemporalLogoComplete.svg"; 
 
 const NavBar: NextPage = () => {
   const title = "{ T } E M P O R A L";
@@ -21,7 +20,7 @@ const NavBar: NextPage = () => {
     },
   ];
   return (
-    <header className="relative bg-[#161616] p-4 text-[#F3F4F6]">
+    <header className="relative bg-[#161616] p-4 mt-4 text-[#F3F4F6]">
       <div
         className="absolute inset-0 justify-center md:justify-left"
         style={{

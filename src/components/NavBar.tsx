@@ -24,7 +24,8 @@ const NavBar: NextPage = () => {
       <div
         className="absolute inset-0 justify-center md:justify-left"
         style={{
-          marginLeft:"24px",
+          marginLeft:"24px",  
+          width:'250px',
           backgroundImage: `url('./TemporalLogoComplete.svg')`,
           backgroundSize: "contain",
           backgroundRepeat: "no-repeat",

@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
 import React, { useState, useEffect } from "react";
-import Footer from "./Footer";
+import Footer from "../components/Footer";
 import { motion, AnimatePresence } from 'framer-motion';
-import NavBar from "./NavBar";
+import NavBar from "../components/NavBar";
 import { useRouter } from 'next/router';
 import { GetServerSideProps } from 'next';
 
@@ -64,7 +64,7 @@ const Hero: NextPage = () => {
           initial="initial"
           animate="animate"
           variants={fadeInOutVariantsForMainContent}
-          className="container mx-auto flex flex-col items-center"
+          className="container mx-auto flex flex-col "
         >
         <div className="text-center">
           <h1 className="mx-4 mt-8 text-center font-sans text-3xl font-extralight leading-tight text-[#3CC0A3] md:mx-0 md:text-5xl lg:text-6xl">
@@ -118,7 +118,7 @@ const Hero: NextPage = () => {
           <button
             className="mr-4 flex items-center rounded-full border-2 border-[#FFFFFF] pl-6 pr-6 pt-1 pb-1 hover:border-[#3CC0A3] hover:bg-black hover:text-[#3CC0A3] md:ml-6"
             onClick={() => {
-              window.location.href = "/litepaper";
+              window.location.href = "/video";
             }}
           >
             <span className="text-12 font-helvetica-neue font-extralight text-[#FFFFFF]">

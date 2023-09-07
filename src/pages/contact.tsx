@@ -32,7 +32,7 @@ const Contact: NextPage = () => {
             </div>
             <h1 className="text-3xl md:text-5xl md:mx-16 mx-12 text-center text-white font-open font-extralight">
                 We will be out of{" "} 
-                <span className="text-[#3CC0A3]">
+                <span className="text-[#0ABAB5]">
                      stealth mode 
                 </span>
                 {" "}soon. Please leave your handle and we’ll reach out to you.
@@ -44,7 +44,7 @@ const Contact: NextPage = () => {
                         placeholder="Enter here" style={{fontSize:"1rem", boxShadow: "none", outline: "none"}}
                         aria-label="Telegram Handle"
                         onChange={(e) => setTelegram(e.target.value)}
-                        className="text-[#9E9E9E] border rounded-xl bg-transparent border-[#3CC0A3] border-solid w-full py-3 pl-5 pr-16 sm:pr-32 focus:text-[#9E9E9E] focus:font-helvetica-neue focus:font-normal focus:outline-none focus:border-[#3CC0A3]"
+                        className="text-[#9E9E9E] border rounded-xl bg-transparent border-[#0ABAB5] border-solid w-full py-3 pl-5 pr-16 sm:pr-32 focus:text-[#9E9E9E] focus:font-helvetica-neue focus:font-normal focus:outline-none focus:border-[#0ABAB5]"
                         />
                     <label className="absolute -top-7 left-0 text-[#9E9E9E] font-light font-helvetica-neue text-sm">
                         Telegram Handle
@@ -57,7 +57,7 @@ const Contact: NextPage = () => {
                         placeholder="Enter here" style={{fontSize:"1rem" , boxShadow: "none", outline: "none"}}
                         aria-label="Discord Tag"
                         onChange={(e) => setDiscord(e.target.value)}
-                        className="text-[#9E9E9E] border rounded-xl bg-transparent border-[#3CC0A3] border-solid w-full py-3 pl-5 pr-16 sm:pr-32 focus:text-[#9E9E9E] focus:font-helvetica-neue focus:font-normal focus:outline-none focus:border-[#3CC0A3]"
+                        className="text-[#9E9E9E] border rounded-xl bg-transparent border-[#0ABAB5] border-solid w-full py-3 pl-5 pr-16 sm:pr-32 focus:text-[#9E9E9E] focus:font-helvetica-neue focus:font-normal focus:outline-none focus:border-[#0ABAB5]"
                     />
                     <label className="absolute -top-7 left-0 text-[#9E9E9E] font-light font-helvetica-neue text-sm">
                         Discord Tag
@@ -77,7 +77,7 @@ const Contact: NextPage = () => {
                                 }
                             })();
                         }}
-                        className="justify-center flex border-[#008063] bg-[#008063] hover:border-[#3CC0A3] hover:bg-[#161616] hover:text-[#3CC0A3] font-helvetica-neue text-white font-light py-3 px-6 rounded-xl">
+                        className="justify-center flex border-[#008884] bg-[#008884] hover:border-[#0ABAB5] hover:bg-[#161616] hover:text-[#0ABAB5] font-helvetica-neue text-black font-light py-3 px-6 rounded-xl">
                         Submit
                     </button>
                 </div>
@@ -88,7 +88,7 @@ const Contact: NextPage = () => {
                 onMouseEnter={() => setIsHovered(true)} 
                 onMouseLeave={() => setIsHovered(false)}
                 onClick={() => window.location.href="/"}
-                className="cursor-pointer flex items-center space-x-4 mt-16 mb-4 text-white font-helvetica-neue font-extralight hover:text-[#3CC0A3]"
+                className="cursor-pointer flex items-center space-x-4 mt-16 mb-4 text-white font-helvetica-neue font-extralight hover:text-[#0ABAB5]"
             >
             <img src={isHovered ? "/arrow-left-circle-hover.svg" : "/arrow-left-circle.svg"} alt="Go back" />
             <span>Go back to Homepage</span>

@@ -5,7 +5,7 @@ const Footer: NextPage = () => {
   const t = "{ T }";
   return (
     
-      <div className="container mx-auto space-y-6 divide-y divide-[#3CC0A3] px-6 mb-4 md:space-y-12">
+      <div className="container mx-auto space-y-6 divide-y divide-[#0ABAB5CC] px-6 mb-4 md:space-y-12">
         <div className="grid grid-cols-12">
           <div className="col-span-full pb-6 md:col-span-6 md:pb-0">
             <a

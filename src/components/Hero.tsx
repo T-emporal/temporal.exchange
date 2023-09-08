@@ -43,7 +43,7 @@ const Hero: NextPage = () => {
               marginTop: "48px",
             }}
           >
-            Temporal has built a Revolutionary Liquidity Primitive: Market-Determined Yield Curves for every asset. Both <br />real-time and continuous. Enable users to borrow and lend at fixed rates for custom maturities. 
+            Temporal introduces a revolutionary liquidity primitive for DeFi: Market Determined Yield Curves. <br /> The underlying innovation unifies siloed markets across time into a real-time continuous yield curve.
           </p>
         </div>
         <div />
@@ -115,7 +115,7 @@ const Hero: NextPage = () => {
           <div className="mb-4 text-4xl font-semibold text-[#0ABAB5CC]">02</div>
           <div className="mb-2 text-xl text-white font-helvetica-neue">Customized Duration</div>
           <div className="text-lg text-white font-extralight font-helvetica-neue">
-            Borrowing and Lending durations are no longer limited by the pool.
+          Borrowers and Lenders can set their own maturities.
           </div>
         </div>
 

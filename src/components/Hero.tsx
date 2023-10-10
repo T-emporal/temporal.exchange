@@ -5,8 +5,6 @@ import { ArrowRightIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 
 const Hero: NextPage = () => {
-  const [isTryDemoHovered, setTryDemoHovered] = useState(false);
-
   return (
     <section
       className="relative z-0 bg-[#161616] bg-cover bg-center"
@@ -17,24 +15,12 @@ const Hero: NextPage = () => {
     >
       <div className="container mx-auto flex flex-col items-center">
         <div className="text-center">
-          {/* <h1 className="mt-8 mx-4 md:mx-0 text-center font-sans text-3xl font-extralight leading-tight text-[#0ABAB5CC] md:text-5xl lg:text-6xl">
-            Yield Customized.
-          </h1> */}
           <h2 className="mx-4 mt-16 font-sans text-4xl font-extralight leading-tight text-white md:mx-0 md:text-6xl lg:text-7xl">
             Yield <span className="text-[#0ABAB5CC]">Customized</span>
           </h2>
           <p
-            className="mx-8"
-            style={{
-              color: "#FFFFFF",
-              textAlign: "center",
-              fontFamily: "Helvetica Neue",
-              fontSize: "22px",
-              fontStyle: "normal",
-              fontWeight: 300,
-              lineHeight: "32px",
-              marginTop: "48px",
-            }}
+            className="mx-8 text-white text-center font-sans text-xl font-light leading-8 mt-12"
+
           >
             Temporal introduces a revolutionary liquidity primitive for DeFi:
             Market Determined Yield Curves. <br /> The underlying innovation

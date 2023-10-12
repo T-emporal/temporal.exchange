@@ -12,7 +12,7 @@ const Home: NextPage = () => {
             </Head>
             <main className="bg-fixed bg-cover bg-center bg-no-repeat" style={{
                 background: "rgba(255, 255, 255, .5) url('background.jpg') no-repeat",
-                backgroundSize: 'contain',
+                backgroundSize: 'cover',
 backgroundAttachment:"fixed"
             }}>
 

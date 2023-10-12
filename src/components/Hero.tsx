@@ -7,11 +7,8 @@ import Link from "next/link";
 const Hero: NextPage = () => {
   return (
     <section
-      className="relative z-0 bg-[#161616] bg-cover bg-center"
-      style={{
-        backgroundImage: 'url("/Background.jpg")',
-        backgroundAttachment: "fixed",
-      }}
+      className="relative z-0  bg-cover bg-center  max-w-[1440px] mx-auto"
+
     >
       <div className="container mx-auto flex flex-col items-center">
         <div className="text-center">
@@ -72,13 +69,13 @@ const Hero: NextPage = () => {
 
       {/* Features section showing 4 cards aligned right next to each other */}
 
-      <div className="lg:justify-left font-helvetica-neue mt-16 text-center text-2xl font-light text-white lg:ml-24 lg:flex">
+      <div className="lg:justify-left font-helvetica-neue mt-16 text-center text-5xl font-light text-white lg:ml-24 lg:flex">
         Features
       </div>
 
       <div className="mx-4 mt-8 grid grid-cols-1 gap-4 sm:mx-24 lg:grid-cols-4">
         {/* First Card */}
-        <div className="flex-1 rounded-3xl border border-[#0ABAB5CC] border-opacity-100 bg-black bg-opacity-40 p-8">
+        <div className="flex-1 rounded-3xl border border-[#0ABAB540] border-opacity-100 bg-black bg-opacity-40 p-8">
           <div className="mb-4 text-4xl font-semibold text-[#0ABAB5CC]">01</div>
           <p className="font-helvetica-neue mb-2 text-xl text-white">
             Fixed Rate Borrowing and Lending
@@ -89,7 +86,7 @@ const Hero: NextPage = () => {
         </div>
 
         {/* Second Card */}
-        <div className="flex-1 rounded-3xl border border-[#0ABAB5CC] border-opacity-100 bg-black bg-opacity-40 p-8">
+        <div className="flex-1 rounded-3xl border border-[#0ABAB540] border-opacity-100 bg-black bg-opacity-40 p-8">
           <div className="mb-4 text-4xl font-semibold text-[#0ABAB5CC]">02</div>
           <div className="font-helvetica-neue mb-2 text-xl text-white">
             Customized Duration
@@ -100,7 +97,7 @@ const Hero: NextPage = () => {
         </div>
 
         {/* Third Card */}
-        <div className="flex-1 rounded-3xl border border-[#0ABAB5CC] border-opacity-100 bg-black bg-opacity-40  p-8">
+        <div className="flex-1 rounded-3xl border border-[#0ABAB540] border-opacity-100 bg-black bg-opacity-40  p-8">
           <div className="mb-4 text-4xl font-semibold text-[#0ABAB5CC]">03</div>
           <div className="font-helvetica-neue mb-2 text-xl text-white">
             Customized Leverage Levels
@@ -111,7 +108,7 @@ const Hero: NextPage = () => {
         </div>
 
         {/* Fourth Card */}
-        <div className="flex-1 rounded-3xl border border-[#0ABAB5CC] border-opacity-100 bg-black bg-opacity-40 p-8">
+        <div className="flex-1 rounded-3xl border border-[#0ABAB540] border-opacity-100 bg-black bg-opacity-40 p-8">
           <div className="mb-4 text-4xl font-semibold text-[#0ABAB5CC]">04</div>
           <div className="font-helvetica-neue mb-2 text-xl text-white">
             No Liquidity Fragmentation
@@ -196,7 +193,7 @@ const Hero: NextPage = () => {
           href="https://www.linkedin.com/company/temporal-exchange/"
           target="_blank"
           rel="noopener noreferrer"
-          className="group rounded-full border-2 border-[#008884] bg-[#008884] p-6 hover:bg-transparent "
+          className="group rounded-full border-2 border-[#008884] bg-[#008884] p-6 hover:bg-transparent  scale-75"
         >
           <svg
             width="30"
@@ -214,7 +211,7 @@ const Hero: NextPage = () => {
           href="https://twitter.com/temporalfinance"
           target="_blank"
           rel="noopener noreferrer"
-          className="group rounded-full border-2 border-[#008884] bg-[#008884] p-7 hover:bg-transparent"
+          className="group rounded-full border-2 border-[#008884] bg-[#008884] p-7 hover:bg-transparent scale-75"
         >
           <svg
             width="31"
@@ -232,7 +229,7 @@ const Hero: NextPage = () => {
           href="https://medium.com/"
           target="_blank"
           rel="noopener noreferrer"
-          className="group rounded-full border-2 border-[#008884] bg-[#008884] p-6 hover:bg-transparent"
+          className="group rounded-full border-2 border-[#008884] bg-[#008884] p-6 hover:bg-transparent scale-75"
         >
           <svg
             width="30"
@@ -258,7 +255,7 @@ const Hero: NextPage = () => {
       </div>
 
       <div
-        className="font-helvetica-neue mx-12 mt-12 mb-24 justify-center text-center font-light text-white md:mx-32"
+        className="font-helvetica-neue  mt-12 mb-24 justify-center text-center font-light text-white  max-w-[725px] mx-auto"
         style={{ fontSize: "18px", lineHeight: "24px" }}
       >
         This is a testnet website for Temporal. All interactions are simulations

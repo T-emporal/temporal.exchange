@@ -12,7 +12,8 @@ const Home: NextPage = () => {
             </Head>
             <main className="bg-fixed bg-cover bg-center bg-no-repeat" style={{
                 background: "rgba(255, 255, 255, .5) url('background.jpg') no-repeat",
-                backgroundSize: 'cover'
+                backgroundSize: 'contain',
+backgroundAttachment:"fixed"
             }}>
 
                 {/* <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c]"> */}

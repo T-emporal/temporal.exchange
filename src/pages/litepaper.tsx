@@ -20,7 +20,7 @@ const LitePaper: NextPage = () => {
                 {/*    // type="application/pdf"*/}
                 {/*        src='temporal-litepaper.pdf'*/}
                 {/*/>*/}
-                <iframe src="https://drive.google.com/file/d/1_HA_d85yX3NBQtm3B3mXzMLEty9duVof/preview"
+                <iframe src="https://drive.google.com/file/d/1RcID4ZXyDlxIemvh1qjpk54ZCLTHVYcZ/preview"
                         width={windowSize.width} height={windowSize.height} allow="autoplay"></iframe>
             </main>
         </>

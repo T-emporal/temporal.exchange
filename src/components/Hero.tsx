@@ -32,10 +32,10 @@ const Hero: NextPage = () => {
       <div className="mt-16 flex items-center justify-center  md:flex-row md:space-x-4">
         <Link
           className=" flex items-center self-center rounded-full border border-[#0ABAB5CC] pl-12 pr-12 pt-4 pb-4 text-[#0ABAB5CC] hover:bg-[#0ABAB5CC] hover:text-black md:mb-0"
-          href={"https://demo.temporal.exchange/"}
+          href={"/coming-soon"}
         >
           <span className="text-md font-open mr-2 whitespace-nowrap font-normal">
-            Try Demo
+            Try Now
           </span>
           <ArrowRightIcon className="w-5 h-5" />
         </Link>

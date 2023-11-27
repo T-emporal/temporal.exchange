@@ -7,13 +7,10 @@ const NavBar: NextPage = () => {
   const [showModal, setShowModal] = useState(false);
   const linkObj = [
     {
-      name: "Demo",
-      href: "https://demo.temporal.exchange/",
+      name: "Try Now",
+      href: "/coming-soon",
     },
-    {
-      name: "Docs",
-      href: "/contact",
-    },
+
     {
       name: "Litepaper",
       href: "/litepaper",
@@ -31,12 +28,12 @@ const NavBar: NextPage = () => {
           backgroundPosition: "left",
         }}
       />
-      <div className="container relative z-10 mx-auto flex h-16 justify-between">
+      <div className="container relative z-10 mx-auto flex  justify-between">
         <Link
           rel="noopener noreferrer"
           href="/"
           aria-label="Back to homepage"
-          className="flex items-center p-2"
+          className="flex items-center p-2 h-16"
         >
           <h1 className="mr-3 mt-3 mb-3 ml-24 justify-center md:justify-left font-mono text-xl font-bold lg:text-2xl">
             
@@ -45,11 +42,11 @@ const NavBar: NextPage = () => {
         <ul className="hidden items-stretch space-x-3 md:flex">
           {linkObj.map((link, idx) => {
             return (
-              <li key={idx} className="flex">
+              <li key={idx} className="flex items-center">
                 <Link
                   rel="noopener noreferrer"
                   href={link.href}
-                  className="-mb-1 flex items-center px-4 dark:border-transparent"
+                  className={`-mb-1 flex items-center px-4 ${link.name == "Try Now" ?"border border-temporal py-2 text-temporal rounded-full":""}`}
                 >
                   {link.name}
                 </Link>

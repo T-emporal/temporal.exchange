@@ -5,7 +5,7 @@ const Footer: NextPage = () => {
   const t = "{ T }";
   return (
     
-      <div className="container mx-auto space-y-6 divide-y divide-[#0ABAB5CC] px-6 mb-4 md:space-y-12">
+      <div className="container mx-auto space-y-6 divide-y divide-[#0ABAB5CC] px-6 pb-4 md:space-y-12">
         <div className="grid grid-cols-12">
           <div className="col-span-full pb-6 md:col-span-6 md:pb-0">
             <a
@@ -22,7 +22,7 @@ const Footer: NextPage = () => {
         </div>
         <div className="grid justify-center pt-6 lg:justify-between">
           <div className="flex flex-col text-[#f9fafb] self-center text-center text-sm md:block md:space-x-6 lg:col-start-1">
-            <span>©2023 Temporal All rights reserved</span>
+            <span>©2024 Temporal All rights reserved</span>
           </div>
           <div className="flex justify-center space-x-4 pt-4 lg:col-end-13 lg:pt-0">
             <Link
@@ -34,7 +34,7 @@ const Footer: NextPage = () => {
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
-                fill="black"
+                fill="temporal"
                 className="h-5 w-5"
               >
                 <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>

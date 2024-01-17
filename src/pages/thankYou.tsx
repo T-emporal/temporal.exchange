@@ -26,7 +26,7 @@ const ThankYou : NextPage= () => {
                 onMouseEnter={() => setIsHovered(true)} 
                 onMouseLeave={() => setIsHovered(false)}
                 onClick={(): void => { void(window.location.href="/"); }}
-                className="cursor-pointer flex items-center space-x-4 mt-16 mb-4 text-white font-helvetica-neue font-extralight hover:text-[#0ABAB5]"
+                className="cursor-pointer flex items-center space-x-4 mt-16 mb-4 text-white   font-extralight hover:text-[#0ABAB5]"
             >
             <img src={isHovered ? "/arrow-left-circle-hover.svg" : "/arrow-left-circle.svg"} alt="Go back" />
             <span>Go back to Homepage</span>

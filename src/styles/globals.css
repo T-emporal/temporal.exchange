@@ -1,3 +1,32 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Initial State */
+.progress-bar {
+    position: relative;
+    top: -10;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 0px; /* Match to the thickness of the bar in your image */
+    background: #000000; /* Placeholder for gradient */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Placeholder for blur effect */
+    width: 0%; /* Starts as a dot in the center */
+    border-radius: 10px; /* Adjust to match the roundness of your bar */
+    z-index: 1; /* High z-index to ensure it's above other content */
+    overflow: hidden; /* Ensures that the blur doesn't bleed out of the bar area */
+  }
+  
+  /* Final State */
+  .progress-bar:before {
+    content: "";
+    position: absolute;
+    top: -10px; /* Increase for more blur */
+    right: -10px; /* Increase for more blur */
+    bottom: -10px; /* Increase for more blur */
+    left: -10px; /* Increase for more blur */
+    background: inherit;
+    filter: blur(8px); /* Adjust to match the blur of your bar */
+    z-index: -1;
+  }
+  

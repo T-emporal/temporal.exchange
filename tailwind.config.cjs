@@ -1,10 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 const config = {
-  content: ["./src/**/*.{js,ts,jsx,tsx}"],
+  
+  content: [
+    "./src/**/*.{js,ts,jsx,tsx}",
+    './src/app/**/*.{js,ts,jsx,tsx}',
+  ],
   theme: {
     extend: {
       fontFamily: {
-        "open-sans": ["Open Sans", "sans"],
+        sansation: ['var(--font-sansation)']
       },
       colors: { temporal: "#00A9A4", temporal50: "#00A9A488" },
     },

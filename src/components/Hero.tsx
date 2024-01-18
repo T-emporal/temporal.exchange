@@ -76,8 +76,10 @@ const Hero: NextPage = () => {
 
     >
       <div className="container mx-auto flex flex-col items-center">
+      <div className="orb" />
+
         <div className="text-center">
-          <h2 className="mx-4 mt-20 text-wrap text-4xl leading-tight text-white md:mx-0 md:text-6xl lg:text-7xl  max-w-[1100px]">
+          <h2 className="mx-4 mt-20 xl:mt-28 text-wrap text-4xl leading-tight text-white md:mx-0 md:text-6xl lg:text-7xl  max-w-[1100px]">
             Institutional Grade Liquidity Layer  for  <span className="text-[#0ABAB5CC]">Yield Markets</span>
           </h2>
           <p
@@ -88,18 +90,17 @@ const Hero: NextPage = () => {
           </p>
         </div>
         <div />
-      </div>
 
-      {/* Section with Try Demo, Litepaper and Docs Buttons */}
-      <div className="mt-16 flex items-center justify-center  md:flex-row md:space-x-4">
-        <Link
-          className=" flex items-center self-center rounded-full border-2 border-temporal px-12 py-4 text-temporal hover:bg-temporal hover:text-white transition-colors"
-          href={"/coming-soon"}
-        >
-          <span className="text-xl px-5">
-            Try App
-          </span>
-        </Link>
+        <div className="mt-16 flex items-center justify-center  md:flex-row md:space-x-4">
+          <Link
+            className=" flex items-center self-center rounded-full border-2 border-temporal px-12 py-4 text-temporal hover:bg-temporal hover:text-white transition-colors"
+            href={"/coming-soon"}
+          >
+            <span className="text-xl px-5">
+              Try App
+            </span>
+          </Link>
+        </div>
       </div>
 
       <div className=" mt-16 container mx-auto items-center max-w-[1000px]">

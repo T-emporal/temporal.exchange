@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import React, { useRef } from 'react';
 import CurvedChart from "~/components/cards/YieldCurve";
+// import CurvedChart from "~/components/cards/CurvedChart";
 import PlaceOrderCard from "~/components/cards/OrderCard";
 import { ScriptableContext } from "chart.js";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -106,7 +107,7 @@ const Features: NextPage = () => {
     return (
         <section className="dark:text-gray-100">
 
-            <div className="relative p-12 w-full md:w-3/4  container mx-auto items-center  z-10 "
+            <div className="relative p-16 w-full md:w-3/4  container mx-auto items-center  z-10 "
                 style={{
                     background: "rgb(10, 18, 29)",
                 }}>
@@ -193,22 +194,32 @@ const Features: NextPage = () => {
                                 <img src="./InterestRateSwaps.svg" alt="Interest Rate Swaps" />
                             </div>
                         </div>
-                        <div className="p-10 grid grid-cols-1 items-center text-lg gap-0 backdrop-blur-[4px] rounded-xl">
-                            <div className="flex md:mb-[-10rem]">
-                                <LinkIcon className="m-5 h-8 w-8" /> Matched-maturities to lower borrowing costs or hedge interest rate risk.
+
+                        <div className="p-10 md:mt-24 backdrop-blur-[4px] rounded-xl text-lg">
+                            <div className="flex items-center mb-4">
+                                <LinkIcon className="h-6 w-6 mr-4 mt-1" />
+                                <div className="flex-1" style={{ minHeight: '4rem' }}> {/* Fixed minimum height */}
+                                    <p>Matched-maturities to lower borrowing costs or hedge interest rate risk.</p>
+                                </div>
                             </div>
-                            <div className="flex ">
-                                <LinkIcon className="m-5 h-8 w-8" /> User-friendly and intuitive way to speculate on the direction of rates.
+                            <div className="flex items-center mb-4">
+                                <LinkIcon className="h-6 w-6 mr-4 mt-1" />
+                                <div className="flex-1" style={{ minHeight: '4rem' }}>
+                                    <p>User-friendly and intuitive way to speculate on the direction of rates.</p>
+                                </div>
                             </div>
-                            <div className="flex md:mt-[-10rem]">
-                                <LinkIcon className="m-5 h-8 w-8" /> $20T Real-World use case brought to DeFi. Whitelabelled for dApps to offer their users.
+                            <div className="flex items-center">
+                                <LinkIcon className="h-6 w-6 mr-4 mt-1" />
+                                <div className="flex-1" style={{ minHeight: '4rem' }}>
+                                    <p>$20T Real-World use case brought to DeFi. Whitelabelled for dApps to offer their users.</p>
+                                </div>
                             </div>
                         </div>
+
                     </div>
 
                     <div className="text-center pt-12">
-                        <h1 className="text-3xl font-semibold">
-                            REPO MARKET</h1>
+                        <h1 className="text-3xl font-semibold">REPO MARKET</h1>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mt-12">
@@ -265,30 +276,37 @@ const Features: NextPage = () => {
 
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mt-12">
-                        <div className="  text-center backdrop-blur-[4px] rounded-xl">
-                            <div className="flex justify-center items-center mb-8">
+                        <div className="text-center backdrop-blur-[4px] rounded-xl">
+                            <div className="flex justify-center items-center">
                                 <img src="./OnChainBondMarket.svg" alt="On Chain Bond Market" />
                             </div>
                         </div>
-                        <div className="p-10 border grid grid-cols-1 items-center text-lg gap-0 backdrop-blur-[4px] rounded-xl">
-                            <div className="flex md:mb-[-8rem]">
-                                <h3 className="text-xl font-semibold">ON-CHAIN BOND MARKET</h3>
-                            </div>
-                            <div className="flex md:mb-[-5rem]">
-                                <LinkIcon className="m-5 h-8 w-8" /> Shared liquidity across the entire yield curve. aaaaaaaa
-                            </div>
-                            <div className="flex ">
-                                <LinkIcon className="m-5 h-8 w-8" /> Dealers only initiate and maintain issuer specific yield curves. Tactically adjusting  the spread without altering AMM state.
-                            </div>
-                            <div className="flex md:mt-[-5rem]">
-                                <LinkIcon className="m-5 h-8 w-8" /> Vastly more efficient over OTC systems which have fragmented markets for each bond.
+                        <div className="grid grid-cols-1 items-center text-lg backdrop-blur-[4px] rounded-xl">
+                            <div className="rounded-xl text-lg p-4">
+                                <h3 className="text-3xl mb-4 font-semibold">ON-CHAIN BOND MARKET</h3>
+                                <div className="flex  items-start mb-4">
+                                    <LinkIcon className="h-6 w-6 mr-4 mt-1 " />
+                                    <div className="flex-1" style={{ minHeight: '2rem' }}>
+                                        <p>Shared liquidity across the entire yield curve.</p>
+                                    </div>
+                                </div>
+                                <div className="flex items-center mb-2">
+                                    <LinkIcon className="h-6 w-6 mr-4 mt-1" />
+                                    <div className="flex-1" style={{ minHeight: '4rem' }}>
+                                        <p>Dealers only initiate and maintain issuer specific yield curves. Tactically adjusting the spread without altering AMM state.</p>
+                                    </div>
+                                </div>
+                                <div className="flex items-center mb-2">
+                                    <LinkIcon className="h-6 w-6 mr-4 mt-1" />
+                                    <div className="flex-1" style={{ minHeight: '4rem' }}>
+                                        <p>Vastly more efficient over OTC systems which have fragmented markets for each bond.</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-
         </section>
     )
 }

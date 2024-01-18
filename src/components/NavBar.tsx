@@ -179,7 +179,7 @@ const NavBar: NextPage = () => {
         <Link href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4636450" className="text-white md:text-xl md:pl-4 md:pr-8 py-2 hover:text-gray-200 mt-2 md:mt-0">
           Litepaper
         </Link>
-        <Link href="/app" className="border border-temporal text-temporal md:text-l px-6 py-2 rounded-full shadow-lg hover:bg-temporal hover:text-white transition-colors mt-4 md:mt-2">
+        <Link href="/coming-soon" className="border border-temporal text-temporal md:text-l px-6 py-2 rounded-full shadow-lg hover:bg-temporal hover:text-white transition-colors mt-4 md:mt-2">
           TRY APP
         </Link>
       </div>

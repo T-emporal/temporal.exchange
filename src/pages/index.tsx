@@ -18,11 +18,7 @@ const Home: NextPage = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <main className="bg-fixed bg-cover bg-center bg-no-repeat" style={{
-                background: "rgba(10, 18, 29, 1) no-repeat",
-                backgroundSize: 'cover',
-                backgroundAttachment: "fixed"
-            }}>
+            <main>
                 <Navbar/>
                 <Hero />
                 <UseCases/>

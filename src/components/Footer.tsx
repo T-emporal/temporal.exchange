@@ -5,7 +5,7 @@ const Footer: NextPage = () => {
   const t = "{ T }";
   return (
     
-      <div className="container mx-auto space-y-6 divide-y divide-[#0ABAB5CC] px-6 pb-4 md:space-y-12">
+      <div className="container mx-auto space-y-6 divide-y divide-[#0ABAB5CC] px-6 pb-8 md:space-y-12">
         <div className="grid grid-cols-12">
           <div className="col-span-full pb-6 md:col-span-6 md:pb-0">
             <a
@@ -29,7 +29,7 @@ const Footer: NextPage = () => {
               rel="noopener noreferrer"
               href="mailto:hello@temporal.exchange"
               title="Email"
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-[#949494]"
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-temporal/80"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -45,7 +45,7 @@ const Footer: NextPage = () => {
               rel="noopener noreferrer"
               href="https://www.linkedin.com/company/temporal-exchange/"
               title="LinkedIn"
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-[#949494]"
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-temporal/80"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -61,14 +61,14 @@ const Footer: NextPage = () => {
               rel="noopener noreferrer"
               href="https://twitter.com/TemporalFinance"
               title="Twitter"
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-[#949494]"
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-temporal/80"
             >   <img src="/TwitterFooterIcon.svg" alt="Twitter footer" />
             </Link>
             <Link
               rel="noopener noreferrer"
               href="/contact"
               title="Telegram"
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-[#949494]"
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-temporal/80"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -84,7 +84,7 @@ const Footer: NextPage = () => {
               rel="noopener noreferrer"
               href="/contact"
               title="Discord"
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-[#949494]"
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-temporal/80"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

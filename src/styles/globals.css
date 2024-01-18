@@ -4,29 +4,87 @@
 
 /* Initial State */
 .progress-bar {
-    position: relative;
-    top: -10;
+  position: relative;
+  top: -10;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 0px; /* Match to the thickness of the bar in your image */
+  background: #000000; /* Placeholder for gradient */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Placeholder for blur effect */
+  width: 0%; /* Starts as a dot in the center */
+  border-radius: 10px; /* Adjust to match the roundness of your bar */
+  z-index: 1; /* High z-index to ensure it's above other content */
+  overflow: hidden; /* Ensures that the blur doesn't bleed out of the bar area */
+}
+
+/* Final State */
+.progress-bar:before {
+  content: "";
+  position: absolute;
+  top: -10px; /* Increase for more blur */
+  right: -10px; /* Increase for more blur */
+  bottom: -10px; /* Increase for more blur */
+  left: -10px; /* Increase for more blur */
+  background: inherit;
+  filter: blur(8px); /* Adjust to match the blur of your bar */
+  z-index: -1;
+}
+
+@keyframes moveOrb {
+  0% {
+    top: 0%;
+    left: 0%;
+  }
+  10% {
+    top: 60%;
+    left: 20%;
+  }
+  20% {
+    top: 30%;
+    left: 80%;
+  }
+  30% {
+    top: 50%;
+    left: 0%;
+  }
+  40% {
+    top: 10%;
+    left: 70%;
+  }
+  50% {
+    top: 60%;
+    left: 90%;
+  }
+  60% {
+    top: 20%;
+    left: 10%;
+  }
+  70% {
+    top: 55%;
+    left: 90%;
+  }
+  80% {
+    top: 5%;
     left: 50%;
-    transform: translateX(-50%);
-    height: 0px; /* Match to the thickness of the bar in your image */
-    background: #000000; /* Placeholder for gradient */
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Placeholder for blur effect */
-    width: 0%; /* Starts as a dot in the center */
-    border-radius: 10px; /* Adjust to match the roundness of your bar */
-    z-index: 1; /* High z-index to ensure it's above other content */
-    overflow: hidden; /* Ensures that the blur doesn't bleed out of the bar area */
   }
-  
-  /* Final State */
-  .progress-bar:before {
-    content: "";
-    position: absolute;
-    top: -10px; /* Increase for more blur */
-    right: -10px; /* Increase for more blur */
-    bottom: -10px; /* Increase for more blur */
-    left: -10px; /* Increase for more blur */
-    background: inherit;
-    filter: blur(8px); /* Adjust to match the blur of your bar */
-    z-index: -1;
+  90% {
+    top: 60%;
+    left: 30%;
   }
-  
+  100% {
+    top: 10%;
+    left: 80%;
+  }
+}
+
+.orb {
+  position: absolute;
+  width: 1px; 
+  height: 1px; 
+  background-color: #00A9A4; 
+  border-radius: 100%;
+  opacity: 0.4; 
+  animation: moveOrb 400s infinite alternate linear;
+  box-shadow: 0 0 250px 250px #00A9A4; 
+  pointer-events: none;
+}

@@ -25,7 +25,7 @@ const CurvedChart = ({ data, options, toggleSwitch }: any) => {
 
   return (
     <div className="relative">
-      <div className=" h-full bg-transparent rounded-xl p-6">
+      <div className="default-sans-serif h-full bg-transparent rounded-xl p-6">
         <Line data={data} options={options} className="h-[200px] md:h-[400px] !w-full" />
       </div>
       {showSwitch && (

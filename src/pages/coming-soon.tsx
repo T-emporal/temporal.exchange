@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { ArrowLeftCircleIcon, } from "@heroicons/react/24/outline";
-import { ArrowRightCircleIcon } from "@heroicons/react/24/solid";
 import type { NextPage } from "next";
 import { NextSeo } from "next-seo";
 import Link from "next/link";
 import Navbar from '~/components/NavBar'
-import Footer from "~/components/Footer";
+import TextEncrypted from '~/components/cards/TextEncrypted'
 
 const ComingSoon: NextPage = () => {
   const [isDiscordFocused, setIsDiscordFocused] = useState(false);
@@ -39,12 +38,21 @@ const ComingSoon: NextPage = () => {
       <NextSeo title="Coming soon" />
       <Navbar></Navbar>
 
-      <main className="flex mt-16 flex-col items-center justify-center ">
+      <main className="flex mt-20 flex-col items-center justify-center ">
         <div className="orb" />
+        {/* Test */}
+        <h3 className="text-center text-4xl md:text-5xl font leading-[70px] text-white">
+        <TextEncrypted text={'You caught us early!'} interval={30}/> 
+        </h3>
+        {/* Test */}
 
         <h3 className="text-center text-4xl md:text-5xl font leading-[70px] text-white">
           You <span className="text-temporal "> caught </span> us early! <br />
-          Please leave your handle and we’ll reach out to you.
+          Please leave your 
+          <span className="text-temporal "> handle </span> 
+          and we’ll 
+          <span className="text-temporal "> reach </span>  
+          out to you.
         </h3>
 
         <div className="text-center text-white">
@@ -138,7 +146,7 @@ const ComingSoon: NextPage = () => {
 
         <div className="grid justify-center pt-6 lg:justify-between">
           <div className="flex flex-col text-[#f9fafb] self-center text-center text-sm md:block md:space-x-6 lg:col-start-1">
-            <span>©2024 Temporal All rights reserved</span>
+            <span>©2023 Temporal All rights reserved</span>
           </div>
           <div className="flex justify-center space-x-4 pt-4 lg:col-end-13 lg:pt-0">
             <Link

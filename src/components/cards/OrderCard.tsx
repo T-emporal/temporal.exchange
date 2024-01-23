@@ -23,8 +23,11 @@ const PlaceOrderCard = () => {
     return (
         <div className=" backdrop-blur-[4px] xl:py-6 rounded-xl flex flex-col py-4 xl:justify-between w-full "
             style={{
-                background: 'radial-gradient(ellipse at center top, rgba(23, 58, 63, 0.35) 10%, rgba(4, 20, 32, 0) 100%)',
+                margin: '0.05rem',
+                background: 'linear-gradient(rgba(23, 58, 63, 0.35) 10%, rgba(4, 20, 32, 0) 100%), rgba(10, 18, 29, 1)',
                 boxShadow: '3.8px 3.8px 38px 0px rgba(70, 70, 70, 0.10) inset',
+                position: 'relative',
+                zIndex: 1
             }}>
             <div>
                 {" "}
@@ -103,7 +106,7 @@ const PlaceOrderCard = () => {
                                 </div>
 
                                 <div className="rounded-md border-2 border-temporal50 bg-neutral-950/50 mt-2 cursor-not-allowed flex" style={{ pointerEvents: 'none' }}>
-                                    <div className="relative pr-5 flex-1 border-r border-temporal50 "
+                                    <div className="relative  flex-1 border-r-2 border-temporal50 "
                                     >
                                         <Listbox value={selectedMintChain}>
                                             <Listbox.Button className="cursor-default text-gray-400 py-3 px-3 text-left w-full flex items-center">
@@ -125,15 +128,9 @@ const PlaceOrderCard = () => {
                                             </Listbox.Options>
                                         </Listbox>
                                     </div>
-                                    <input
-                                        type="text"
-                                        name="mint-amount"
-                                        id="mint-amount"
-                                        className="flex-1 border-0 border-l border-temporal50 py-0 text-gray-400 text-center bg-transparent focus:outline-none "
-                                        placeholder=""
-                                        aria-describedby="mint-amount"
-                                        value='100'
-                                    />
+                                    <span className="flex-1 py-3 text-center text-gray-400 bg-transparent">
+                                        100
+                                    </span>
                                 </div>
                             </div>
                         </div>

@@ -5,15 +5,15 @@ const Features: NextPage = () => {
         <section className="dark:text-gray-100">
             {/* Disclaimer Section */}
             <div
-                className=" mt-24 text-center font-light text-white"
-                style={{ fontSize: "48px", lineHeight: "48px" }}
+                className=" mt-12 text-4xl text-center font-light text-white"
+                style={{ lineHeight: "48px" }}
             >
                 Disclaimer
             </div>
 
             <div
-                className="  mt-12 mb-24 justify-center text-center font-light text-white  max-w-[725px] mx-auto"
-                style={{ fontSize: "18px", lineHeight: "24px" }}
+                className="  mt-12 mb-12 text-lg justify-center text-center font-light text-white  max-w-[725px] mx-auto"
+                style={{ lineHeight: "24px" }}
             >
                 This is a testnet website for Temporal. All interactions are simulations
                 and do not involve real assets. Ensure to exercise caution and conduct

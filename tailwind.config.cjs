@@ -8,7 +8,7 @@ const config = {
   theme: {
     extend: {
       fontFamily: {
-        sansation: ['var(--font-sansation)']
+        sans: ['Sansation', 'sans-serif'], 
       },
       colors: { temporal: "#00A9A4", temporal50: "#00A9A488" },
     },

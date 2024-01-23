@@ -180,7 +180,7 @@ const NavBar: NextPage = () => {
           Litepaper
         </Link>
         <Link href="/coming-soon" className="border border-temporal text-temporal md:text-l px-6 py-2 rounded-full shadow-lg hover:bg-temporal hover:text-white transition-colors mt-4 md:mt-2">
-          TRY APP
+          Try App
         </Link>
       </div>
     </nav>

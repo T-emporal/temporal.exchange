@@ -4,7 +4,6 @@ import Navbar from '~/components/NavBar'
 import Hero from "~/components/Hero";
 import UseCases from "~/components/UseCases";
 import Features from "~/components/Features";
-import Partners from "~/components/Partners";
 import Disclaimer from "~/components/Disclaimer";
 import Footer from "~/components/Footer";
 
@@ -18,12 +17,11 @@ const Home: NextPage = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <main>
+            <main className="font-sans">
                 <Navbar/>
                 <Hero />
                 <UseCases/>
                 <Features />
-                {/* <Partners /> */}
                 <Disclaimer />
                 <Footer />
             </main>

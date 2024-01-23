@@ -22,7 +22,7 @@ const Footer: NextPage = () => {
         </div>
         <div className="grid justify-center pt-6 lg:justify-between">
           <div className="flex flex-col text-[#f9fafb] self-center text-center text-sm md:block md:space-x-6 lg:col-start-1">
-            <span>©2024 Temporal All rights reserved</span>
+            <span>©2023 Temporal All rights reserved</span>
           </div>
           <div className="flex justify-center space-x-4 pt-4 lg:col-end-13 lg:pt-0">
             <Link

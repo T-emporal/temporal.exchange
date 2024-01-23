@@ -9,7 +9,7 @@ import { LinkIcon } from "@heroicons/react/24/outline";
 
 
 const curvedData = {
-    labels: [0, 2, 4, 6, 8, 10, 12],
+    labels: [0, 2, 4, 6, 8, 10],
     datasets: [
         {
             label: 'Yield',
@@ -48,7 +48,7 @@ const curvedOptions = {
     },
     scales: {
         x: {
-            beginAtZero: false,
+            beginAtZero: true,
             title: {
                 display: true,
                 text: 'DURATION',
@@ -57,9 +57,15 @@ const curvedOptions = {
             grid: {
                 display: false,
             },
+            ticks: {
+                callback: function(value:any, index:any) {
+                  return value !== 0 ? value*2 : '';
+                },
+            }
         },
         y: {
             beginAtZero: false,
+            min: 2.95,
             title: {
                 display: true,
                 text: 'YIELD',
@@ -68,6 +74,11 @@ const curvedOptions = {
             grid: {
                 display: false,
             },
+            ticks: {
+                callback: function(value:any, index:any) {
+                  return value >= 3.00 ? Number(value).toFixed(2) : '';
+                },
+            }
         },
     },
 };
@@ -359,7 +370,7 @@ const Features: NextPage = () => {
                                 <div className="flex items-center mb-2">
                                     {/* <LinkIcon className="text-temporal h-6 w-6 mr-4 mt-1" /> */}
                                     <img src="./icons/redo-spark.svg" className="h-6 w-6 mr-4 mt-1" alt="Redp icon" />
-                                    
+
                                     <div className="flex-1" style={{ minHeight: '4rem' }}>
                                         <p>Vastly more efficient over OTC systems which have fragmented markets for each bond.</p>
                                     </div>
@@ -368,7 +379,7 @@ const Features: NextPage = () => {
                         </div>
                     </div>
 
-                    
+
                 </div>
             </div>
         </section>

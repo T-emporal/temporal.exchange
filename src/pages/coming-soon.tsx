@@ -4,7 +4,6 @@ import type { NextPage } from "next";
 import { NextSeo } from "next-seo";
 import Link from "next/link";
 import Navbar from '~/components/NavBar'
-import TextEncrypted from '~/components/cards/TextEncrypted'
 
 const ComingSoon: NextPage = () => {
   const [isDiscordFocused, setIsDiscordFocused] = useState(false);
@@ -40,11 +39,6 @@ const ComingSoon: NextPage = () => {
 
       <main className="flex mt-20 flex-col items-center justify-center ">
         <div className="orb" />
-        {/* Test */}
-        <h3 className="text-center text-4xl md:text-5xl font leading-[70px] text-white">
-        <TextEncrypted text={'You caught us early!'} interval={30}/> 
-        </h3>
-        {/* Test */}
 
         <h3 className="text-center text-4xl md:text-5xl font leading-[70px] text-white">
           You <span className="text-temporal "> caught </span> us early! <br />

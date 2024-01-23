@@ -1,36 +1,38 @@
 import type { NextPage } from "next";
 import Link from "next/link";
+import Image from 'next/image';
+
 import { useState } from "react";
 
 const NavBar: NextPage = () => {
-  const title = "{ T } E M P O R A L";
-  const [showModal, setShowModal] = useState(false);
-  const linkObj = [
-    {
-      name: "Litepaper",
-      href: "/litepaper",
-    },
-    {
-      name: "Docs",
-      href: "/docs",
-    },
-    {
-      name: "Try App",
-      href: "/coming-soon",
-    },
-  ];
+  // const title = "{ T } E M P O R A L";
+  // const [showModal, setShowModal] = useState(false);
+  // const linkObj = [
+  //   {
+  //     name: "Litepaper",
+  //     href: "/litepaper",
+  //   },
+  //   {
+  //     name: "Docs",
+  //     href: "/docs",
+  //   },
+  //   {
+  //     name: "Try App",
+  //     href: "/coming-soon",
+  //   },
+  // ];
 
-  const svgLogo = (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-      className="h-8 w-8 text-blue-500"
-    >
-      {/* Your SVG path elements go here */}
-    </svg>
-  );
+  // const svgLogo = (
+  //   <svg
+  //     xmlns="http://www.w3.org/2000/svg"
+  //     fill="none"
+  //     viewBox="0 0 24 24"
+  //     stroke="currentColor"
+  //     className="h-8 w-8 text-blue-500"
+  //   >
+  //     {/* Your SVG path elements go here */}
+  //   </svg>
+  // );
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -134,9 +136,9 @@ const NavBar: NextPage = () => {
     <nav className=" py-4 px-2 md:px-10 mx-2 md:mx-10 flex justify-between items-center">
       <div className="flex items-center">
         {isMenuOpen ? (
-          <img src="./TemporalLogoWithT.svg" alt="Temporal Logo" className="h-20 w-20" />
+          <Image src="./TemporalLogoWithT.svg" alt="Temporal Logo"  width={100} height={100} />
         ) : (
-          <img src="./TemporalLogoComplete.svg" alt="Small Temporal Logo" className="" />
+          <Image src="./TemporalLogoComplete.svg" alt="Small Temporal Logo"  width={300} height={300} />
         )}
       </div>
 

@@ -1,4 +1,6 @@
 import type { NextPage } from "next";
+import Image from 'next/image';
+
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from "framer-motion";
 
@@ -66,7 +68,7 @@ const Features: NextPage = () => {
                             zIndex: 1
                         }}>
                         <div className="flex justify-center items-center mb-8">
-                            <img src="./FeaturesLink.png" alt="Concentrated Liquidity via a novel vAMM" />
+                            <Image src="/FeaturesLink.png" alt="Concentrated Liquidity via a novel vAMM" width={100} height={100}/> 
                         </div>
                         <h3 className="text-lg mb-8 font-semi bold">Concentrated Liquidity via a novel vAMM</h3>
                     </div>
@@ -84,7 +86,7 @@ const Features: NextPage = () => {
                                     zIndex: 1
                                 }}>
                         <div className="flex justify-center items-center mb-8">
-                            <img src="./FeaturesDatabase.png" alt="No Liquidity Fragmentation" />
+                            <Image src="/FeaturesDatabase.png" alt="No Liquidity Fragmentation"  width={100} height={100} />
                         </div>
                         <h3 className="text-lg mb-8 font-semi bold">No Liquidity Fragmentation</h3>
                     </div>
@@ -102,7 +104,7 @@ const Features: NextPage = () => {
                                     zIndex: 1
                                 }}>
                         <div className="flex justify-center items-center mb-8">
-                            <img src="./FeaturesEfficiency.png" alt="Capital Efficiency" />
+                            <Image src="/FeaturesEfficiency.png" alt="Capital Efficiency"  width={100} height={100} />
                         </div>
                         <h3 className="text-lg mb-8 font-semi bold">Capital Efficiency</h3>
                     </div>
@@ -120,7 +122,7 @@ const Features: NextPage = () => {
                                     zIndex: 1
                                 }}>
                         <div className="flex justify-center items-center mb-8">
-                            <img src="./FeaturesModular.png" alt="Modular Structure" />
+                            <Image src="/FeaturesModular.png" alt="Modular Structure"   width={100} height={100}/>
                         </div>
                         <h3 className="text-lg mb-8 font-semi bold">Modular Structure</h3>
                     </div>

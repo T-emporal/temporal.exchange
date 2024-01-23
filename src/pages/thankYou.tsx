@@ -1,4 +1,6 @@
 import type {NextPage} from "next";
+import Image from 'next/image';
+
 import {NextSeo} from "next-seo";
 import {Fragment, useState} from "react";
 import { useRouter } from 'next/router';
@@ -28,7 +30,7 @@ const ThankYou : NextPage= () => {
                 onClick={(): void => { void(window.location.href="/"); }}
                 className="cursor-pointer flex items-center space-x-4 mt-16 mb-4 text-white   font-extralight hover:text-[#0ABAB5]"
             >
-            <img src={isHovered ? "/arrow-left-circle-hover.svg" : "/arrow-left-circle.svg"} alt="Go back" />
+            <Image src={isHovered ? "/arrow-left-circle-hover.svg" : "/arrow-left-circle.svg"} width={24} height={24} alt="Go back" />
             <span>Go back to Homepage</span>
             </div>
 

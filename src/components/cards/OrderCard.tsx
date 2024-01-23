@@ -1,4 +1,6 @@
 import { Fragment } from "react";
+import Image from 'next/image';
+
 import {
     ArrowSmallLeftIcon,
     ArrowSmallRightIcon,
@@ -111,7 +113,7 @@ const PlaceOrderCard = () => {
                                         <Listbox value={selectedMintChain}>
                                             <Listbox.Button className="cursor-default text-gray-400 py-3 px-3 text-left w-full flex items-center">
                                                 <span className=" truncate flex items-center text-gray-400">
-                                                    <img src={selectedMintChain.icon} alt={selectedMintChain.name} className="w-6 mr-5 h-6" />
+                                                    <Image src={selectedMintChain.icon} alt={selectedMintChain.name} width={24} height={24} className=" mr-5" />
                                                     {selectedMintChain.name}
                                                 </span>
                                                 <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
@@ -143,7 +145,7 @@ const PlaceOrderCard = () => {
                         <div className="flex flex-col">
                             <div className="flex items-center rounded-md border-2 border-temporal50 bg-neutral-950/50 mt-4">
                                 <div className="flex-1 flex items-center border-r-2 border-temporal50 py-0 ">
-                                    <img src={selectedMintChain.icon} alt={selectedMintChain.name} className="w-6 mx-5 h-6 " />
+                                    <Image src={selectedMintChain.icon} alt={selectedMintChain.name} width={24} height={24} className="mx-5" />
                                     <div>
                                         <div className="text-gray-400">PT {selectedMintChain.name}</div>
                                         <div className="text-gray-400 text-xs">30 Dec 2030</div>
@@ -156,7 +158,7 @@ const PlaceOrderCard = () => {
 
                             <div className="flex items-center rounded-md border-2 border-temporal50 bg-neutral-950/50 mt-4">
                                 <div className="flex-1 flex items-center border-r-2 border-temporal50 py-0 ">
-                                    <img src={selectedMintChain.icon} alt={selectedMintChain.name} className="w-6 mx-5 h-6 " />
+                                    <Image src={selectedMintChain.icon} alt={selectedMintChain.name} width={24} height={24} className="mx-5 " />
                                     <div>
                                         <div className="text-gray-400">YT {selectedMintChain.name}</div>
                                         <div className="text-gray-400 text-xs">30 Dec 2030</div>

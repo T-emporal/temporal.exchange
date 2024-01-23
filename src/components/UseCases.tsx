@@ -1,11 +1,11 @@
 import type { NextPage } from "next";
 import React, { useRef } from 'react';
+import Image from 'next/image';
+
 import CurvedChart from "~/components/cards/YieldCurve";
-// import CurvedChart from "~/components/cards/CurvedChart";
 import PlaceOrderCard from "~/components/cards/OrderCard";
 import { ScriptableContext } from "chart.js";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { LinkIcon } from "@heroicons/react/24/outline";
 
 
 const curvedData = {
@@ -179,7 +179,7 @@ const Features: NextPage = () => {
                                     zIndex: 1
                                 }}>
                                 <div className="flex justify-center items-center mb-8">
-                                    <img src="./MaximisedCapitalEfficiency.svg" alt="Maximised Capital Efficiency" />
+                                    <Image src="/MaximisedCapitalEfficiency.svg" alt="Maximised Capital Efficiency" width={100} height={100}/>
                                 </div>
                                 <h3 className="text-lg mb-8 font-semi bold">MAXIMIZED CAPITAL EFFICIENCY</h3>
                                 <p className="mt-8 mb-8">Experience the power of unified liquidity. A single pool for each asset for all maturity levels.</p>
@@ -197,7 +197,7 @@ const Features: NextPage = () => {
                                     zIndex: 1
                                 }}>
                                 <div className="flex justify-center items-center mb-8">
-                                    <img src="./NoMaturityLimits.svg" alt="No Maturity Limits" />
+                                    <Image src="/NoMaturityLimits.svg" alt="No Maturity Limits" width={100} height={100}/>
                                 </div>
                                 <h3 className="text-lg font mb-8 font-semibold">NO MATURITY LIMITS</h3>
                                 <p className="mt-8 mb-8">Trade yields of any duration daily.
@@ -216,7 +216,7 @@ const Features: NextPage = () => {
                                     zIndex: 1
                                 }}>
                                 <div className="flex justify-center items-center mb-8">
-                                    <img src="./YieldTradingOnMargin.svg" alt="Yield Trading On Margin" />
+                                    <Image src="/YieldTradingOnMargin.svg" alt="Yield Trading On Margin" width={100} height={100}/>
                                 </div>
                                 <h3 className="text-lg font mb-8 font-semibold">YIELD TRADING ON MARGIN</h3>
                                 <p className="mt-8 mb-8">Amplify returns by leveraging up your bets</p>
@@ -233,14 +233,14 @@ const Features: NextPage = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mt-12">
                         <div className="  text-center backdrop-blur-[4px] rounded-xl">
                             <div className="flex justify-center items-center mb-8">
-                                <img src="./InterestRateSwaps.svg" alt="Interest Rate Swaps" />
+                                <Image src="/InterestRateSwaps.svg" alt="Interest Rate Swaps" width={500} height={500}/>
                             </div>
                         </div>
 
                         <div className="p-10 md:mt-24 backdrop-blur-[4px] rounded-xl text-lg">
                             <div className="flex  items-center mb-4">
                                 {/* <LinkIcon className="text-temporal h-6 w-6 mr-4 mt-1" /> */}
-                                <img src="./icons/link.svg" className="h-6 w-6 mr-4 mt-1" alt="Link icon" />
+                                <Image src="/icons/link.svg" className="mr-4 mt-1" width={24} height={24} alt="Link icon" />
 
                                 <div className="flex-1" style={{ minHeight: '4rem' }}>
                                     <p>Matched-maturities to lower borrowing costs or hedge interest rate risk.</p>
@@ -248,7 +248,7 @@ const Features: NextPage = () => {
                             </div>
                             <div className="flex items-center mb-4">
                                 {/* <LinkIcon className="text-temporal h-6 w-6 mr-4 mt-1" /> */}
-                                <img src="./icons/graph-dot.svg" className="h-6 w-6 mr-4 mt-1" alt="Graph icon" />
+                                <Image src="/icons/graph-dot.svg" className="mr-4 mt-1" width={24} height={24} alt="Graph icon" />
 
                                 <div className="flex-1" style={{ minHeight: '4rem' }}>
                                     <p>User-friendly and intuitive way to speculate on the direction of rates.</p>
@@ -256,7 +256,7 @@ const Features: NextPage = () => {
                             </div>
                             <div className="flex items-center">
                                 {/* <LinkIcon className="text-temporal h-6 w-6 mr-4 mt-1" /> */}
-                                <img src="./icons/delta.svg" className="h-6 w-6 mr-4 mt-1" alt="Delta icon" />
+                                <Image src="/icons/delta.svg" className="mr-4 mt-1" width={24} height={24} alt="Delta icon" />
 
                                 <div className="flex-1" style={{ minHeight: '4rem' }}>
                                     <p>$20T Real-World use case brought to DeFi. Whitelabelled for dApps to offer their users.</p>
@@ -285,7 +285,7 @@ const Features: NextPage = () => {
                                 <p className="mt-2 mb-12 md:px-12">Designed to facilitate fixed-rate borrowing / lending across various short-term maturities upto a year.</p>
 
                                 <div className="flex justify-center items-center mb-8">
-                                    <img src="./RepoMarketSwap.svg" alt="Repo Market Swap" />
+                                    <Image src="/RepoMarketSwap.svg" alt="Repo Market Swap" width={320} height={180}/>
                                 </div>
                             </div>
                         </div>
@@ -311,7 +311,7 @@ const Features: NextPage = () => {
                                 </div>
 
                                 <div className="flex justify-center items-center mb-8">
-                                    <img src="./RepoMarketWaves.png" alt="Repo Market Waves" />
+                                    <Image src="/RepoMarketWaves.png" alt="Repo Market Waves" width={460} height={110}/>
                                 </div>
 
                             </div>
@@ -335,7 +335,7 @@ const Features: NextPage = () => {
                                 </div>
 
                                 <div className="flex justify-center items-center mb-0 pr-10">
-                                    <img src="./PlaceOrderBox.png" alt="Place Order Box" />
+                                    <Image src="/PlaceOrderBox.png" alt="Place Order Box" width={600} height={600}/>
                                 </div>
                             </div>
                         </div>
@@ -345,7 +345,7 @@ const Features: NextPage = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mt-6 mb-0">
                         <div className="text-center backdrop-blur-[4px] rounded-xl">
                             <div className="flex justify-center items-center">
-                                <img src="./OnChainBondMarket.svg" alt="On Chain Bond Market" />
+                                <Image src="/OnChainBondMarket.svg" alt="On Chain Bond Market" width={500} height={500}/>
                             </div>
                         </div>
                         <div className="grid grid-cols-1 items-center text-lg backdrop-blur-[4px] rounded-xl">
@@ -353,7 +353,7 @@ const Features: NextPage = () => {
                                 <h3 className="text-3xl mb-4 font-semibold">ON-CHAIN BOND MARKET</h3>
                                 <div className="flex  items-start mb-4">
                                     {/* <LinkIcon className="text-temporal h-6 w-6 mr-4 mt-1 " /> */}
-                                    <img src="./icons/warehouse.svg" className="h-6 w-6 mr-4 mt-1" alt="Warehouse icon" />
+                                    <Image src="/icons/warehouse.svg" className="mr-4 mt-1" width={24} height={24} alt="Warehouse icon" />
 
                                     <div className="flex-1" style={{ minHeight: '2rem' }}>
                                         <p>Shared liquidity across the entire yield curve.</p>
@@ -361,7 +361,7 @@ const Features: NextPage = () => {
                                 </div>
                                 <div className="flex items-center mb-2">
                                     {/* <LinkIcon className="text-temporal h-6 w-6 mr-4 mt-1" /> */}
-                                    <img src="./icons/chess-king.svg" className="h-6 w-6 mr-4 mt-1" alt="Chess King icon" />
+                                    <Image src="/icons/chess-king.svg" className="mr-4 mt-1" width={24} height={24} alt="Chess King icon" />
 
                                     <div className="flex-1" style={{ minHeight: '4rem' }}>
                                         <p>Dealers only initiate and maintain issuer specific yield curves. Tactically adjusting the spread without altering AMM state.</p>
@@ -369,7 +369,7 @@ const Features: NextPage = () => {
                                 </div>
                                 <div className="flex items-center mb-2">
                                     {/* <LinkIcon className="text-temporal h-6 w-6 mr-4 mt-1" /> */}
-                                    <img src="./icons/redo-spark.svg" className="h-6 w-6 mr-4 mt-1" alt="Redp icon" />
+                                    <Image src="/icons/redo-spark.svg" className="mr-4 mt-1" width={24} height={24} alt="Redp icon" />
 
                                     <div className="flex-1" style={{ minHeight: '4rem' }}>
                                         <p>Vastly more efficient over OTC systems which have fragmented markets for each bond.</p>

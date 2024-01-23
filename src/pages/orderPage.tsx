@@ -1,7 +1,6 @@
 import type {NextPage} from "next";
 import {NextSeo} from "next-seo";
-import {Fragment, useState} from "react";
-import { useRouter } from 'next/router';
+import {Fragment} from "react";
 
 const ThankYou : NextPage= () => {
     return (<Fragment>

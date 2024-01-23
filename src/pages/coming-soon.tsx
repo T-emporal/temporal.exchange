@@ -37,22 +37,24 @@ const ComingSoon: NextPage = () => {
       <NextSeo title="Coming soon" />
       <Navbar></Navbar>
 
-      <main className="flex mt-20 flex-col items-center justify-center ">
+    
+
+      <main className="flex mt-20 flex-col items-center justify-center mb-5 xl:mb-20">
         <div className="orb" />
 
         <h3 className="text-center text-4xl md:text-5xl font leading-[70px] text-white">
           You <span className="text-temporal "> caught </span> us early! <br />
-          Please leave your 
-          <span className="text-temporal "> handle </span> 
-          and we’ll 
-          <span className="text-temporal "> reach </span>  
+          Please leave your
+          <span className="text-temporal "> handle </span>
+          and we’ll
+          <span className="text-temporal "> reach </span>
           out to you.
         </h3>
 
         <div className="text-center text-white">
           <form className="space-y-8 mt-12" onSubmit={handleTraditionalFormSubmit}>
             <div className="relative">
-            {isTelegramFocused && (
+              {isTelegramFocused && (
                 <label
                   htmlFor="telegramHandle"
                   className="absolute top-0 left-5 -translate-y-7 text-sm font-medium text-gray-400 transition-all"
@@ -180,7 +182,10 @@ const ComingSoon: NextPage = () => {
               href="https://twitter.com/TemporalFinance"
               title="Twitter"
               className="flex h-10 w-10 items-center justify-center rounded-full bg-temporal/80"
-            >   <img src="/TwitterFooterIcon.svg" alt="Twitter footer" />
+            >   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.6007 0.769531H15.054L9.694 6.8962L16 15.2315H11.0627L7.196 10.1755L2.77067 15.2315H0.316L6.04933 8.6782L0 0.770198H5.06267L8.558 5.39153L12.6007 0.769531ZM11.74 13.7635H13.0993L4.324 2.16086H2.86533L11.74 13.7635Z" fill="black" />
+              </svg>
+
             </Link>
             <Link
               rel="noopener noreferrer"

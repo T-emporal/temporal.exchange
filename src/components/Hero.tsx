@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 import CurvedChart from "~/components/cards/YieldCurve";
 import { ScriptableContext } from "chart.js";

@@ -20,8 +20,40 @@ ChartJS.register(
   Legend
 );
 
-const CurvedChart = ({ data, options, toggleSwitch }: any) => {
-  const [showSwitch, setShowSwitch] = useState(toggleSwitch);
+
+type ChartData = {
+  labels: number[];
+  datasets: {
+    label: string;
+    data: number[];
+    fill: boolean;
+    backgroundColor: string | ((context: any) => string | CanvasGradient);
+    borderColor: string;
+    tension: number;
+  }[];
+};
+
+type ChartOptions = {
+  responsive: boolean;
+  maintainAspectRatio: boolean;
+  scales: {
+    x: {
+      beginAtZero: boolean;
+    };
+    y: {
+      beginAtZero: boolean;
+    };
+  };
+};
+
+interface CurvedChartProps {
+  data: ChartData;
+  options: ChartOptions;
+  toggleSwitch: boolean;
+}
+
+const CurvedChart = ({ data, options, toggleSwitch }: CurvedChartProps) => {
+  const [showSwitch] = useState(toggleSwitch);
 
   return (
     <div className="relative">

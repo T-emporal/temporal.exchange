@@ -5,7 +5,7 @@ import CurvedChart from "~/components/cards/YieldCurve";
 import { ScriptableContext } from "chart.js";
 
 // Drawing a logarithmic graph
-const xValues = [2, 4, 6, 8, 10, 12, 14]; // X-axis values
+const xValues = [1, 2, 4, 6, 8, 10, 12]; // X-axis values
 const yValues = xValues.map(x => Math.log(x)); 
 
 // Since logarithmic values can be quite small, you might want to scale them up to fit your chart
@@ -63,9 +63,15 @@ const curvedOptions = {
       grid: {
         display: false,
       },
+      ticks: {
+        callback: function(value:any, index:any) {
+          return value !== 0 ? value*2 : '';
+        },
+    }
     },
     y: {
       beginAtZero: false,
+      min: 1.5,
       title: {
         display: true,
         text: 'YIELD',
@@ -74,6 +80,11 @@ const curvedOptions = {
       grid: {
         display: false,
       },
+      ticks: {
+        callback: function(value:any, index:any) {
+          return value >= 2.00 ? Number(value).toFixed(2) : '';
+        },
+    }
     },
   },
 };

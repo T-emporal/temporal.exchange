@@ -137,9 +137,8 @@ const Features: NextPage = () => {
             <div className="bg-dark-blue text-white ">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center py-12">
-                        <h1 className="text-3xl mt-12 font-semibold">
-                            YIELD TRADING</h1>
-                        <p className="mt-12 text-xl">Empower your users with an unparalleled experience in trading yield</p>
+                        <h1 className="text-3xl mt-12 font-semibold tracking-widest">YIELD TRADING</h1>
+                        <p className="default-sans-serif mt-12 text-xl">Empower your users with an unparalleled experience in trading yield</p>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-5 gap-2">
                         <div className="col-span-2">
@@ -181,8 +180,8 @@ const Features: NextPage = () => {
                                 <div className="flex justify-center items-center mb-8">
                                     <Image src="/MaximisedCapitalEfficiency.svg" alt="Maximised Capital Efficiency" width={100} height={100}/>
                                 </div>
-                                <h3 className="text-lg mb-8 font-semi bold">MAXIMIZED CAPITAL EFFICIENCY</h3>
-                                <p className="mt-8 mb-8">Experience the power of unified liquidity. A single pool for each asset for all maturity levels.</p>
+                                <h3 className="text-lg mb-8 font-semi bold tracking-widest">MAXIMIZED CAPITAL EFFICIENCY</h3>
+                                <p className="default-sans-serif mt-8 mb-8">Experience the power of unified liquidity. A single pool for each asset for all maturity levels.</p>
                             </div>
                         </div>
 
@@ -199,8 +198,8 @@ const Features: NextPage = () => {
                                 <div className="flex justify-center items-center mb-8">
                                     <Image src="/NoMaturityLimits.svg" alt="No Maturity Limits" width={100} height={100}/>
                                 </div>
-                                <h3 className="text-lg font mb-8 font-semibold">NO MATURITY LIMITS</h3>
-                                <p className="mt-8 mb-8">Trade yields of any duration daily.
+                                <h3 className="text-lg font mb-8 font-semibold tracking-widest">NO MATURITY <span className="hidden m-0 p-0 sm:block"></span> LIMITS</h3>
+                                <p className="default-sans-serif mt-8 mb-8">Trade yields of any duration daily.
                                     Without fragmentation or waiting for maturity additions.</p>
                             </div>
                         </div>
@@ -218,16 +217,15 @@ const Features: NextPage = () => {
                                 <div className="flex justify-center items-center mb-8">
                                     <Image src="/YieldTradingOnMargin.svg" alt="Yield Trading On Margin" width={100} height={100}/>
                                 </div>
-                                <h3 className="text-lg font mb-8 font-semibold">YIELD TRADING ON MARGIN</h3>
-                                <p className="mt-8 mb-8">Amplify returns by leveraging up your bets</p>
+                                <h3 className="text-lg font mb-8 font-semibold tracking-widest">YIELD TRADING ON MARGIN</h3>
+                                <p className="default-sans-serif mt-8 mb-8">Amplify returns by leveraging up your bets</p>
                             </div>
                         </div>
 
                     </div>
 
                     <div className="text-center pt-12">
-                        <h1 className="text-3xl mt-12 font-semibold">
-                            INTEREST RATE SWAPS</h1>
+                        <h1 className="text-3xl mt-12 font-semibold tracking-widest"> INTEREST RATE SWAPS</h1>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mt-12">
@@ -243,7 +241,7 @@ const Features: NextPage = () => {
                                 <Image src="/icons/link.svg" className="mr-4 mt-1" width={24} height={24} alt="Link icon" />
 
                                 <div className="flex-1" style={{ minHeight: '4rem' }}>
-                                    <p>Matched-maturities to lower borrowing costs or hedge interest rate risk.</p>
+                                    <p className="default-sans-serif">Matched-maturities to lower borrowing costs or hedge interest rate risk.</p>
                                 </div>
                             </div>
                             <div className="flex items-center mb-4">
@@ -251,7 +249,7 @@ const Features: NextPage = () => {
                                 <Image src="/icons/graph-dot.svg" className="mr-4 mt-1" width={24} height={24} alt="Graph icon" />
 
                                 <div className="flex-1" style={{ minHeight: '4rem' }}>
-                                    <p>User-friendly and intuitive way to speculate on the direction of rates.</p>
+                                    <p className="default-sans-serif">User-friendly and intuitive way to speculate on the direction of rates.</p>
                                 </div>
                             </div>
                             <div className="flex items-center">
@@ -259,7 +257,7 @@ const Features: NextPage = () => {
                                 <Image src="/icons/delta.svg" className="mr-4 mt-1" width={24} height={24} alt="Delta icon" />
 
                                 <div className="flex-1" style={{ minHeight: '4rem' }}>
-                                    <p>$20T Real-World use case brought to DeFi. Whitelabelled for dApps to offer their users.</p>
+                                    <p className="default-sans-serif">$20T Real-World use case brought to DeFi. Whitelabelled for dApps to offer their users.</p>
                                 </div>
                             </div>
                         </div>
@@ -267,7 +265,7 @@ const Features: NextPage = () => {
                     </div>
 
                     <div className="text-center pt-12">
-                        <h1 className="text-3xl font-semibold">REPO MARKET</h1>
+                        <h1 className="text-3xl font-semibold tracking-widest">REPO MARKET</h1>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mt-12">
@@ -282,7 +280,7 @@ const Features: NextPage = () => {
                                     position: 'relative',
                                     zIndex: 1
                                 }}>
-                                <p className="mt-2 mb-12 md:px-12">Designed to facilitate fixed-rate borrowing / lending across various short-term maturities upto a year.</p>
+                                <p className="default-sans-serif mt-2 mb-12 md:px-12">Designed to facilitate fixed-rate borrowing / lending across various short-term maturities upto a year.</p>
 
                                 <div className="flex justify-center items-center mb-8">
                                     <Image src="/RepoMarketSwap.svg" alt="Repo Market Swap" width={320} height={180}/>
@@ -300,14 +298,14 @@ const Features: NextPage = () => {
                                     position: 'relative',
                                     zIndex: 1
                                 }}>
-                                <p className="md:pl-20 mt-2 mb-4">A Repo market helps your users</p>
+                                <p className="default-sans-serif md:pl-20 mt-2 mb-4">A Repo market helps your users</p>
                                 <div className="flex items-center ">
                                     <div className="w-3 h-3 md:ml-20 bg-temporal rounded-full"></div>
-                                    <p className="pl-4 ">Reduce funding rates for their long positions</p>
+                                    <p className="default-sans-serif pl-4 ">Reduce funding rates for their long positions</p>
                                 </div>
-                                <div className="flex items-center mb-8">
+                                <div className="flex items-center mt-2 mb-8">
                                     <div className="w-3 h-3 md:ml-20 bg-temporal rounded-full"></div>
-                                    <p className="pl-4 ">Cover short positions cheaply</p>
+                                    <p className="default-sans-serif pl-4 ">Cover short positions cheaply</p>
                                 </div>
 
                                 <div className="flex justify-center items-center mb-8">
@@ -330,8 +328,8 @@ const Features: NextPage = () => {
                             }}>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-2 pl-4 md:pl-10 mt-4 md:mt-12">
                                 <div className="flex-col items-center mb-8 max-w-md">
-                                    <h1 className="text-lg  mb-8 font-semibold">CUSTOM-BUILT REPO MARKET FOR YOUR DAPP</h1>
-                                    <p className="text-lg">With Shared Liquidity across markets built with Temporal</p>
+                                    <h1 className="text-lg  mb-8 font-semibold tracking-widest">CUSTOM-BUILT REPO MARKET FOR YOUR DAPP</h1>
+                                    <p className="default-sans-serif text-lg">With Shared Liquidity across markets built with Temporal</p>
                                 </div>
 
                                 <div className="flex justify-center items-center mb-0 pr-10">
@@ -350,13 +348,13 @@ const Features: NextPage = () => {
                         </div>
                         <div className="grid grid-cols-1 items-center text-lg backdrop-blur-[4px] rounded-xl">
                             <div className="rounded-xl text-lg p-4">
-                                <h3 className="text-3xl mb-4 font-semibold">ON-CHAIN BOND MARKET</h3>
+                                <h3 className="text-3xl mb-4 font-semibold tracking-widest">ON-CHAIN BOND MARKET</h3>
                                 <div className="flex  items-start mb-4">
                                     {/* <LinkIcon className="text-temporal h-6 w-6 mr-4 mt-1 " /> */}
                                     <Image src="/icons/warehouse.svg" className="mr-4 mt-1" width={24} height={24} alt="Warehouse icon" />
 
                                     <div className="flex-1" style={{ minHeight: '2rem' }}>
-                                        <p>Shared liquidity across the entire yield curve.</p>
+                                        <p className="default-sans-serif">Shared liquidity across the entire yield curve.</p>
                                     </div>
                                 </div>
                                 <div className="flex items-center mb-2">
@@ -364,7 +362,7 @@ const Features: NextPage = () => {
                                     <Image src="/icons/chess-king.svg" className="mr-4 mt-1" width={24} height={24} alt="Chess King icon" />
 
                                     <div className="flex-1" style={{ minHeight: '4rem' }}>
-                                        <p>Dealers only initiate and maintain issuer specific yield curves. Tactically adjusting the spread without altering AMM state.</p>
+                                        <p className="default-sans-serif">Dealers only initiate and maintain issuer specific yield curves. Tactically adjusting the spread without altering AMM state.</p>
                                     </div>
                                 </div>
                                 <div className="flex items-center mb-2">
@@ -372,7 +370,7 @@ const Features: NextPage = () => {
                                     <Image src="/icons/redo-spark.svg" className="mr-4 mt-1" width={24} height={24} alt="Redp icon" />
 
                                     <div className="flex-1" style={{ minHeight: '4rem' }}>
-                                        <p>Vastly more efficient over OTC systems which have fragmented markets for each bond.</p>
+                                        <p className="default-sans-serif">Vastly more efficient over OTC systems which have fragmented markets for each bond.</p>
                                     </div>
                                 </div>
                             </div>

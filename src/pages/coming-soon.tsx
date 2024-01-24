@@ -189,7 +189,7 @@ const ComingSoon: NextPage = () => {
             </Link>
             <Link
               rel="noopener noreferrer"
-              href="/contact"
+              href="/coming-soon"
               title="Telegram"
               className="flex h-10 w-10 items-center justify-center rounded-full bg-temporal/80"
             >
@@ -205,7 +205,7 @@ const ComingSoon: NextPage = () => {
             </Link>
             <Link
               rel="noopener noreferrer"
-              href="/contact"
+              href="/coming-soon"
               title="Discord"
               className="flex h-10 w-10 items-center justify-center rounded-full bg-temporal/80"
             >

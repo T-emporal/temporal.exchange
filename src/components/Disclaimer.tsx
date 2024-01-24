@@ -12,7 +12,7 @@ const Features: NextPage = () => {
             </div>
 
             <div
-                className="  mt-12 mb-12 text-lg justify-center text-center font-light text-white  max-w-[725px] mx-auto"
+                className="default-sans-serif mt-12 mb-12 text-lg justify-center text-center font-light text-white  max-w-[725px] mx-auto"
                 style={{ lineHeight: "24px" }}
             >
                 This is a testnet website for Temporal. All interactions are simulations

@@ -100,13 +100,16 @@ const Hero: NextPage = () => {
       <div className="orb" />
 
         <div className="text-center">
-          <h2 className="mx-4 mt-20 xl:mt-40 text-wrap text-4xl leading-tight text-white md:mx-0 md:text-6xl lg:text-7xl  max-w-[950px]">
-            Institutional Grade Liquidity Layer  for  <span className="text-[#0ABAB5CC]">Yield Markets</span>
+          <h2 className="mx-4 mt-20 xl:mt-40 text-wrap text-4xl leading-tight text-white md:mx-0 md:text-6xl lg:text-7xl  ">
+            Institutional Grade Liquidity Layer  for 
+            <span className="hidden sm:block"></span>
+            <span className="text-[#0ABAB5CC]"> Yield Markets</span>
           </h2>
           <p
-            className="mx-4 text-white text-center font-sans text-xl  leading-8 mt-12 max-w-[950px]"
+            className="mx-4 text-white text-center font-sans text-xl  leading-8 mt-12 "
           >
-            Temporal provides a shared omnichain vAMM. The novel design generates a continuous
+            Temporal provides a shared omnichain vAMM. The novel design generates a continuous 
+            <span className="hidden sm:block"></span>
             market-determined yield curve for dApps to optimize their own yield applications.
           </p>
         </div>

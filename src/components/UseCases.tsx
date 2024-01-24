@@ -1,16 +1,13 @@
 import type { NextPage } from "next";
 import React, { useRef } from 'react';
 import Image from 'next/image';
-import Lottie from 'lottie-react';
+import { DotLottiePlayer } from '@dotlottie/react-player';
+import '@dotlottie/react-player/dist/index.css';
 
 import CurvedChart from "~/components/cards/YieldCurve";
 import PlaceOrderCard from "~/components/cards/OrderCard";
 import { ScriptableContext } from "chart.js";
 import { motion, useScroll, useTransform } from "framer-motion";
-
-import interestRateSwapAnimation from '../../public/InterestRateSwaps.json'; 
-import onChainBondMarketAnimation from '../../public/OnChainBondMarket.json'; 
-
 
 const curvedData = {
     labels: [0, 2, 4, 6, 8, 10],
@@ -235,14 +232,17 @@ const Features: NextPage = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mt-12">
                         <div className="  text-center backdrop-blur-[4px] rounded-xl">
                             <div className="flex justify-center items-center mb-8">
-                                {/* <Image src="/InterestRateSwaps.svg" alt="Interest Rate Swaps" width={500} height={500}/> */}
-                                <Lottie animationData={interestRateSwapAnimation} style={{ width: 500, height: 500 }} />
+                                <DotLottiePlayer
+                                    src="./InterestRateSwaps.lottie"
+                                    autoplay
+                                    loop
+                                >
+                                </DotLottiePlayer>
                             </div>
                         </div>
 
-                        <div className="p-10 md:mt-24 backdrop-blur-[4px] rounded-xl text-lg">
+                        <div className="p-10 md:mt-36 backdrop-blur-[4px] rounded-xl text-lg">
                             <div className="flex  items-center mb-4">
-                                {/* <LinkIcon className="text-temporal h-6 w-6 mr-4 mt-1" /> */}
                                 <Image src="/icons/link.svg" className="mr-4 mt-1" width={24} height={24} alt="Link icon" />
 
                                 <div className="flex-1" style={{ minHeight: '4rem' }}>
@@ -250,7 +250,6 @@ const Features: NextPage = () => {
                                 </div>
                             </div>
                             <div className="flex items-center mb-4">
-                                {/* <LinkIcon className="text-temporal h-6 w-6 mr-4 mt-1" /> */}
                                 <Image src="/icons/graph-dot.svg" className="mr-4 mt-1" width={24} height={24} alt="Graph icon" />
 
                                 <div className="flex-1" style={{ minHeight: '4rem' }}>
@@ -258,7 +257,6 @@ const Features: NextPage = () => {
                                 </div>
                             </div>
                             <div className="flex items-center">
-                                {/* <LinkIcon className="text-temporal h-6 w-6 mr-4 mt-1" /> */}
                                 <Image src="/icons/delta.svg" className="mr-4 mt-1" width={24} height={24} alt="Delta icon" />
 
                                 <div className="flex-1" style={{ minHeight: '4rem' }}>
@@ -338,7 +336,13 @@ const Features: NextPage = () => {
                                 </div>
 
                                 <div className="flex justify-center items-center mb-0 pr-10">
-                                    <Image src="/PlaceOrderBox.png" alt="Place Order Box" width={600} height={600} />
+                                    <DotLottiePlayer
+                                        src="./PlaceOrderBox.lottie"
+                                        autoplay
+                                        loop
+                                        className="glow rounded-xl"
+                                    >
+                                    </DotLottiePlayer>
                                 </div>
                             </div>
                         </div>
@@ -348,15 +352,18 @@ const Features: NextPage = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mt-6 mb-0">
                         <div className="text-center backdrop-blur-[4px] rounded-xl">
                             <div className="flex justify-center items-center">
-                                {/* <Image src="/OnChainBondMarket.svg" alt="On Chain Bond Market" width={500} height={500} /> */}
-                                <Lottie animationData={onChainBondMarketAnimation} style={{ width: 500, height: 500 }} />
+                                <DotLottiePlayer
+                                    src="./OnChainBondMarket.lottie"
+                                    autoplay
+                                    loop
+                                >
+                                </DotLottiePlayer>
                             </div>
                         </div>
                         <div className="grid grid-cols-1 items-center text-lg backdrop-blur-[4px] rounded-xl">
                             <div className="rounded-xl text-lg p-4">
                                 <h3 className="text-3xl mb-4 font-semibold tracking-widest">ON-CHAIN BOND MARKET</h3>
                                 <div className="flex  items-start mb-4">
-                                    {/* <LinkIcon className="text-temporal h-6 w-6 mr-4 mt-1 " /> */}
                                     <Image src="/icons/warehouse.svg" className="mr-4 mt-1" width={24} height={24} alt="Warehouse icon" />
 
                                     <div className="flex-1" style={{ minHeight: '2rem' }}>
@@ -364,7 +371,6 @@ const Features: NextPage = () => {
                                     </div>
                                 </div>
                                 <div className="flex items-center mb-2">
-                                    {/* <LinkIcon className="text-temporal h-6 w-6 mr-4 mt-1" /> */}
                                     <Image src="/icons/chess-king.svg" className="mr-4 mt-1" width={24} height={24} alt="Chess King icon" />
 
                                     <div className="flex-1" style={{ minHeight: '4rem' }}>
@@ -372,7 +378,6 @@ const Features: NextPage = () => {
                                     </div>
                                 </div>
                                 <div className="flex items-center mb-2">
-                                    {/* <LinkIcon className="text-temporal h-6 w-6 mr-4 mt-1" /> */}
                                     <Image src="/icons/redo-spark.svg" className="mr-4 mt-1" width={24} height={24} alt="Redp icon" />
 
                                     <div className="flex-1" style={{ minHeight: '4rem' }}>

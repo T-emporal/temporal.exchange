@@ -1,11 +1,15 @@
 import type { NextPage } from "next";
 import React, { useRef } from 'react';
 import Image from 'next/image';
+import Lottie from 'lottie-react';
 
 import CurvedChart from "~/components/cards/YieldCurve";
 import PlaceOrderCard from "~/components/cards/OrderCard";
 import { ScriptableContext } from "chart.js";
 import { motion, useScroll, useTransform } from "framer-motion";
+
+import interestRateSwapAnimation from '../../public/InterestRateSwaps.json'; 
+import onChainBondMarketAnimation from '../../public/OnChainBondMarket.json'; 
 
 
 const curvedData = {
@@ -58,8 +62,8 @@ const curvedOptions = {
                 display: false,
             },
             ticks: {
-                callback: function(value:any, index:any) {
-                  return value !== 0 ? value*2 : '';
+                callback: function (value: any, index: any) {
+                    return value !== 0 ? value * 2 : '';
                 },
             }
         },
@@ -75,8 +79,8 @@ const curvedOptions = {
                 display: false,
             },
             ticks: {
-                callback: function(value:any, index:any) {
-                  return value >= 3.00 ? Number(value).toFixed(2) : '';
+                callback: function (value: any, index: any) {
+                    return value >= 3.00 ? Number(value).toFixed(2) : '';
                 },
             }
         },
@@ -178,7 +182,7 @@ const Features: NextPage = () => {
                                     zIndex: 1
                                 }}>
                                 <div className="flex justify-center items-center mb-8">
-                                    <Image src="/MaximisedCapitalEfficiency.svg" alt="Maximised Capital Efficiency" width={100} height={100}/>
+                                    <Image src="/MaximisedCapitalEfficiency.svg" alt="Maximised Capital Efficiency" width={100} height={100} />
                                 </div>
                                 <h3 className="text-lg mb-8 font-semi bold tracking-widest">MAXIMIZED CAPITAL EFFICIENCY</h3>
                                 <p className="default-sans-serif mt-8 mb-8">Experience the power of unified liquidity. A single pool for each asset for all maturity levels.</p>
@@ -196,7 +200,7 @@ const Features: NextPage = () => {
                                     zIndex: 1
                                 }}>
                                 <div className="flex justify-center items-center mb-8">
-                                    <Image src="/NoMaturityLimits.svg" alt="No Maturity Limits" width={100} height={100}/>
+                                    <Image src="/NoMaturityLimits.svg" alt="No Maturity Limits" width={100} height={100} />
                                 </div>
                                 <h3 className="text-lg font mb-8 font-semibold tracking-widest">NO MATURITY <span className="hidden m-0 p-0 sm:block"></span> LIMITS</h3>
                                 <p className="default-sans-serif mt-8 mb-8">Trade yields of any duration daily.
@@ -215,7 +219,7 @@ const Features: NextPage = () => {
                                     zIndex: 1
                                 }}>
                                 <div className="flex justify-center items-center mb-8">
-                                    <Image src="/YieldTradingOnMargin.svg" alt="Yield Trading On Margin" width={100} height={100}/>
+                                    <Image src="/YieldTradingOnMargin.svg" alt="Yield Trading On Margin" width={100} height={100} />
                                 </div>
                                 <h3 className="text-lg font mb-8 font-semibold tracking-widest">YIELD TRADING ON MARGIN</h3>
                                 <p className="default-sans-serif mt-8 mb-8">Amplify returns by leveraging up your bets</p>
@@ -231,7 +235,8 @@ const Features: NextPage = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mt-12">
                         <div className="  text-center backdrop-blur-[4px] rounded-xl">
                             <div className="flex justify-center items-center mb-8">
-                                <Image src="/InterestRateSwaps.svg" alt="Interest Rate Swaps" width={500} height={500}/>
+                                {/* <Image src="/InterestRateSwaps.svg" alt="Interest Rate Swaps" width={500} height={500}/> */}
+                                <Lottie animationData={interestRateSwapAnimation} style={{ width: 500, height: 500 }} />
                             </div>
                         </div>
 
@@ -283,7 +288,7 @@ const Features: NextPage = () => {
                                 <p className="default-sans-serif mt-2 mb-12 md:px-12">Designed to facilitate fixed-rate borrowing / lending across various short-term maturities upto a year.</p>
 
                                 <div className="flex justify-center items-center mb-8">
-                                    <Image src="/RepoMarketSwap.svg" alt="Repo Market Swap" width={320} height={180}/>
+                                    <Image src="/RepoMarketSwap.svg" alt="Repo Market Swap" width={320} height={180} />
                                 </div>
                             </div>
                         </div>
@@ -309,7 +314,7 @@ const Features: NextPage = () => {
                                 </div>
 
                                 <div className="flex justify-center items-center mb-8">
-                                    <Image src="/RepoMarketWaves.png" alt="Repo Market Waves" width={460} height={110}/>
+                                    <Image src="/RepoMarketWaves.png" alt="Repo Market Waves" width={460} height={110} />
                                 </div>
 
                             </div>
@@ -333,7 +338,7 @@ const Features: NextPage = () => {
                                 </div>
 
                                 <div className="flex justify-center items-center mb-0 pr-10">
-                                    <Image src="/PlaceOrderBox.png" alt="Place Order Box" width={600} height={600}/>
+                                    <Image src="/PlaceOrderBox.png" alt="Place Order Box" width={600} height={600} />
                                 </div>
                             </div>
                         </div>
@@ -343,7 +348,8 @@ const Features: NextPage = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mt-6 mb-0">
                         <div className="text-center backdrop-blur-[4px] rounded-xl">
                             <div className="flex justify-center items-center">
-                                <Image src="/OnChainBondMarket.svg" alt="On Chain Bond Market" width={500} height={500}/>
+                                {/* <Image src="/OnChainBondMarket.svg" alt="On Chain Bond Market" width={500} height={500} /> */}
+                                <Lottie animationData={onChainBondMarketAnimation} style={{ width: 500, height: 500 }} />
                             </div>
                         </div>
                         <div className="grid grid-cols-1 items-center text-lg backdrop-blur-[4px] rounded-xl">

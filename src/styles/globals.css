@@ -133,8 +133,8 @@
   height: 1px; 
   background-color: #00A9A4; 
   border-radius: 100%;
-  opacity: 0.4; 
-  animation: moveOrb 400s infinite alternate linear;
-  box-shadow: 0 0 250px 250px #00A9A4; 
+  opacity: 0.3; 
+  animation: moveOrb 100s infinite alternate linear;
+  box-shadow: 0 0 300px 300px #00A9A4; 
   pointer-events: none;
 }

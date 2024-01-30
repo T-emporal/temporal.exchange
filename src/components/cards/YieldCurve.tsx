@@ -33,17 +33,27 @@ type ChartData = {
   }[];
 };
 
+// type ChartOptions = {
+//   responsive: boolean;
+//   animation?: object;
+//   maintainAspectRatio: boolean;
+//   scales: {
+//     x: {
+//       beginAtZero: boolean;
+//     };
+//     y: {
+//       beginAtZero: boolean;
+//     };
+//   };
+// };
+
 type ChartOptions = {
   responsive: boolean;
+  animation?: object;
+  elements?: object;
+  plugins?: object;
   maintainAspectRatio: boolean;
-  scales: {
-    x: {
-      beginAtZero: boolean;
-    };
-    y: {
-      beginAtZero: boolean;
-    };
-  };
+  scales: object;
 };
 
 interface CurvedChartProps {

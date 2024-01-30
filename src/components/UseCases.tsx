@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import Image from 'next/image';
 import { DotLottiePlayer } from '@dotlottie/react-player';
 import '@dotlottie/react-player/dist/index.css';
@@ -7,7 +7,16 @@ import '@dotlottie/react-player/dist/index.css';
 import CurvedChart from "~/components/cards/YieldCurve";
 import PlaceOrderCard from "~/components/cards/OrderCard";
 import { ScriptableContext } from "chart.js";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useInView } from "framer-motion";
+
+type ChartOptions = {
+    responsive: boolean;
+    animation?: object;
+    elements?: object;
+    plugins?: object;
+    maintainAspectRatio: boolean;
+    scales: object;
+};
 
 const curvedData = {
     labels: [0, 2, 4, 6, 8, 10],
@@ -30,7 +39,7 @@ const curvedData = {
     ],
 };
 
-const curvedOptions = {
+const curvedOptions: ChartOptions = {
     responsive: true,
     maintainAspectRatio: false,
     elements: { point: { radius: 1, rotation: 30 } },
@@ -85,6 +94,9 @@ const curvedOptions = {
 };
 
 
+
+
+
 const Features: NextPage = () => {
 
     // --------------------Framer Motion--------------------
@@ -114,8 +126,54 @@ const Features: NextPage = () => {
         [0, 1],
         [initialBoxShadow, finalBoxShadow]
     );
-
     // --------------------Framer Motion--------------------
+
+
+    // --------------------Chart Animation--------------------
+    const [chartData, setChartData] = useState(curvedData);
+    const [chartOptions, setChartOptions] = useState(curvedOptions);
+    const [key, setKey] = useState(0);
+
+    const ref = useRef(null)
+    const inView = useInView(ref,{
+        margin: "10% 0% 50% 0%"
+    })
+
+
+    useEffect(() => {
+        console.log('Chart is in view:', inView);
+
+        if (inView) {
+            const totalDuration = 2000;
+            const delayBetweenPoints = totalDuration / curvedData.labels.length;
+
+            const animation = {
+                x: {
+                    type: 'number',
+                    easing: 'linear',
+                    duration: delayBetweenPoints,
+                    from: NaN,
+                    delay: (ctx: any) => ctx.type === 'data' && !ctx.xStarted ? (ctx.xStarted = true, ctx.index * delayBetweenPoints) : 0,
+                },
+                y: {
+                    type: 'number',
+                    easing: 'linear',
+                    duration: delayBetweenPoints,
+                    from: (ctx: any) => ctx.chart.scales.y.getPixelForValue(2.95),
+                    delay: (ctx: any) => ctx.type === 'data' && !ctx.yStarted ? (ctx.yStarted = true, ctx.index * delayBetweenPoints) : 0,
+                },
+            };
+            setChartOptions(prevOptions => {
+                const newOptions = { ...prevOptions, animation };
+                console.log('New chart options:', newOptions);
+                return newOptions;
+            });
+            setKey(prevKey => prevKey + 1);
+
+        }
+    }, [inView]);
+
+    // --------------------Chart Animation--------------------
 
     return (
         <section className="dark:text-gray-100">
@@ -161,7 +219,9 @@ const Features: NextPage = () => {
                                 <span className="text-lg font-bold text-[#f2f2f2] uppercase">
                                     Yield Curve
                                 </span>
-                                <CurvedChart data={curvedData} options={curvedOptions} toggleSwitch={true} />
+                                <div ref={ref}>
+                                    <CurvedChart data={curvedData} options={curvedOptions} toggleSwitch={true} key={key}/>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -286,7 +346,13 @@ const Features: NextPage = () => {
                                 <p className="default-sans-serif mt-2 mb-12 md:px-12">Designed to facilitate fixed-rate borrowing / lending across various short-term maturities upto a year.</p>
 
                                 <div className="flex justify-center items-center mb-8">
-                                    <Image src="/RepoMarketSwap.svg" alt="Repo Market Swap" width={320} height={180} />
+                                    {/* <Image src="/RepoMarketSwap.svg" alt="Repo Market Swap" width={320} height={180} /> */}
+                                    <DotLottiePlayer
+                                        src="./RepoMarketCubes.lottie"
+                                        autoplay
+                                        loop
+                                        style={{ width: "320", height: "180" }}                                    >
+                                    </DotLottiePlayer>
                                 </div>
                             </div>
                         </div>
@@ -312,7 +378,14 @@ const Features: NextPage = () => {
                                 </div>
 
                                 <div className="flex justify-center items-center mb-8">
-                                    <Image src="/RepoMarketWaves.png" alt="Repo Market Waves" width={460} height={110} />
+                                    {/* <Image src="/RepoMarketWaves.png" alt="Repo Market Waves" width={460} height={110} /> */}
+                                    <DotLottiePlayer
+                                        src="./RepoMarketWaves.lottie"
+                                        autoplay
+                                        loop
+                                        className=""
+                                    >
+                                    </DotLottiePlayer>
                                 </div>
 
                             </div>

@@ -1,12 +1,13 @@
 import type { NextPage } from "next";
-import React from "react";
+import React, { useRef, useState, useEffect } from 'react';
 import Link from "next/link";
 import CurvedChart from "~/components/cards/YieldCurve";
 import { ScriptableContext } from "chart.js";
+import { useInView } from "framer-motion";
 
 // Drawing a logarithmic graph
 const xValues = [1, 2, 4, 6, 8, 10, 12]; // X-axis values
-const yValues = xValues.map(x => Math.log(x)); 
+const yValues = xValues.map(x => Math.log(x));
 
 // Since logarithmic values can be quite small, you might want to scale them up to fit your chart
 const scaleFactor = 1; // Adjust this factor to scale the values up to a range you like
@@ -64,10 +65,10 @@ const curvedOptions = {
         display: false,
       },
       ticks: {
-        callback: function(value:any, index:any) {
-          return value !== 0 ? value*2 : '';
+        callback: function (value: any, index: any) {
+          return value !== 0 ? value * 2 : '';
         },
-    }
+      }
     },
     y: {
       beginAtZero: false,
@@ -81,34 +82,80 @@ const curvedOptions = {
         display: false,
       },
       ticks: {
-        callback: function(value:any, index:any) {
+        callback: function (value: any, index: any) {
           return value >= 2.00 ? Number(value).toFixed(2) : '';
         },
-    }
+      }
     },
   },
 };
 
 
 const Hero: NextPage = () => {
+  // --------------------Chart Animation--------------------
+  const [chartData, setChartData] = useState(curvedData);
+  const [chartOptions, setChartOptions] = useState(curvedOptions);
+  const [key, setKey] = useState(0);
+
+  const ref = useRef(null)
+  const inView = useInView(ref,{
+    margin: "10% 0% 50% 0%"
+})
+
+  useEffect(() => {
+    console.log('Chart is in view:', inView);
+
+    if (inView) {
+      const totalDuration = 2000;
+      const delayBetweenPoints = totalDuration / curvedData.labels.length;
+
+      const animation = {
+        x: {
+          type: 'number',
+          easing: 'linear',
+          duration: delayBetweenPoints,
+          from: NaN,
+          delay: (ctx: any) => ctx.type === 'data' && !ctx.xStarted ? (ctx.xStarted = true, ctx.index * delayBetweenPoints) : 0,
+        },
+        y: {
+          type: 'number',
+          easing: 'linear',
+          duration: delayBetweenPoints,
+          from: (ctx: any) => ctx.chart.scales.y.getPixelForValue(2.95),
+          delay: (ctx: any) => ctx.type === 'data' && !ctx.yStarted ? (ctx.yStarted = true, ctx.index * delayBetweenPoints) : 0,
+        },
+      };
+      setChartOptions(prevOptions => {
+        const newOptions = { ...prevOptions, animation };
+        console.log('New chart options:', newOptions);
+        return newOptions;
+      });
+      setKey(prevKey => prevKey + 1);
+
+    }
+  }, [inView]);
+
+  // --------------------Chart Animation--------------------
+
+
   return (
     <section
       className="relative z-0  bg-cover bg-center  max-w-[1440px] mx-auto"
 
     >
       <div className="container mx-auto flex flex-col items-center">
-      <div className="orb" />
+        <div className="orb" />
 
         <div className="text-center">
           <h2 className="mx-4 mt-20 xl:mt-40 text-wrap text-4xl leading-tight text-white md:mx-0 md:text-6xl lg:text-7xl  ">
-            Institutional Grade Liquidity Layer  for 
+            Institutional Grade Liquidity Layer  for
             <span className="hidden sm:block"></span>
             <span className="text-[#0ABAB5CC]"> Yield Markets</span>
           </h2>
           <p
             className="mx-4 text-white text-center font-sans text-xl  leading-8 mt-12 "
           >
-            Temporal provides a shared omnichain vAMM. The novel design generates a continuous 
+            Temporal provides a shared omnichain vAMM. The novel design generates a continuous
             <span className="hidden sm:block"></span>
             market-determined yield curve for dApps to optimize their own yield applications.
           </p>
@@ -136,7 +183,9 @@ const Hero: NextPage = () => {
           <span className="text-lg font-bold text-[#f2f2f2] uppercase">
             Yield Curve
           </span>
-          <CurvedChart data={curvedData} options={curvedOptions} toggleSwitch={false} />
+          <div ref={ref}>
+            <CurvedChart data={curvedData} options={curvedOptions} toggleSwitch={false} key={key} />
+          </div>
         </div>
       </div>
 
@@ -162,7 +211,7 @@ const Hero: NextPage = () => {
       </div> */}
 
       {/* ----------------Graph with border---------------- */}
-      
+
 
     </section>
   );

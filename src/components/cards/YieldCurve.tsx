@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Line } from 'react-chartjs-2';
 import { Chart as ChartJS } from 'chart.js/auto';
+import type { ScriptableContext } from "chart.js";
+
 import {
   CategoryScale,
   LinearScale,
@@ -27,7 +29,7 @@ type ChartData = {
     label: string;
     data: number[];
     fill: boolean;
-    backgroundColor: string | ((context: any) => string | CanvasGradient);
+    backgroundColor: string | ((context: ScriptableContext<"line">) => string | CanvasGradient);
     borderColor: string;
     tension: number;
   }[];

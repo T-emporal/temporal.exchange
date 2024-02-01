@@ -25,14 +25,14 @@ const Features: NextPage = () => {
     })
     React.useEffect(() => {
         if (inView) {
-            controls.start({
+            void controls.start({
                 width: finalWidth,
                 background: finalBackground,
                 boxShadow: finalBoxShadow,
                 transition: { duration: 1 }
             });
         } else {
-            controls.start({
+            void controls.start({
                 width: initialWidth,
                 background: initialBackground,
                 boxShadow: initialBoxShadow

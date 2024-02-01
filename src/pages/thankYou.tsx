@@ -3,11 +3,9 @@ import Image from 'next/image';
 
 import {NextSeo} from "next-seo";
 import {Fragment, useState} from "react";
-import { useRouter } from 'next/router';
 
 const ThankYou : NextPage= () => {
 
-    const router = useRouter();
     const [isHovered, setIsHovered] = useState(false);
 
     return (<Fragment>

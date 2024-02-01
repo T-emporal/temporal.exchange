@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import React, { useRef, useState, useEffect } from 'react';
 import Link from "next/link";
 import CurvedChart from "~/components/cards/YieldCurve";
-import { ScriptableContext } from "chart.js";
+import type { ScriptableContext } from "chart.js";
 import { useInView } from "framer-motion";
 
 // Drawing a logarithmic graph
@@ -65,7 +65,7 @@ const curvedOptions = {
         display: false,
       },
       ticks: {
-        callback: function (value: any, index: any) {
+        callback: function (value: number) {
           return value !== 0 ? value * 2 : '';
         },
       }
@@ -82,7 +82,7 @@ const curvedOptions = {
         display: false,
       },
       ticks: {
-        callback: function (value: any, index: any) {
+        callback: function (value: number) {
           return value >= 2.00 ? Number(value).toFixed(2) : '';
         },
       }
@@ -93,8 +93,6 @@ const curvedOptions = {
 
 const Hero: NextPage = () => {
   // --------------------Chart Animation--------------------
-  const [chartData, setChartData] = useState(curvedData);
-  const [chartOptions, setChartOptions] = useState(curvedOptions);
   const [key, setKey] = useState(0);
 
   const ref = useRef(null)
@@ -105,29 +103,29 @@ const Hero: NextPage = () => {
   useEffect(() => {
 
     if (inView) {
-      const totalDuration = 2000;
-      const delayBetweenPoints = totalDuration / curvedData.labels.length;
+      // const totalDuration = 2000;
+      // const delayBetweenPoints = totalDuration / curvedData.labels.length;
 
-      const animation = {
-        x: {
-          type: 'number',
-          easing: 'linear',
-          duration: delayBetweenPoints,
-          from: NaN,
-          delay: (ctx: any) => ctx.type === 'data' && !ctx.xStarted ? (ctx.xStarted = true, ctx.index * delayBetweenPoints) : 0,
-        },
-        y: {
-          type: 'number',
-          easing: 'linear',
-          duration: delayBetweenPoints,
-          from: (ctx: any) => ctx.chart.scales.y.getPixelForValue(2.95),
-          delay: (ctx: any) => ctx.type === 'data' && !ctx.yStarted ? (ctx.yStarted = true, ctx.index * delayBetweenPoints) : 0,
-        },
-      };
-      setChartOptions(prevOptions => {
-        const newOptions = { ...prevOptions, animation };
-        return newOptions;
-      });
+      // const animation = {
+      //   x: {
+      //     type: 'number',
+      //     easing: 'linear',
+      //     duration: delayBetweenPoints,
+      //     from: NaN,
+      //     delay: (ctx: any) => ctx.type === 'data' && !ctx.xStarted ? (ctx.xStarted = true, ctx.index * delayBetweenPoints) : 0,
+      //   },
+      //   y: {
+      //     type: 'number',
+      //     easing: 'linear',
+      //     duration: delayBetweenPoints,
+      //     from: (ctx: any) => ctx.chart.scales.y.getPixelForValue(2.95),
+      //     delay: (ctx: any) => ctx.type === 'data' && !ctx.yStarted ? (ctx.yStarted = true, ctx.index * delayBetweenPoints) : 0,
+      //   },
+      // };
+      // setChartOptions(prevOptions => {
+      //   const newOptions = { ...prevOptions, animation };
+      //   return newOptions;
+      // });
       setKey(prevKey => prevKey + 1);
 
     }

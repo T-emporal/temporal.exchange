@@ -8,7 +8,7 @@ import Navbar from '~/components/NavBar'
 const ComingSoon: NextPage = () => {
   const [isDiscordFocused, setIsDiscordFocused] = useState(false);
   const [isTelegramFocused, setIsTelegramFocused] = useState(false);
-
+  
   const [telegram, setTelegram] = useState("");
   const [discord, setDiscord] = useState("");
 
@@ -18,26 +18,30 @@ const ComingSoon: NextPage = () => {
   const handleTelegramBlur = () => setIsTelegramFocused(false);
 
   function handleTraditionalFormSubmit(event: React.FormEvent) {
-    event.preventDefault();  // This prevents the form from submitting traditionally (page reload)
+    event.preventDefault();
+    onSubmit(telegram, discord).catch(console.error);
   }
 
   async function onSubmit(telegram: string, discord: string) {
     const message = `Discord handle: ${discord} and Telegram handle: ${telegram}`;
-    console.log(message)
+    console.log(message);
     const res = await fetch(`/api/sendmessage?name=NoName&message=${encodeURIComponent(message)}`);
     if (res.status === 200) {
-      window.location.href = "/thankYou"
+      window.location.href = "/thankYou";
     } else {
-      alert("Some error occurred. Please try again")
+      alert("Some error occurred. Please try again");
     }
   }
+
+  const isSubmitDisabled = telegram.trim() === '' && discord.trim() === '';
+
 
   return (
     <>
       <NextSeo title="Coming soon" />
       <Navbar></Navbar>
 
-    
+
 
       <main className="flex mt-20 flex-col items-center justify-center mb-5 xl:mb-20">
         <div className="orb" />
@@ -52,7 +56,7 @@ const ComingSoon: NextPage = () => {
         </h3>
 
         <div className="text-center text-white">
-          <form className="space-y-8 mt-12" onSubmit={handleTraditionalFormSubmit}>
+          <form className="space-y-10 mt-12" onSubmit={handleTraditionalFormSubmit}>
             <div className="relative">
               {isTelegramFocused && (
                 <label
@@ -99,18 +103,9 @@ const ComingSoon: NextPage = () => {
             <div className="flex justify-center w-full">
               <button
                 type="submit"
-                style={{ borderWidth: '1px' }}
-
-                onClick={() => {
-                  void (async () => {
-                    try {
-                      await onSubmit(telegram, discord);
-                    } catch (error) {
-                      console.error("Error occurred:", error);
-                    }
-                  })();
-                }}
-                className="justify-center flex border-temporal bg-temporal hover:border-temporal/80 hover:bg-temporal/80 text-black font-semibold py-3 px-6 rounded-xl">
+                disabled={isSubmitDisabled}
+                className={`justify-center flex border-temporal bg-temporal ${isSubmitDisabled ? 'opacity-50 cursor-not-allowed' : 'hover:border-temporal/80 hover:bg-temporal/80'} text-black font-semibold py-3 px-6 rounded-xl`}
+              >
                 Submit
               </button>
             </div>

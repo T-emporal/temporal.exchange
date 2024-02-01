@@ -103,7 +103,6 @@ const Hero: NextPage = () => {
 })
 
   useEffect(() => {
-    console.log('Chart is in view:', inView);
 
     if (inView) {
       const totalDuration = 2000;
@@ -127,7 +126,6 @@ const Hero: NextPage = () => {
       };
       setChartOptions(prevOptions => {
         const newOptions = { ...prevOptions, animation };
-        console.log('New chart options:', newOptions);
         return newOptions;
       });
       setKey(prevKey => prevKey + 1);

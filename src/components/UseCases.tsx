@@ -7,7 +7,10 @@ import '@dotlottie/react-player/dist/index.css';
 import CurvedChart from "~/components/cards/YieldCurve";
 import PlaceOrderCard from "~/components/cards/OrderCard";
 import { ScriptableContext } from "chart.js";
-import { motion, useScroll, useTransform, useInView } from "framer-motion";
+import { motion, useInView, useAnimation } from "framer-motion";
+
+
+// --------------------Chart Setup--------------------
 
 type ChartOptions = {
     responsive: boolean;
@@ -93,40 +96,46 @@ const curvedOptions: ChartOptions = {
     },
 };
 
-
-
+// --------------------Chart Setup--------------------
 
 
 const Features: NextPage = () => {
 
-    // --------------------Framer Motion--------------------
-    const scrollUseCasesRef = useRef(null);
-    const { scrollYProgress } = useScroll({
-        target: scrollUseCasesRef,
-        offset: ["start end", "end center"],
-    });
+    // --------------------Framer Motion NEW--------------------
+    // Animation controls
+    const controls = useAnimation();
 
-    // Transform scrollYProgress to a width percentage for animation
-    const width = useTransform(scrollYProgress, [0, 0.4], ["0%", "40%"]);
-
-    // Define the initial and final background colors and box-shadow based on the images
+    // Define the initial and final values for the animation
+    const initialWidth = '0%';
+    const finalWidth = '40%'; // Adjust according to your preference
     const initialBackground = "#000000";
     const finalBackground = "#028583";
     const initialBoxShadow = "0px 20px 20px -40px rgba(0, 0, 0, 0.5)";
-    const finalBoxShadow = "0px 10px 70px 40px rgba(2, 133, 131 1)";
+    const finalBoxShadow = "0px 40px 110px 70px rgba(2, 133, 131 1)";
 
-    // Use Framer Motion's useTransform to interpolate between initial and final values
-    const background = useTransform(
-        scrollYProgress,
-        [0, 1],
-        [initialBackground, finalBackground]
-    );
-    const boxShadow = useTransform(
-        scrollYProgress,
-        [0, 1],
-        [initialBoxShadow, finalBoxShadow]
-    );
-    // --------------------Framer Motion--------------------
+    // Setup the Intersection Observer
+    const scrollUseCasesRef = useRef(null)
+    const scrollUseCasesinView = useInView(scrollUseCasesRef, {
+        margin: "50% 0% 0% 0%"
+    })
+    React.useEffect(() => {
+        if (scrollUseCasesinView) {
+            controls.start({
+                width: finalWidth,
+                background: finalBackground,
+                boxShadow: finalBoxShadow,
+                transition: { duration: 1 }
+            });
+        } else {
+            controls.start({
+                width: initialWidth,
+                background: initialBackground,
+                boxShadow: initialBoxShadow
+            });
+        }
+    }, [scrollUseCasesinView, controls]);
+
+    // --------------------Framer Motion NEW--------------------
 
 
     // --------------------Chart Animation--------------------
@@ -135,13 +144,12 @@ const Features: NextPage = () => {
     const [key, setKey] = useState(0);
 
     const ref = useRef(null)
-    const inView = useInView(ref,{
-        margin: "10% 0% 50% 0%"
+    const inView = useInView(ref, {
+        margin: "50% 0% 50% 0%"
     })
 
 
     useEffect(() => {
-        console.log('Chart is in view:', inView);
 
         if (inView) {
             const totalDuration = 2000;
@@ -165,7 +173,6 @@ const Features: NextPage = () => {
             };
             setChartOptions(prevOptions => {
                 const newOptions = { ...prevOptions, animation };
-                console.log('New chart options:', newOptions);
                 return newOptions;
             });
             setKey(prevKey => prevKey + 1);
@@ -184,12 +191,13 @@ const Features: NextPage = () => {
                 }}>
 
             </div>
+
             <motion.div
                 className="progress-bar z-1"
-                style={{ width, background, boxShadow }}
+                style={{ width: initialWidth, background: initialBackground, boxShadow: initialBoxShadow }}
+                animate={controls}
             />
-
-            <div ref={scrollUseCasesRef} className="justify-center   mt-8 md:mt-24 text-center text-5xl font-light text-white lg:flex">
+            <div ref={scrollUseCasesRef} className="relative justify-center z-10 mt-8 md:mt-12 text-center text-5xl font-light text-white lg:flex">
                 Use Cases
             </div>
 
@@ -220,7 +228,7 @@ const Features: NextPage = () => {
                                     Yield Curve
                                 </span>
                                 <div ref={ref}>
-                                    <CurvedChart data={curvedData} options={curvedOptions} toggleSwitch={true} key={key}/>
+                                    <CurvedChart data={curvedData} options={curvedOptions} toggleSwitch={true} key={key} />
                                 </div>
                             </div>
                         </div>
@@ -296,6 +304,7 @@ const Features: NextPage = () => {
                                     src="./InterestRateSwaps.lottie"
                                     autoplay
                                     loop
+                                    speed={0.4}
                                 >
                                 </DotLottiePlayer>
                             </div>
@@ -346,13 +355,16 @@ const Features: NextPage = () => {
                                 <p className="default-sans-serif mt-2 mb-12 md:px-12">Designed to facilitate fixed-rate borrowing / lending across various short-term maturities upto a year.</p>
 
                                 <div className="flex justify-center items-center mb-8">
-                                    {/* <Image src="/RepoMarketSwap.svg" alt="Repo Market Swap" width={320} height={180} /> */}
-                                    <DotLottiePlayer
+                                    <Image src="/RepoMarketSwap.svg" alt="Repo Market Swap" width={320} height={180} />
+                                    {/* <DotLottiePlayer
                                         src="./RepoMarketCubes.lottie"
                                         autoplay
                                         loop
-                                        style={{ width: "320", height: "180" }}                                    >
-                                    </DotLottiePlayer>
+                                        speed={0.7}
+                                        style={{ height: "180px" }}
+
+                                    >
+                                    </DotLottiePlayer> */}
                                 </div>
                             </div>
                         </div>
@@ -383,6 +395,8 @@ const Features: NextPage = () => {
                                         src="./RepoMarketWaves.lottie"
                                         autoplay
                                         loop
+                                        speed={0.2}
+                                        style={{ marginTop: "20px", height: "110px" }}
                                         className=""
                                     >
                                     </DotLottiePlayer>
@@ -413,6 +427,7 @@ const Features: NextPage = () => {
                                         src="./PlaceOrderBox.lottie"
                                         autoplay
                                         loop
+                                        speed={0.8}
                                         className="glow rounded-xl"
                                     >
                                     </DotLottiePlayer>
@@ -422,18 +437,23 @@ const Features: NextPage = () => {
                     </div>
 
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mt-6 mb-0">
+                    <div className=" rounded-xl z-10 relative grid grid-cols-1 md:grid-cols-2 gap-2 mt-6 pb-6"
+                        style={{
+                            background: "rgb(10, 18, 29)",
+                            // background: "white",
+                        }}>
                         <div className="text-center backdrop-blur-[4px] rounded-xl">
                             <div className="flex justify-center items-center">
                                 <DotLottiePlayer
                                     src="./OnChainBondMarket.lottie"
                                     autoplay
                                     loop
+                                    speed={0.6}
                                 >
                                 </DotLottiePlayer>
                             </div>
                         </div>
-                        <div className="grid grid-cols-1 items-center text-lg backdrop-blur-[4px] rounded-xl">
+                        <div className=" grid grid-cols-1 items-center text-lg backdrop-blur-[4px] rounded-xl">
                             <div className="rounded-xl text-lg p-4">
                                 <h3 className="text-3xl mb-4 font-semibold tracking-widest">ON-CHAIN BOND MARKET</h3>
                                 <div className="flex  items-start mb-4">

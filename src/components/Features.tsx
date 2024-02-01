@@ -2,55 +2,55 @@ import type { NextPage } from "next";
 import Image from 'next/image';
 
 import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useInView, useAnimation } from "framer-motion";
 
 const Features: NextPage = () => {
+    
+    // --------------------Framer Motion NEW--------------------
+    // Animation controls
+    const controls = useAnimation();
 
-    // --------------------Framer Motion--------------------
-    const scrollFeaturesRef = useRef(null);
-    const { scrollYProgress } = useScroll({
-        target: scrollFeaturesRef,
-        offset: ["start end", "end center"],
-    });
-
-    // Transform scrollYProgress to a width percentage for animation
-    const width = useTransform(scrollYProgress, [0, 0.4], ["0%", "40%"]);
-
-    // Define the initial and final background colors and box-shadow based on the images
+    // Define the initial and final values for the animation
+    const initialWidth = '0%';
+    const finalWidth = '35%';
     const initialBackground = "#000000";
     const finalBackground = "#028583";
     const initialBoxShadow = "0px 20px 20px -40px rgba(0, 0, 0, 0.5)";
-    const finalBoxShadow = "0px 10px 70px 40px rgba(2, 133, 131 1)";
+    const finalBoxShadow = "0px 0px 90px 80px rgba(2, 133, 131 1)";
 
-    // Use Framer Motion's useTransform to interpolate between initial and final values
-    const background = useTransform(
-        scrollYProgress,
-        [0, 1],
-        [initialBackground, finalBackground]
-    );
-    const boxShadow = useTransform(
-        scrollYProgress,
-        [0, 1],
-        [initialBoxShadow, finalBoxShadow]
-    );
+    // Setup the Intersection Observer
+    const scrollFeaturesRef = useRef(null);
+    const inView = useInView(scrollFeaturesRef,{
+        margin: "50% 0% 0% 0%"
+    })
+    React.useEffect(() => {
+        if (inView) {
+            controls.start({
+                width: finalWidth,
+                background: finalBackground,
+                boxShadow: finalBoxShadow,
+                transition: { duration: 1 }
+            });
+        } else {
+            controls.start({
+                width: initialWidth,
+                background: initialBackground,
+                boxShadow: initialBoxShadow
+            });
+        }
+    }, [inView, controls]);
 
-    // --------------------Framer Motion--------------------
+    // --------------------Framer Motion NEW--------------------
 
     return (
         <section className="dark:text-gray-100">
-            <div className="relative mt-0 p-14 w-full md:w-3/4  container mx-auto items-center  z-10 "
-                style={{
-                    background: "rgb(10, 18, 29)",
-                    // background: "white",
-                }}>
-
-            </div>
+  
             <motion.div
                 className="progress-bar z-1"
-                style={{ width, background, boxShadow }}
+                style={{ width: initialWidth, background: initialBackground, boxShadow: initialBoxShadow }}
+                animate={controls}
             />
-
-            <div ref={scrollFeaturesRef} className="justify-center mt-8 md:mt-24 text-center text-5xl font-light text-white lg:flex">
+            <div ref={scrollFeaturesRef} className="relative justify-center z-10 mt-8 md:mt-12 text-center text-5xl font-light text-white lg:flex">
                 Features
             </div>
 
@@ -68,7 +68,7 @@ const Features: NextPage = () => {
                             zIndex: 1
                         }}>
                         <div className="flex justify-center items-center mb-8">
-                            <Image src="/FeaturesLink.png" alt="Concentrated Liquidity via a novel vAMM" width={100} height={100}/> 
+                            <Image src="/FeaturesLink.png" alt="Concentrated Liquidity via a novel vAMM" width={100} height={100} />
                         </div>
                         <h3 className="default-sans-serif text-lg mb-8 font-semi bold">Concentrated Liquidity via a novel vAMM</h3>
                     </div>
@@ -79,14 +79,14 @@ const Features: NextPage = () => {
                     <div className="absolute inset-0 bg-gradient-to-b from-gray-400/60 to-transparent rounded-xl z-0"></div>
                     <div className="p-10 h-full text-center backdrop-blur-[4px] rounded-xl"
                         style={{
-                                    margin: '0.05rem',
-                                    background: 'linear-gradient(rgba(23, 58, 63, 0.35) 10%, rgba(4, 20, 32, 0) 100%), rgba(10, 18, 29, 1)',
-                                    boxShadow: '3.8px 3.8px 38px 0px rgba(70, 70, 70, 0.10) inset',
-                                    position: 'relative',
-                                    zIndex: 1
-                                }}>
+                            margin: '0.05rem',
+                            background: 'linear-gradient(rgba(23, 58, 63, 0.35) 10%, rgba(4, 20, 32, 0) 100%), rgba(10, 18, 29, 1)',
+                            boxShadow: '3.8px 3.8px 38px 0px rgba(70, 70, 70, 0.10) inset',
+                            position: 'relative',
+                            zIndex: 1
+                        }}>
                         <div className="flex justify-center items-center mb-8">
-                            <Image src="/FeaturesDatabase.png" alt="No Liquidity Fragmentation"  width={100} height={100} />
+                            <Image src="/FeaturesDatabase.png" alt="No Liquidity Fragmentation" width={100} height={100} />
                         </div>
                         <h3 className="default-sans-serif text-lg mb-8 font-semi bold">No Liquidity Fragmentation</h3>
                     </div>
@@ -97,14 +97,14 @@ const Features: NextPage = () => {
                     <div className="absolute inset-0 bg-gradient-to-b from-gray-400/60 to-transparent rounded-xl z-0"></div>
                     <div className="p-10 h-full text-center backdrop-blur-[4px] rounded-xl"
                         style={{
-                                    margin: '0.05rem',
-                                    background: 'linear-gradient(rgba(23, 58, 63, 0.35) 10%, rgba(4, 20, 32, 0) 100%), rgba(10, 18, 29, 1)',
-                                    boxShadow: '3.8px 3.8px 38px 0px rgba(70, 70, 70, 0.10) inset',
-                                    position: 'relative',
-                                    zIndex: 1
-                                }}>
+                            margin: '0.05rem',
+                            background: 'linear-gradient(rgba(23, 58, 63, 0.35) 10%, rgba(4, 20, 32, 0) 100%), rgba(10, 18, 29, 1)',
+                            boxShadow: '3.8px 3.8px 38px 0px rgba(70, 70, 70, 0.10) inset',
+                            position: 'relative',
+                            zIndex: 1
+                        }}>
                         <div className="flex justify-center items-center mb-8">
-                            <Image src="/FeaturesEfficiency.png" alt="Capital Efficiency"  width={100} height={100} />
+                            <Image src="/FeaturesEfficiency.png" alt="Capital Efficiency" width={100} height={100} />
                         </div>
                         <h3 className="default-sans-serif text-lg mb-8 font-semi bold">Capital Efficiency</h3>
                     </div>
@@ -115,14 +115,14 @@ const Features: NextPage = () => {
                     <div className="absolute inset-0 bg-gradient-to-b from-gray-400/60 to-transparent rounded-xl z-0"></div>
                     <div className="p-10 h-full text-center backdrop-blur-[4px] rounded-xl"
                         style={{
-                                    margin: '0.05rem',
-                                    background: 'linear-gradient(rgba(23, 58, 63, 0.35) 10%, rgba(4, 20, 32, 0) 100%), rgba(10, 18, 29, 1)',
-                                    boxShadow: '3.8px 3.8px 38px 0px rgba(70, 70, 70, 0.10) inset',
-                                    position: 'relative',
-                                    zIndex: 1
-                                }}>
+                            margin: '0.05rem',
+                            background: 'linear-gradient(rgba(23, 58, 63, 0.35) 10%, rgba(4, 20, 32, 0) 100%), rgba(10, 18, 29, 1)',
+                            boxShadow: '3.8px 3.8px 38px 0px rgba(70, 70, 70, 0.10) inset',
+                            position: 'relative',
+                            zIndex: 1
+                        }}>
                         <div className="flex justify-center items-center mb-8">
-                            <Image src="/FeaturesModular.png" alt="Modular Structure"   width={100} height={100}/>
+                            <Image src="/FeaturesModular.png" alt="Modular Structure" width={100} height={100} />
                         </div>
                         <h3 className="default-sans-serif text-lg mb-8 font-semi bold">Modular Structure</h3>
                     </div>

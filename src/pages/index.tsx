@@ -2,6 +2,7 @@ import { type NextPage } from "next";
 import Head from "next/head";
 import Navbar from '~/components/NavBar'
 import Hero from "~/components/Hero";
+import Backers from "~/components/Backers";
 import UseCases from "~/components/UseCases";
 import Features from "~/components/Features";
 import Disclaimer from "~/components/Disclaimer";

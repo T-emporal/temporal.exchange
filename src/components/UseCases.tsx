@@ -111,7 +111,7 @@ const Features: NextPage = () => {
     const initialBackground = "#000000";
     const finalBackground = "#028583";
     const initialBoxShadow = "0px 20px 20px -40px rgba(0, 0, 0, 0.5)";
-    const finalBoxShadow = "0px 40px 110px 70px rgba(2, 133, 131 1)";
+    const finalBoxShadow = "0px 50px 100px 70px rgba(2, 133, 131 1)";
 
     // Setup the Intersection Observer
     const scrollUseCasesRef = useRef(null)
@@ -183,7 +183,7 @@ const Features: NextPage = () => {
     return (
         <section className="dark:text-gray-100">
 
-            <div className="relative p-16 w-full md:w-3/4  container mx-auto items-center  z-10 "
+            <div className="relative p-16 m-2 w-full md:w-3/4  container mx-auto items-center  z-10 "
                 style={{
                     background: "rgb(10, 18, 29)",
                 }}>

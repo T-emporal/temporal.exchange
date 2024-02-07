@@ -37,7 +37,7 @@ const Backers: NextPage = () => {
                                 boxShadow: 'inset 3.8px 3.8px 38px 0px rgba(70, 70, 70, 0.10)',
                             }}>
                             <div className="flex justify-center items-center h-full">
-                                <Image src="./Wormhole_Logo.svg" alt="Wormhole Logo" width={320} height={100} />
+                                <Image src="./Wormhole_Logo_Full.svg" alt="Wormhole Logo" width={320} height={100} />
                             </div>
                         </div>
                     </div>

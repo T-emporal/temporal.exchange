@@ -21,6 +21,7 @@ const Home: NextPage = () => {
             <main className="font-sans">
                 <Navbar/>
                 <Hero />
+                <Backers/>
                 <UseCases/>
                 <Features />
                 <Disclaimer />

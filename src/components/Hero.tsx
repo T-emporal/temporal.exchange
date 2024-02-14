@@ -149,7 +149,7 @@ const Hero: NextPage = () => {
             <span className="text-[#0ABAB5CC]"> Yield Markets</span>
           </h2>
           <p
-            className="mx-4 text-white text-center font-sans text-xl  leading-8 mt-12 "
+            className="mx-4 text-white text-center font-light text-2xl leading-8 mt-12 "
           >
             Temporal provides a shared omnichain vAMM. The novel design generates a continuous
             <span className="hidden sm:block"></span>

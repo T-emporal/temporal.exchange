@@ -70,7 +70,7 @@ const Features: NextPage = () => {
                         <div className="flex justify-center items-center mb-8">
                             <Image src="/FeaturesLink.png" alt="Concentrated Liquidity via a novel vAMM" width={100} height={100} />
                         </div>
-                        <h3 className="default-sans-serif text-white text-lg mb-8 font-semi bold">Concentrated Liquidity via a novel vAMM</h3>
+                        <h3 className="default-sans-serif text-white text-lg mb-8">Concentrated Liquidity via a novel vAMM</h3>
                     </div>
                 </div>
 
@@ -88,7 +88,7 @@ const Features: NextPage = () => {
                         <div className="flex justify-center items-center mb-8">
                             <Image src="/FeaturesDatabase.png" alt="No Liquidity Fragmentation" width={100} height={100} />
                         </div>
-                        <h3 className="default-sans-serif text-white text-lg mb-8 font-semi bold">No Liquidity Fragmentation</h3>
+                        <h3 className="default-sans-serif text-white text-lg mb-8">No Liquidity Fragmentation</h3>
                     </div>
                 </div>
 
@@ -106,7 +106,7 @@ const Features: NextPage = () => {
                         <div className="flex justify-center items-center mb-8">
                             <Image src="/FeaturesEfficiency.png" alt="Capital Efficiency" width={100} height={100} />
                         </div>
-                        <h3 className="default-sans-serif text-white text-lg mb-8 font-semi bold">Capital Efficiency</h3>
+                        <h3 className="default-sans-serif text-white text-lg mb-8">Capital Efficiency</h3>
                     </div>
                 </div>
 
@@ -124,7 +124,7 @@ const Features: NextPage = () => {
                         <div className="flex justify-center items-center mb-8">
                             <Image src="/FeaturesModular.png" alt="Modular Structure" width={100} height={100} />
                         </div>
-                        <h3 className="default-sans-serif text-white text-lg mb-8 font-semi bold">Modular Structure</h3>
+                        <h3 className="default-sans-serif text-white text-lg mb-8">Modular Structure</h3>
                     </div>
                 </div>
             </div>

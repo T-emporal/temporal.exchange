@@ -45,7 +45,8 @@
 }
 
 .default-sans-serif {
-  font-family:Arial, sans-serif;
+  /* font-family:Arial, sans-serif; */
+  font-weight: 300;
 }
 
 .glow {

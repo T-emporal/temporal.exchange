@@ -8,7 +8,7 @@ const Backers: NextPage = () => {
     return (
         <section className="dark:text-gray-100">
 
-            <div className="container mx-auto px-4 md:px-24 mt-32 mb-12">
+            <div className="container mx-auto px-4 md:px-24 mt-32">
                 <div className="relative justify-center z-10 mt-8 md:mt-12 text-center text-5xl font-light text-white lg:flex">
                     Backed By
                 </div>

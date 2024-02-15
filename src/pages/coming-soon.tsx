@@ -61,14 +61,14 @@ const ComingSoon: NextPage = () => {
               {isTelegramFocused && (
                 <label
                   htmlFor="telegramHandle"
-                  className="absolute top-0 left-5 -translate-y-7 text-sm font-medium text-gray-400 transition-all"
+                  className="absolute top-0 left-5 -translate-y-7 text-sm text-gray-400 transition-all"
                 >
                   Telegram Handle
                 </label>
               )}
               <input
                 type="text"
-                placeholder={isTelegramFocused ? "" : "Enter Telegram Handle"}
+                placeholder={isTelegramFocused ? "" : "Telegram Handle"}
                 aria-label="Telegram Handle"
                 value={telegram}
                 onChange={(e) => setTelegram(e.target.value)}
@@ -90,7 +90,7 @@ const ComingSoon: NextPage = () => {
               )}
               <input
                 type="text"
-                placeholder={isDiscordFocused ? "" : "Enter Discord Tag"}
+                placeholder={isDiscordFocused ? "" : "Discord Tag"}
                 aria-label="Discord Tag"
                 value={discord}
                 onChange={(e) => setDiscord(e.target.value)}

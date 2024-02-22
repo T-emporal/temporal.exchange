@@ -5,10 +5,14 @@ import { NextSeo } from "next-seo";
 import Link from "next/link";
 import Navbar from '~/components/NavBar'
 
+interface ErrorResponse {
+  message: string;
+}
+
 const ComingSoon: NextPage = () => {
   const [isDiscordFocused, setIsDiscordFocused] = useState(false);
   const [isTelegramFocused, setIsTelegramFocused] = useState(false);
-  
+
   const [telegram, setTelegram] = useState("");
   const [discord, setDiscord] = useState("");
 
@@ -23,12 +27,28 @@ const ComingSoon: NextPage = () => {
   }
 
   async function onSubmit(telegram: string, discord: string) {
-    const message = `Discord handle: ${discord} and Telegram handle: ${telegram}`;
-    console.log(message);
-    const res = await fetch(`/api/sendmessage?name=NoName&message=${encodeURIComponent(message)}`);
-    if (res.status === 200) {
-      window.location.href = "/thankYou";
-    } else {
+    const data = {
+      discordHandle: discord,
+      telegramHandle: telegram
+    };
+
+    try {
+      const res = await fetch('/api/sheet', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (res.status === 200) {
+        window.location.href = "/thankYou";
+      } else {
+        const errorResponse = await res.json() as ErrorResponse;
+        alert(`Error: ${errorResponse.message}`);
+      }
+    } catch (error) {
+      console.error('An error occurred:', error);
       alert("Some error occurred. Please try again");
     }
   }
@@ -96,7 +116,7 @@ const ComingSoon: NextPage = () => {
                 onChange={(e) => setDiscord(e.target.value)}
                 onFocus={handleDiscordFocus}
                 onBlur={handleDiscordBlur}
-                className="text-[#9E9E9E] border rounded-xl bg-transparent border-temporal border-solid w-full py-3 pl-5 pr-16 sm:pr-32 focus:outline-none focus:border-temporal"
+                className="text-white border rounded-xl bg-transparent border-temporal border-solid w-full py-3 pl-5 pr-16 sm:pr-32 focus:outline-none focus:border-temporal"
                 id="discordTag"
               />
             </div>

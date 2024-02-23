@@ -139,3 +139,98 @@
   box-shadow: 0 0 300px 300px #00A9A4; 
   pointer-events: none;
 }
+
+.tetris {
+  display: grid;
+  grid-template-areas:
+    ". controls ."
+    ". game .";
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.board {
+  border: none;
+  user-select: none;
+  margin: auto;
+  grid-area: game;
+}
+
+.controls {
+  grid-area: controls;
+}
+
+.row {
+  display: flex;
+}
+
+.upcoming {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.cell {
+  width: 30px;
+  aspect-ratio: 1;
+  border: 1px solid rgba(0, 169, 164, 0.3);
+}
+
+.cell.hidden {
+  visibility: hidden;
+}
+
+.cell.Empty {
+  background-color: transparent;
+}
+
+.cell.I {
+  background-color: rgba(193, 233, 255, 0.75)
+  ;
+}
+
+.cell.J {
+  background-color: rgba(100, 170, 255, 0.75)
+  ;
+}
+
+.cell.L {
+  background-color: rgba(255, 216, 193, 0.75)
+  ;
+}
+
+.cell.O {
+  background-color: rgba(255, 234, 193, 0.75)
+  ;
+}
+
+.cell.S {
+  background-color: rgba(193, 255, 218, 0.75)
+  ;
+}
+
+.cell.T {
+  background-color: rgba(202, 193, 255, 0.75)
+  ;
+}
+
+.cell.Z {
+  background-color: rgba(255, 193, 193, 0.75)
+  ;
+}
+
+@keyframes slideUp {
+  from {
+      transform: translateY(100%); /* Start from below the view */
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0); /* End at the normal position */
+      opacity: 1;
+  }
+}
+
+.animate-slideUp {
+  animation: slideUp 0.5s ease-out forwards; /* Adjust timing as needed */
+}
+

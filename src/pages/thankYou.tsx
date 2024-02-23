@@ -136,8 +136,8 @@ const ThankYou: NextPage = () => {
                     </div>
                     <div className="flex flex-col items-center justify-center">
                         <Image src="/arrow-keys.svg" width={180} height={180} alt="Arrow Keys Control" />
-                        <h1 className="text-white text-2xl mt-8">
-                            Use <span className="text-temporal"> Arrow Keys </span> to play
+                        <h1 className="text-white text-center text-2xl mt-8">
+                           Click <span className="text-temporal"> New Game </span> and <br />  use <span className="text-temporal"> Arrow Keys </span> to play
                         </h1>
                         <div
                             onMouseEnter={() => setIsHovered(true)}

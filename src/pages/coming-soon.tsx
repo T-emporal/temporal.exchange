@@ -16,6 +16,8 @@ const ComingSoon: NextPage = () => {
   const [telegram, setTelegram] = useState("");
   const [discord, setDiscord] = useState("");
 
+  const [isLoading, setIsLoading] = useState(false);
+
   const handleDiscordFocus = () => setIsDiscordFocused(true);
   const handleTelegramFocus = () => setIsTelegramFocused(true);
   const handleDiscordBlur = () => setIsDiscordFocused(false);
@@ -27,6 +29,8 @@ const ComingSoon: NextPage = () => {
   }
 
   async function onSubmit(telegram: string, discord: string) {
+    setIsLoading(true);
+
     const data = {
       discordHandle: discord,
       telegramHandle: telegram
@@ -50,11 +54,12 @@ const ComingSoon: NextPage = () => {
     } catch (error) {
       console.error('An error occurred:', error);
       alert("Some error occurred. Please try again");
+    } finally {
+      setIsLoading(false);
     }
   }
 
-  const isSubmitDisabled = telegram.trim() === '' && discord.trim() === '';
-
+  const isSubmitDisabled = telegram.trim() === '' && discord.trim() === '' || isLoading;
 
   return (
     <>
@@ -126,9 +131,14 @@ const ComingSoon: NextPage = () => {
                 <button
                   type="submit"
                   disabled={isSubmitDisabled}
-                  className={`justify-center flex border-temporal bg-temporal ${isSubmitDisabled ? 'opacity-50 cursor-not-allowed' : 'hover:border-temporal/80 hover:bg-temporal/80'} text-black font-semibold py-3 px-6 rounded-xl`}
+                  className={`justify-center flex border-temporal bg-temporal ${isSubmitDisabled ? 'opacity-50 cursor-not-allowed' : 'hover:border-temporal/80 hover:bg-temporal/80'} text-black font-semibold py-3 px-6 rounded-xl relative`}
                 >
                   Submit
+                  {isLoading && (
+                    <div className="absolute bottom-0 left-0 right-0 mb-1 h-1 flex justify-center">
+                      <div className="loader"></div> {/* This will contain the animation */}
+                    </div>
+                  )}
                 </button>
               </div>
 

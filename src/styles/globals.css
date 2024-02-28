@@ -221,7 +221,7 @@
 
 @keyframes slideUp {
   from {
-      transform: translateY(100%); /* Start from below the view */
+      transform: translateY(30%); /* Start from below the view */
       opacity: 0;
   }
   to {
@@ -231,7 +231,7 @@
 }
 
 .animate-slideUp {
-  animation: slideUp 0.5s ease-out forwards; /* Adjust timing as needed */
+  animation: slideUp 0.5s ease-out; /* Adjust timing as needed */
 }
 
 .loader {

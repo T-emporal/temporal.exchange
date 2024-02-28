@@ -7,26 +7,28 @@ import UseCases from "~/components/UseCases";
 import Features from "~/components/Features";
 import Disclaimer from "~/components/Disclaimer";
 import Footer from "~/components/Footer";
-
+import Layout from "~/components/Layout";
 
 const Home: NextPage = () => {
     return (
         <>
-            <Head>
-                <title>Temporal</title>
-                <meta name="description" content="Decentralized Finances" />
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
+            <Layout>
+                <Head>
+                    <title>Temporal</title>
+                    <meta name="description" content="Decentralized Finances" />
+                    <link rel="icon" href="/favicon.ico" />
+                </Head>
 
-            <main className="font-sans">
-                <Navbar/>
-                <Hero />
-                <Backers/>
-                <UseCases/>
-                <Features />
-                <Disclaimer />
-                <Footer />
-            </main>
+                <div className="font-sans">
+                    <Navbar />
+                    <Hero />
+                    <Backers />
+                    <UseCases />
+                    <Features />
+                    <Disclaimer />
+                    <Footer />
+                </div>
+            </Layout>
         </>
     );
 };

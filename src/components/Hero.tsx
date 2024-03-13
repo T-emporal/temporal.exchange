@@ -164,7 +164,7 @@ const Hero: NextPage = () => {
             href={"/coming-soon"}
           >
             <span className="text-xl px-5">
-              Try App
+              Join Waitlist
             </span>
           </Link>
         </div>

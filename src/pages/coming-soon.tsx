@@ -1,21 +1,46 @@
 import React, { useState } from 'react';
-import { ArrowLeftCircleIcon } from "@heroicons/react/24/outline";
+import { ArrowLeftCircleIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
 import type { NextPage } from "next";
 import { NextSeo } from "next-seo";
 import Link from "next/link";
 import Navbar from '~/components/NavBar'
 import Layout from '~/components/Layout';
 
+import { Listbox } from '@headlessui/react';
+import { motion } from 'framer-motion';
+
 interface ErrorResponse {
   message: string;
 }
+
+interface Level {
+  name: string;
+  value: string;
+}
+
+
+const levels = [
+  { name: 'Select Level', value: '' },
+  { name: 'Yield Farmer', value: 'Yield Farmer' },
+  { name: 'Professional Trader', value: 'Professional Trader' },
+  { name: 'Institution / Ecosystem', value: 'Institution / Ecosystem' },
+];
+
+const fadeInVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
 
 const ComingSoon: NextPage = () => {
   const [isDiscordFocused, setIsDiscordFocused] = useState(false);
   const [isTelegramFocused, setIsTelegramFocused] = useState(false);
 
-  const [telegram, setTelegram] = useState("");
-  const [discord, setDiscord] = useState("");
+  const [selectedLevel, setSelectedLevel] = useState<Level>(levels[0] as Level);
+  const [name, setName] = useState('');
+  const [company, setCompany] = useState('');
+  const [email, setEmail] = useState('');
+  const [telegram, setTelegram] = useState('');
+  const [discord, setDiscord] = useState('');
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -24,18 +49,15 @@ const ComingSoon: NextPage = () => {
   const handleDiscordBlur = () => setIsDiscordFocused(false);
   const handleTelegramBlur = () => setIsTelegramFocused(false);
 
-  function handleTraditionalFormSubmit(event: React.FormEvent) {
+  async function onSubmit(event: React.FormEvent) {
     event.preventDefault();
-    onSubmit(telegram, discord).catch(console.error);
-  }
-
-  async function onSubmit(telegram: string, discord: string) {
     setIsLoading(true);
 
-    const data = {
-      discordHandle: discord,
-      telegramHandle: telegram
-    };
+    const data = selectedLevel.value === 'Yield Farmer'
+      ? { name, level: selectedLevel.value, telegramHandle: telegram, discordHandle: discord }
+      : { name, level: selectedLevel.value, company, email };
+
+    console.log('Data: ', data)
 
     try {
       const res = await fetch('/api/sheet', {
@@ -60,7 +82,7 @@ const ComingSoon: NextPage = () => {
     }
   }
 
-  const isSubmitDisabled = telegram.trim() === '' && discord.trim() === '' || isLoading;
+  const isSubmitDisabled = isLoading || name.trim() === '' || (selectedLevel.value === 'Yield Farmer' ? telegram.trim() === '' && discord.trim() === '' : company.trim() === '' && email.trim() === '');
 
   return (
     <>
@@ -69,64 +91,126 @@ const ComingSoon: NextPage = () => {
         <div className='md:h-screen'>
 
           <Navbar></Navbar>
-          
+
           <main className="flex mt-20 flex-col items-center justify-center mb-5 xl:mb-20">
             <div className="orb" />
 
-            <h3 className="text-center text-4xl md:text-5xl font leading-[70px] text-white">
+            {/* <h3 className="text-center text-4xl md:text-5xl font leading-[70px] text-white">
               You <span className="text-temporal "> caught </span> us early! <br />
               Please leave your
-              <span className="text-temporal "> handle </span>
+              <span className="text-temporal "> details </span>
               and we’ll
               <span className="text-temporal "> reach </span>
               out to you.
+            </h3> */}
+
+            <h3 className="text-center text-4xl md:text-5xl font leading-[70px] text-white">
+              You <span className="text-temporal "> caught </span> us early! <br />
             </h3>
+          
+            <h2 className="text-center text-xl leading-[70px] space-x-5 mt-6 text-white">
+              <span className="text-temporal "> 1: </span> Leave your handle
+              <span className="text-temporal "> 2: </span> Play some Temptris
+              <span className="text-temporal "> 3: </span> We'll reach out to you
+            </h2>
 
-            <div className="text-center text-white">
-              <form className="space-y-10 mt-12" onSubmit={handleTraditionalFormSubmit}>
-                <div className="relative">
-                  {isTelegramFocused && (
-                    <label
-                      htmlFor="telegramHandle"
-                      className="absolute top-0 left-5 -translate-y-7 text-sm text-gray-400 transition-all"
-                    >
-                      Telegram Handle
-                    </label>
-                  )}
-                  <input
-                    type="text"
-                    placeholder={isTelegramFocused ? "" : "Telegram Handle"}
-                    aria-label="Telegram Handle"
-                    value={telegram}
-                    onChange={(e) => setTelegram(e.target.value)}
-                    onFocus={handleTelegramFocus}
-                    onBlur={handleTelegramBlur}
-                    className="text-white border rounded-xl bg-transparent border-temporal border-solid w-full py-3 pl-5 pr-16 sm:pr-32 focus:outline-none focus:border-temporal"
-                    id="telegramHandle"
-                  />
-                </div>
 
-                <div className="relative">
-                  {isDiscordFocused && (
-                    <label
-                      htmlFor="discordTag"
-                      className="absolute top-0 left-5 -translate-y-7 text-sm font-medium text-gray-400 transition-all"
-                    >
-                      Discord Tag
-                    </label>
-                  )}
-                  <input
-                    type="text"
-                    placeholder={isDiscordFocused ? "" : "Discord Tag"}
-                    aria-label="Discord Tag"
-                    value={discord}
-                    onChange={(e) => setDiscord(e.target.value)}
-                    onFocus={handleDiscordFocus}
-                    onBlur={handleDiscordBlur}
-                    className="text-white border rounded-xl bg-transparent border-temporal border-solid w-full py-3 pl-5 pr-16 sm:pr-32 focus:outline-none focus:border-temporal"
-                    id="discordTag"
-                  />
+
+            <div className="text-center w-1/2 text-white">
+              <form className="space-y-6 mt-12" onSubmit={onSubmit}>
+                <div className="flex gap-4">
+                  <div className="flex-1">
+                    <input
+                      type="text"
+                      placeholder="Name"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      className=" flex-1 placeholder-gray-400 text-white border rounded-xl bg-transparent border-temporal border-solid w-full py-3 pl-5 pr-16 focus:outline-none focus:border-temporal"
+                    />
+                  </div>
+                  <Listbox as="div" className="relative flex-1" value={selectedLevel} onChange={setSelectedLevel}>
+                    {({ open }) => (
+                      <>
+                        <Listbox.Button className="flex items-center justify-between text-white border rounded-xl bg-transparent border-temporal border-solid w-full py-3 px-5 focus:outline-none focus:border-temporal">
+                          {selectedLevel.name}
+                          <ChevronDownIcon className="h-5 w-5" aria-hidden="true" />
+
+                        </Listbox.Button>
+
+                        {open && (
+                          <Listbox.Options static className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-gray-300 py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+                            {levels.map((level) => (
+                              <Listbox.Option key={level.value} value={level} as={React.Fragment}>
+                                {({ active, selected }) => (
+                                  <li className={`flex justify-center items-center cursor-default select-none relative py-2 pr-4 pl-4 ${active ? 'bg-temporal text-white' : 'text-gray-900'}`}>
+                                    {level.name}
+                                  </li>
+                                )}
+                              </Listbox.Option>
+                            ))}
+                          </Listbox.Options>
+                        )}
+                      </>
+                    )}
+                  </Listbox>
                 </div>
+                {selectedLevel.name === 'Yield Farmer' && (
+                  <motion.div
+                    initial="hidden"
+                    animate="visible"
+                    variants={fadeInVariants}
+                    className="flex space-x-4"
+                  >
+                    <div className="flex-1">
+                      <input
+                        type="text"
+                        placeholder="Telegram Handle"
+                        value={telegram}
+                        onChange={(e) => setTelegram(e.target.value)}
+                        className="placeholder-gray-400 text-white border rounded-xl bg-transparent border-temporal border-solid w-full mb-6 py-3 pl-5 pr-16 focus:outline-none focus:border-temporal"
+                      />
+                    </div>
+                    <div className="flex-1">
+                      <input
+                        type="text"
+                        placeholder="Discord Tag"
+                        value={discord}
+                        onChange={(e) => setDiscord(e.target.value)}
+                        className="placeholder-gray-400 text-white border rounded-xl bg-transparent border-temporal border-solid w-full py-3 pl-5 pr-16 focus:outline-none focus:border-temporal"
+                      />
+                    </div>
+                  </motion.div>
+
+                )}
+                {(selectedLevel.name === 'Professional Trader' || selectedLevel.name === 'Institution / Ecosystem') && (
+                  <motion.div
+                    initial="hidden"
+                    animate="visible"
+                    variants={fadeInVariants}
+                    className="flex space-x-4"
+                  >
+                    <div className="flex-1">
+                      <input
+                        type="text"
+                        placeholder="Company"
+                        value={company}
+                        onChange={(e) => setCompany(e.target.value)}
+                        className="placeholder-gray-400 text-white border rounded-xl bg-transparent border-temporal border-solid w-full py-3 pl-5 pr-16 sm:pr-32 focus:outline-none focus:border-temporal"
+                      />
+                    </div>
+                    <div className="flex-1">
+                      <input
+                        type="email"
+                        placeholder="Email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        className="placeholder-gray-400 text-white border rounded-xl bg-transparent border-temporal border-solid w-full py-3 pl-5 pr-16 sm:pr-32 focus:outline-none focus:border-temporal"
+                      />
+                    </div>
+                  </motion.div>
+
+                )}
+
                 <div className="flex justify-center w-full">
                   <button
                     type="submit"
@@ -136,27 +220,12 @@ const ComingSoon: NextPage = () => {
                     Submit
                     {isLoading && (
                       <div className="absolute bottom-0 left-0 right-0 mb-1 h-1 flex justify-center">
-                        <div className="loader"></div> {/* This will contain the animation */}
+                        <div className="loader"></div>
                       </div>
                     )}
                   </button>
                 </div>
-
               </form>
-
-
-              {/* <div className="mb-4 text-lg md:text-xl">
-            <p>Follow us on <span className="text-temporal ">Twitter </span> for regular updates</p>
-          </div>
-          <div className="flex justify-center">
-            <Link
-              rel="noopener noreferrer"
-              href="https://twitter.com/TemporalFinance"
-              title="Twitter"
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-temporal"
-            >   <img src="/TwitterFooterIcon.svg" alt="Twitter footer" />
-            </Link>
-          </div> */}
             </div>
 
             <Link className="mt-16 text-white text-lg flex items-center hover:text-temporal" href={"/"}>

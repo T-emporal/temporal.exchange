@@ -32,8 +32,6 @@ const fadeInVariants = {
 };
 
 const ComingSoon: NextPage = () => {
-  const [isDiscordFocused, setIsDiscordFocused] = useState(false);
-  const [isTelegramFocused, setIsTelegramFocused] = useState(false);
 
   const [selectedLevel, setSelectedLevel] = useState<Level>(levels[0] as Level);
   const [name, setName] = useState('');
@@ -44,43 +42,41 @@ const ComingSoon: NextPage = () => {
 
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleDiscordFocus = () => setIsDiscordFocused(true);
-  const handleTelegramFocus = () => setIsTelegramFocused(true);
-  const handleDiscordBlur = () => setIsDiscordFocused(false);
-  const handleTelegramBlur = () => setIsTelegramFocused(false);
+  const onSubmit = (event: React.FormEvent) => {
+    event.preventDefault(); 
 
-  async function onSubmit(event: React.FormEvent) {
-    event.preventDefault();
-    setIsLoading(true);
+    void (async () => {
+      setIsLoading(true);
 
-    const data = selectedLevel.value === 'Yield Farmer'
-      ? { name, level: selectedLevel.value, telegramHandle: telegram, discordHandle: discord }
-      : { name, level: selectedLevel.value, company, email };
+      const data = selectedLevel.value === 'Yield Farmer'
+        ? { name, level: selectedLevel.value, telegramHandle: telegram, discordHandle: discord }
+        : { name, level: selectedLevel.value, company, email };
 
-    console.log('Data: ', data)
+      console.log('Data: ', data);
 
-    try {
-      const res = await fetch('/api/sheet', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
+      try {
+        const res = await fetch('/api/sheet', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        });
 
-      if (res.status === 200) {
-        window.location.href = "/thankYou";
-      } else {
-        const errorResponse = await res.json() as ErrorResponse;
-        alert(`Error: ${errorResponse.message}`);
+        if (res.status === 200) {
+          window.location.href = "/thankYou";
+        } else {
+          const errorResponse = (await res.json()) as ErrorResponse;
+          alert(`Error: ${errorResponse.message}`);
+        }
+      } catch (error) {
+        console.error('An error occurred:', error);
+        alert("Some error occurred. Please try again");
+      } finally {
+        setIsLoading(false);
       }
-    } catch (error) {
-      console.error('An error occurred:', error);
-      alert("Some error occurred. Please try again");
-    } finally {
-      setIsLoading(false);
-    }
-  }
+    })();
+  };
 
   const isSubmitDisabled = isLoading || name.trim() === '' || (selectedLevel.value === 'Yield Farmer' ? telegram.trim() === '' && discord.trim() === '' : company.trim() === '' && email.trim() === '');
 
@@ -107,14 +103,12 @@ const ComingSoon: NextPage = () => {
             <h3 className="text-center text-4xl md:text-5xl font leading-[70px] text-white">
               You <span className="text-temporal "> caught </span> us early! <br />
             </h3>
-          
+
             <h2 className="text-center text-xl leading-[70px] space-x-5 mt-6 text-white">
               <span className="text-temporal "> 1: </span> Leave your handle
               <span className="text-temporal "> 2: </span> Play some Temptris
-              <span className="text-temporal "> 3: </span> We'll reach out to you
+              <span className="text-temporal "> 3: </span> We&aposll reach out to you
             </h2>
-
-
 
             <div className="text-center w-1/2 text-white">
               <form className="space-y-6 mt-12" onSubmit={onSubmit}>
@@ -141,7 +135,7 @@ const ComingSoon: NextPage = () => {
                           <Listbox.Options static className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-gray-300 py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
                             {levels.map((level) => (
                               <Listbox.Option key={level.value} value={level} as={React.Fragment}>
-                                {({ active, selected }) => (
+                                {({ active }) => (
                                   <li className={`flex justify-center items-center cursor-default select-none relative py-2 pr-4 pl-4 ${active ? 'bg-temporal text-white' : 'text-gray-900'}`}>
                                     {level.name}
                                   </li>

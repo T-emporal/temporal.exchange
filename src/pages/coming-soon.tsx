@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { ArrowLeftCircleIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
+import React, { useEffect, useState } from 'react';
+import { ArrowLeftCircleIcon, ArrowPathIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
 import type { NextPage } from "next";
 import { NextSeo } from "next-seo";
 import Link from "next/link";
@@ -42,8 +42,29 @@ const ComingSoon: NextPage = () => {
 
   const [isLoading, setIsLoading] = useState(false);
 
+  const [rowCount, setRowCount] = useState<number>(0);
+  const [isRowCountLoading, setIsRowCountLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    const fetchRowCount = async () => {
+      setIsRowCountLoading(true);
+      try {
+        const response = await fetch('/api/getSubscribers');
+        if (!response.ok) throw new Error('Network response was not ok');
+        const data = await response.json() as { rowCount: number };
+        setRowCount(data.rowCount);
+      } catch (error) {
+        console.error('Failed to fetch row count:', error);
+      } finally {
+        setIsRowCountLoading(false);
+      }
+    };
+
+    void fetchRowCount();
+  }, []);
+
   const onSubmit = (event: React.FormEvent) => {
-    event.preventDefault(); 
+    event.preventDefault();
 
     void (async () => {
       setIsLoading(true);
@@ -100,14 +121,30 @@ const ComingSoon: NextPage = () => {
               out to you.
             </h3> */}
 
-            <h3 className="text-center text-4xl md:text-5xl font leading-[70px] text-white">
+            {/* <h3 className="text-center text-4xl md:text-5xl font leading-[70px] text-white">
               You <span className="text-temporal "> caught </span> us early! <br />
-            </h3>
+            </h3> */}
+
+            <span className="font-extralight text-5xl" >
+              {isRowCountLoading ? (
+                <div className="flex justify-center items-center h-full">
+                  <ArrowPathIcon className="animate-spin rounded-full h-12 w-12 text-white" />
+                </div>
+
+              ) : (
+                // <span>You are currently #{rowCount} in queue </span>
+                <h1>
+                  <span className="text-temporal">{rowCount} </span>
+                  <span className='text-white'>users in the waitlist </span>
+                </h1>
+
+              )}
+            </span>
 
             <h2 className="text-center text-xl leading-[70px] space-x-5 mt-6 text-white">
               <span className="text-temporal "> 1: </span> Leave your handle
               <span className="text-temporal "> 2: </span> Play some Temptris
-              <span className="text-temporal "> 3: </span> We&aposll reach out to you
+              <span className="text-temporal">3:</span> We&apos;ll reach out to you
             </h2>
 
             <div className="text-center w-1/2 text-white">

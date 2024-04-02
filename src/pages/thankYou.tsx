@@ -3,7 +3,6 @@ import Image from 'next/image';
 
 import { DotLottiePlayer } from '@dotlottie/react-player';
 import '@dotlottie/react-player/dist/index.css';
-import { ArrowPathIcon } from "@heroicons/react/24/outline";
 
 import { NextSeo } from "next-seo";
 import { Fragment, useEffect, useState } from "react";
@@ -20,8 +19,8 @@ const ThankYou: NextPage = () => {
 
     const [showTetris, setShowTetris] = useState(false);
 
-    const [rowCount, setRowCount] = useState<number>(0);
-    const [isRowCountLoading, setIsRowCountLoading] = useState<boolean>(true);
+    // const [rowCount, setRowCount] = useState<number>(0);
+    // const [isRowCountLoading, setIsRowCountLoading] = useState<boolean>(true);
 
 
     const toggleView = () => {
@@ -39,23 +38,23 @@ const ThankYou: NextPage = () => {
         { letter: "s", color: "#C39B9D" },
     ];
 
-    useEffect(() => {
-        const fetchRowCount = async () => {
-            setIsRowCountLoading(true);
-            try {
-                const response = await fetch('/api/getSubscribers');
-                if (!response.ok) throw new Error('Network response was not ok');
-                const data = await response.json() as { rowCount: number };
-                setRowCount(data.rowCount);
-            } catch (error) {
-                console.error('Failed to fetch row count:', error);
-            } finally {
-                setIsRowCountLoading(false);
-            }
-        };
+    // useEffect(() => {
+    //     const fetchRowCount = async () => {
+    //         setIsRowCountLoading(true);
+    //         try {
+    //             const response = await fetch('/api/getSubscribers');
+    //             if (!response.ok) throw new Error('Network response was not ok');
+    //             const data = await response.json() as { rowCount: number };
+    //             setRowCount(data.rowCount);
+    //         } catch (error) {
+    //             console.error('Failed to fetch row count:', error);
+    //         } finally {
+    //             setIsRowCountLoading(false);
+    //         }
+    //     };
     
-        void fetchRowCount();
-    }, []);
+    //     void fetchRowCount();
+    // }, []);
     
 
 
@@ -73,7 +72,7 @@ const ThankYou: NextPage = () => {
                                     Thank You :&#41;
                                 </span>
 
-                                <span className="font-extralight text-5xl" >
+                                {/* <span className="font-extralight text-5xl" >
                                     {isRowCountLoading ? (
                                         <div className="flex justify-center items-center h-full">
                                             <ArrowPathIcon className="animate-spin rounded-full h-12 w-12 border-b-2 border-gray-900" />
@@ -87,7 +86,7 @@ const ThankYou: NextPage = () => {
                                         </h1>
 
                                     )}
-                                </span>
+                                </span> */}
 
                             </h1>
 
